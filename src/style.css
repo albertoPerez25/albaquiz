@@ -1,0 +1,22 @@
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: grid;
+    margin: 0 45%;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+body div a{
+    color:#333;
+    padding-left: 50%;
+    align-items: center;
+}
