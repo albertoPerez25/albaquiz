@@ -36,6 +36,6 @@ GP-TM-10
 - TBD
 
 Leyenda:
-TBD: To Be Done
-WIP: Work In Progress
+TBD: To Be Done || 
+WIP: Work In Progress || 
 ?: Opcional/No prioritario
