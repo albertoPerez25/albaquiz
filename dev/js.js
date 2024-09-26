@@ -10,12 +10,15 @@ async function setMotionListeners(){
         if ((event.rotationRate.alpha > 256 || event.rotationRate.beta > 256 || event.rotationRate.gamma > 256)) {
             this.output_message.innerHTML = "SE AGITAAAAAAAAA!"
             document.body.style.backgroundColor = "red"
-            setTimeout(() => {
-                this.message.innerHTML = null
-                document.body.style.backgroundColor = "white"
-            }, "1000")
+            resetear()
         }
     })
 }
 
+function resetear(){
+    setTimeout(() => {
+        document.getElementById('output_message').innerHTML = null;
+        document.body.style.backgroundColor = "grey"
+    }, 2000)
+}
 this.setMotionListeners()
