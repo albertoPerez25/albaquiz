@@ -19,5 +19,5 @@ function resetear(){
         document.body.style.backgroundColor = "grey"
     }, 2000)
 }
-resetear()
+//resetear()
 this.setMotionListeners()
