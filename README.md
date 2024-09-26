@@ -11,15 +11,18 @@ GP-TM-10
 - Material Design:
    - Animaciones -> TBD
    - Colores -> TBD
+  
 **Sensores:**
--Agitar -> WIP
--Ubicación -> TBD
--Voz -> TBD
+- Agitar -> WIP
+- Ubicación -> TBD
+- Voz -> TBD
+
 **Tablero:**
 - Movil -> TBD
 - Ordenador -> WIP
 - Diseño decente -> TBD
 - Fichas -> TBD
+  
 **Preguntas:**
 - Diseño -> TBD
 - Implementacion:
@@ -28,6 +31,7 @@ GP-TM-10
 - Preguntas normales? -> TBD
 - Preguntas de sensores -> TBD
 - Respuestaas -> TBD
+
 **Lógica de juego:**
 - TBD
 
