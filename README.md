@@ -9,8 +9,8 @@ GP-TM-10
 **Diseño:**
 - Web Responsive -> TBD
 - Material Design:
-- - Animaciones -> TBD
-- - Colores -> TBD
+   - Animaciones -> TBD
+   - Colores -> TBD
 **Sensores:**
 -Agitar -> WIP
 -Ubicación -> TBD
@@ -23,12 +23,11 @@ GP-TM-10
 **Preguntas:**
 - Diseño -> TBD
 - Implementacion:
-- - Puntos -> TBD
+  - Puntos -> TBD
   - Varios Jugadores? -> TBD
 - Preguntas normales? -> TBD
 - Preguntas de sensores -> TBD
 - Respuestaas -> TBD
-- 
 **Lógica de juego:**
 - TBD
 
