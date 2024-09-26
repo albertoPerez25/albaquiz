@@ -5,8 +5,6 @@ async function setMotionListeners(){
     })*/
 
     await window.addEventListener('devicemotion', event => {
-        console.log('Device motion event: %O', event)
-
         if ((event.rotationRate.alpha > 256 || event.rotationRate.beta > 256 || event.rotationRate.gamma > 256)) {
             this.output_message.innerHTML = "SE AGITAAAAAAAAA!"
             document.body.style.backgroundColor = "red"
@@ -21,4 +19,5 @@ function resetear(){
         document.body.style.backgroundColor = "grey"
     }, 2000)
 }
+resetear()
 this.setMotionListeners()
