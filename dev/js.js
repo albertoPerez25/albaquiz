@@ -12,7 +12,7 @@ function resetear(){
     setTimeout(() => {
         document.getElementById('output_message').innerHTML = null;
         document.body.style.backgroundColor = "grey"
-    }, 2000)
+    }, 2500)
 }
 
 this.setMotionListeners()
