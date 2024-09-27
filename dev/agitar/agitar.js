@@ -1,9 +1,12 @@
 function setMotionListeners(func){
-    window.addEventListener('devicemotion', detectar(func));
+    window.addEventListener('devicemotion', detectar(event,func));
 }
 
-function detectar(func) {
-    if ((event.rotationRate.alpha > 900 || event.rotationRate.beta > 900 || event.rotationRate.gamma > 900)) {
+function detectar(event,func) {
+    if ((Math.absolute(event.rotationRate.alpha > 900) || 
+        Math.absolute(event.rotationRate.beta > 900) || 
+        Math.absolute(event.rotationRate.gamma > 900))) 
+    {
         document.getElementById('output_message').innerHTML = "SE AGITAAAAAAAAA!";
         document.body.style.backgroundColor = "red";
         func();
