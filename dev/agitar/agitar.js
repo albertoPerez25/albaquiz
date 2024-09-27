@@ -4,9 +4,9 @@ async function setMotionListeners(func){
 
 function detectar(event,func) {
     //window.alert("llego a detectar");
-    if ((Math.absolute(event.rotationRate.alpha > 900) || 
-        Math.absolute(event.rotationRate.beta > 900) || 
-        Math.absolute(event.rotationRate.gamma > 900))) 
+    if ((Math.abs(event.rotationRate.alpha > 900) || 
+        Math.abs(event.rotationRate.beta > 900) || 
+        Math.abs(event.rotationRate.gamma > 900))) 
     {
         document.getElementById('output_message').innerHTML = "SE AGITAAAAAAAAA!";
         document.body.style.backgroundColor = "red";
