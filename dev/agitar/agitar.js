@@ -3,7 +3,7 @@ async function setMotionListeners(func){
 }
 
 function detectar(event,func) {
-    window.alert("llego a detectar");
+    //window.alert("llego a detectar");
     if ((Math.absolute(event.rotationRate.alpha > 900) || 
         Math.absolute(event.rotationRate.beta > 900) || 
         Math.absolute(event.rotationRate.gamma > 900))) 
