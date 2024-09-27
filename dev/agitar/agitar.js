@@ -3,7 +3,7 @@ function setMotionListeners(func){
 }
 
 function detectar(func) {
-    if ((detectar.rotationRate.alpha > 900 || detectar.rotationRate.beta > 900 || detectar.rotationRate.gamma > 900)) {
+    if ((event.rotationRate.alpha > 900 || event.rotationRate.beta > 900 || event.rotationRate.gamma > 900)) {
         this.output_message.innerHTML = "SE AGITAAAAAAAAA!";
         document.body.style.backgroundColor = "red";
         func();
