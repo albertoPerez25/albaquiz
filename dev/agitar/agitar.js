@@ -1,4 +1,4 @@
-function setMotionListeners(func){
+async function setMotionListeners(func){
     window.addEventListener('devicemotion', detectar(event,func));
 }
 
