@@ -1,8 +1,9 @@
 async function setMotionListeners(func){
-    window.addEventListener('devicemotion', detectar(event,func));
+    window.addEventListener('devicemotion', function(){detectar(event,func)});
 }
 
 function detectar(event,func) {
+    window.alert("llego a detectar");
     if ((Math.absolute(event.rotationRate.alpha > 900) || 
         Math.absolute(event.rotationRate.beta > 900) || 
         Math.absolute(event.rotationRate.gamma > 900))) 
@@ -14,6 +15,7 @@ function detectar(event,func) {
 }
 
 function resetear(){
+    window.alert("llego a resetear");
     setTimeout(() => {
         document.getElementById('output_message').innerHTML = null;
         document.body.style.backgroundColor = "grey";
