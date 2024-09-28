@@ -1,4 +1,4 @@
-async function setMotionListeners(func){
+function setMotionListeners(func){
     window.addEventListener('devicemotion', function(){detectar(event,func)});
 }
 
@@ -15,7 +15,7 @@ function detectar(event,func) {
 }
 
 function resetear(){
-    window.alert("llego a resetear");
+    //window.alert("llego a resetear");
     setTimeout(() => {
         document.getElementById('output_message').innerHTML = null;
         document.body.style.backgroundColor = "grey";
