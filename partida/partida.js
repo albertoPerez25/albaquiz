@@ -2,16 +2,18 @@
 
 
 window.onload=function(){
-    const casilla = document.querySelector('.box');
+    const casilla = document.getElementsByClassName('box');
     //const casilla = document.getElementById('ejemplo');
     const pregunta = document.getElementById('cajaPregunta');
     const respuestaInput = document.getElementById('respuesta');
     const aceptarBoton = document.getElementById('aceptar');
 
-    casilla.addEventListener('click', () => {
-        //pregunta.style.display = 'block';
-        pregunta.classList.add('visible');
-    });
+    for(let i = 0; i < casilla.length; i++){
+        casilla[i].addEventListener('click', () => {
+            //pregunta.style.display = 'block';
+            pregunta.classList.add('visible');
+        });
+    }
     
     aceptarBoton.addEventListener('click', () => {
         const answer = respuestaInput.value;
@@ -19,4 +21,3 @@ window.onload=function(){
         //pregunta.style.display = 'none';
     });
 }
-JSON.parse();
