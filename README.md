@@ -14,7 +14,7 @@ GP-TM-10
   
 **Sensores:**
 - Agitar -> WIP
-- Ubicación -> TBD
+- Ubicación -> WIP
 - Voz -> TBD
 
 **Tablero:**
