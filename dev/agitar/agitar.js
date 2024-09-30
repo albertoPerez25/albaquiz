@@ -1,9 +1,10 @@
+//Necesita https
 async function setMotionListeners(func){
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
         await DeviceMotionEvent.requestPermission()
         .catch( (error) => {
-            console.log("Error getting sensor permission: %O", error)
-            return // Exit out of logic
+            console.log("Error getting sensor permission: %O", error);
+            return;
         })
     }
 }
