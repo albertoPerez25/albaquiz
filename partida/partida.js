@@ -2,7 +2,8 @@
 
 
 window.onload=function(){
-    const casilla = document.getElementById('ejemplo');
+    const casilla = document.querySelector('.box');
+    //const casilla = document.getElementById('ejemplo');
     const pregunta = document.getElementById('cajaPregunta');
     const respuestaInput = document.getElementById('respuesta');
     const aceptarBoton = document.getElementById('aceptar');
@@ -18,4 +19,4 @@ window.onload=function(){
         //pregunta.style.display = 'none';
     });
 }
-
+JSON.parse();
