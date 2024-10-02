@@ -11,6 +11,7 @@ let p = document.createElement("p");
 
 recognition.addEventListener("result", (e) => {
   console.log(e);
+  document.getElementById("texto").innerHTML = e;
   });
 
 recognition.addEventListener("end", () => {
