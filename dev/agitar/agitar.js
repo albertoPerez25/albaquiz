@@ -9,7 +9,7 @@ async function setMotionListeners(func){
     }
 }
 
-window.addEventListener('devicemotion', function(){detectar(event,func)});
+window.addEventListener('devicemotion', function(){detectar(eventData,func)});
 function detectar(event,func) {
     //window.alert("llego a detectar");
     if ((Math.abs(event.rotationRate.alpha > 900) || 
