@@ -1,4 +1,5 @@
 //Necesita https
+
 async function setMotionListeners(func){
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
         await DeviceMotionEvent.requestPermission()
@@ -7,21 +8,22 @@ async function setMotionListeners(func){
             return;
         })
     }
-}
 
-window.addEventListener('devicemotion', function(){detectar(eventData,func)});
-function detectar(event,func) {
-    //window.alert("llego a detectar");
-    if ((Math.abs(event.rotationRate.alpha > 900) || 
-        Math.abs(event.rotationRate.beta > 900) || 
-        Math.abs(event.rotationRate.gamma > 900))) 
-    {
-        document.getElementById('output_message').innerHTML = "SE AGITAAAAAAAAA!";
-        document.body.style.backgroundColor = "red";
-        func();
+
+
+    window.addEventListener('devicemotion', function(){detectar(eventData,func)});
+    function detectar(event,func) {
+        //window.alert("llego a detectar");
+        if ((Math.abs(event.rotationRate.alpha > 900) || 
+            Math.abs(event.rotationRate.beta > 900) || 
+            Math.abs(event.rotationRate.gamma > 900))) 
+        {
+            document.getElementById('output_message').innerHTML = "SE AGITAAAAAAAAA!";
+            document.body.style.backgroundColor = "red";
+            func();
+        }
     }
 }
-
 function resetear(){
     //window.alert("llego a resetear");
     setTimeout(() => {
