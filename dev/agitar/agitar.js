@@ -1,6 +1,6 @@
 //Necesita https
 
-async function setMotionListeners(func){
+function setMotionListeners(func){
     /*
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
         await DeviceMotionEvent.requestPermission()
