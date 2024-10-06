@@ -1,6 +1,7 @@
 //Necesita https
 
 async function setMotionListeners(func){
+    /*
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
         await DeviceMotionEvent.requestPermission()
         .catch( (error) => {
@@ -9,7 +10,7 @@ async function setMotionListeners(func){
         })
     }
 
-
+*/
 
     window.addEventListener('devicemotion', function(){detectar(eventData,func)});
     function detectar(event,func) {

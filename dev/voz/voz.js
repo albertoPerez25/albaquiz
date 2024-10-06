@@ -4,7 +4,7 @@ window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition = new SpeechRecognition();
-recognition.interimResults = true;
+recognition.interimResults = false;
 recognition.lang = "es-ES";
 
 let p = document.createElement("p");
