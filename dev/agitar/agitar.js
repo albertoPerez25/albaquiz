@@ -14,10 +14,11 @@ function setMotionListeners(func){
 }
 
     function detectar(event,func) {
+        document.getElementById('sensor').innerHTML = "alpha: " + event.rotationRate.alpha + "<br>beta: " + event.rotationRate.beta + "<br>gamma: " + event.rotationRate.gamma;
         //window.alert("llego a detectar");
-        if ((Math.abs(event.rotationRate.alpha > 900) || 
-            Math.abs(event.rotationRate.beta > 900) || 
-            Math.abs(event.rotationRate.gamma > 900))) 
+        if ((Math.abs(event.rotationRate.alpha > 300) || 
+            Math.abs(event.rotationRate.beta > 300) || 
+            Math.abs(event.rotationRate.gamma > 300))) 
         {
             document.getElementById('output_message').innerHTML = "SE AGITAAAAAAAAA!";
             document.body.style.backgroundColor = "red";
