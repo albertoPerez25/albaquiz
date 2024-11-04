@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALBA Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/"
+        }
+      }
+    </script>
+    <script type="module">
+      import '@material/web/all.js';
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <style>
+        /* Estilos generales y ajustes para móviles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #E8EAED;
+            margin: 0;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 100%;
+            max-width: 360px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Encabezado */
+        .header {
+            background-color: #6200EE;
+            color: #FFFFFF;
+            padding: 10px 15px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        /* Contenedor del logo */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        /* Estilo del logo */
+        .logo {
+            width: 160px;
+            height: 160px;
+            background-color: #F0F4F7;
+            border: 1.5px solid #333;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Texto ALBA */
+        .logo .logo-text {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Contenedor de globo para "Quiz" */
+        .logo .speech-bubble {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+            padding: 6px 18px;
+            border-radius: 8px;
+            border: 1.5px solid #333;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            position: relative;
+        }
+
+        /* Triángulo para la cola del globo */
+        .logo .speech-bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: #FFFFFF transparent transparent transparent;
+            border-top-color: #333;
+        }
+
+        /* Botón Jugar */
+        .play-button {
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 24px;
+            margin-top: 30px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: #018786;
+        }
+
+        /* Icono de micrófono */
+        .mic-icon {
+            position: absolute;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #BB86FC;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #FFFFFF;
+            font-size: 24px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            background-color: #E0E0E0;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            color: #6200EE;
+        }
+
+        .navbar .nav-item i {
+            font-size: 22px;
+            color: #6200EE;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header">Menú Jugar</div>
+
+        <!-- Contenedor del logo -->
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-text">ALBA</div>
+                <div class="speech-bubble">Quiz</div>
+            </div>
+            <md-filled-button class="play-button">Jugar</button>
+        </div>
+
+        <!-- Icono de micrófono -->
+        <div class="mic-icon">🎤</div>
+
+        <!-- Barra de navegación -->
+        <div class="navbar">
+            <div class="nav-item">
+                <i class="icon">▶️</i>
+                <span>Jugar</span>
+            </div>
+            <div class="nav-item">
+                <i class="icon">📊</i>
+                <span>Estadísticas</span>
+            </div>
+            <div class="nav-item">
+                <i class="icon">⚙️</i>
+                <span>Ajustes</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
