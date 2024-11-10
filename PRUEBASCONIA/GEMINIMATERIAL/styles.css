@@ -1,0 +1,71 @@
+
+/* Background styling */
+:root {
+    /* Generated from Material Theme Builder Figma plugin
+       or `material-color-utilities`. */
+    --md-sys-color-primary: #2776bf;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #6FF7F6;
+    --md-sys-color-on-primary-container: #002020;
+    /* ... */
+  }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #b3e5fc, #4fc3f7);
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 300px;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: #e0f7fa;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.logo .quiz-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Play button styling */
+.play-button {
+  width: 100%;
+}
+
+.menu {
+  height: 2rem;
+}
+
+/* Bottom navigation styling */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #e0f7fa;
+  padding: 12px 0;
+}

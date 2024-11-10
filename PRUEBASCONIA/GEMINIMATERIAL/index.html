@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALBA Quiz</title>
+  <!-- Import Material Components -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <!-- Iconos-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+   <!-- Material Components Script -->
+   <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+   <script type="module">
+    // Import individual Material components if needed
+    import '@material/web/all.js';
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+
+</head>
+<body>
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      ALBA
+      <div class="quiz-text">Quiz</div>
+    </div>
+
+    <!-- Play Button -->
+    <md-filled-button class="play-button" label="Jugar" leading-icon="play_arrow"href="partida/partida.html">Jugar</md-filled-button>
+
+    <!-- Mute Icon -->
+    <md-icon-button icon="mic_off" aria-label="mute" disabled>BV</md-icon-button>
+  </div>
+
+  
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a style="text-align: center; text-decoration: none">
+        <md-filled-button leading-icon="play_arrow" name="Jugar" class="menu" label="Jugar" density="medium"  href="partida/partida.html"><md-icon>play_arrow</md-icon></md-filled-button>
+        <p>Jugar</p>
+    </a>
+    <a style="text-align: center; text-decoration: none">
+        <md-icon-button leading-icon="bar_chart" class="menu" label="Estadísticas" density="medium"><md-icon>list</md-icon></md-icon-button>
+        <p>Estadisticas</p>
+    </a>
+    <a style="text-align: center; text-decoration: none">
+        <md-icon-button leading-icon="settings" class="menu" label="Ajustes" density="medium"><md-icon>settings</md-icon></md-icon-button>
+        <p>Ajustes</p>
+    </a>
+  </div>
+
+
+</body>
+</html>
