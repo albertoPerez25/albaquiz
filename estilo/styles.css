@@ -7,6 +7,7 @@
     --md-sys-color-on-primary: #FFFFFF;
     --md-sys-color-primary-container: #6FF7F6;
     --md-sys-color-on-primary-container: #002020;
+    --md-
     /* ... */
   }
 
@@ -15,9 +16,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  margin: 0rem;
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #b3e5fc, #4fc3f7);
+  overflow-y: hidden;
 }
 
 /* Container styling */
@@ -26,8 +28,9 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10rem;
+  gap: 15vh;
   max-width: 20rem;
+  margin-top: -35vh;
 }
 
 /* Logo styling */
@@ -69,12 +72,18 @@ body {
   margin-top: 0px;
 }
 
+.microfono{
+  position: fixed;
+  bottom: 8rem;
+  right: 1.5rem;
+}
+
 /* Bottom navigation styling */
 .bottom-nav {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 5rem;
+  height: 10vh;
   display: flex;
   justify-content: space-around;
   background-color: #e0f7fa;

@@ -1,30 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlbaQuiz</title>
-    <link rel="stylesheet" type="text/css" href="estilo/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALBA Quiz</title>
+  <!-- Import Material Components -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="estilo/styles.css" rel="stylesheet">
+  <!-- Iconos-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+   <!-- Material Components Script -->
+   <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+   <script type="module">
+    // Import individual Material components if needed
+    import '@material/web/all.js';
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+
 </head>
 <body>
-    <header>
-        <h1>AlbaQuiz</h1>
-        <a href="dev/index.html">Tests de Desarrollo</a>
-    </header>
-
-    <nav>
-    </nav>
-    <div>
-        <div id="boton"><a href="partida/partida.html">Iniciar Partida</a></div>
-        <div id="boton"><a href="#editar">Editar preguntas</a></div>
-        <div id="boton"><a href="#estats">Estadísticas</a></div>
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      ALBA
+      <div class="quiz-text">Quiz</div>
     </div>
 
+    <!-- Play Button -->
+    <md-elevated-button class="play-button" label="Jugar" leading-icon="play_arrow"href="partida/partida.html" style="--md-elevated-button-label-text-line-height: 2.5rem; font-size: 2rem;">Jugar</md-elevated-button>
+    </div>
+  </div>
 
+   <!-- Mute Icon -->
+   <div class="microfono">
+    <md-fab id="mic-button-on" aria-label="mute"><md-icon slot="icon">mic</md-icon></md-fab>
+  </div>
 
-</body>
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav" style="text-align: center; ">
+    <a style="text-align: center;  font-weight: bold;text-decoration: none;">
+        <md-filled-button leading-icon="play_arrow" name="Jugar" class="menu" label="Jugar" density="medium"><md-icon>play_arrow</md-icon></md-filled-button>
+        <p style="color:black;"class="menutext">Jugar</p>
+    </a>
 
-    <!-- TBD-->
+    <a style="text-align: center;text-decoration: none; "role="link" href="partida/estadisticas.html">
+        <md-icon-button style="height: 2.5rem;" leading-icon="bar_chart" class="menu" label="Estadísticas" density="medium"><md-icon>list</md-icon></md-icon-button>
+        <p  style="color:black;"class="menutext">Estadisticas</p>
+    </a>
 
+    <a style="text-align: center;">
+        <md-icon-button style="height: 2.5rem;" leading-icon="settings" class="menu" label="Ajustes" density="medium"><md-icon>settings</md-icon></md-icon-button>
+        <p style="color:black;"class="menutext";>Ajustes</p>
+    </a>
+  </div>
 </body>
 </html>
