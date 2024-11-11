@@ -26,8 +26,8 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 16px;
-  max-width: 300px;
+  gap: 10rem;
+  max-width: 20rem;
 }
 
 /* Logo styling */
@@ -36,27 +36,37 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 150px;
+  width: 15rem;
+  height: 15rem;
   background-color: #e0f7fa;
-  border-radius: 16px;
+  border-radius: 3rem;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: black;
+  border-style: solid;
+  border-color: #002020;
 }
 
 .logo .quiz-text {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: bold;
 }
 
 /* Play button styling */
 .play-button {
-  width: 100%;
+  width: 15rem;
+  height: 4rem;
+}
+
+.menutext{
+    padding-top: 0px;
+    font-size: 1rem;
 }
 
 .menu {
   height: 2rem;
+  padding-bottom: 0px;
+  margin-top: 0px;
 }
 
 /* Bottom navigation styling */
@@ -64,8 +74,10 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 5rem;
   display: flex;
   justify-content: space-around;
   background-color: #e0f7fa;
-  padding: 12px 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }

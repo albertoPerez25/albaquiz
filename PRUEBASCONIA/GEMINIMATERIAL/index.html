@@ -36,7 +36,7 @@
     </div>
 
     <!-- Play Button -->
-    <md-filled-button class="play-button" label="Jugar" leading-icon="play_arrow"href="partida/partida.html">Jugar</md-filled-button>
+    <md-elevated-button class="play-button" label="Jugar" leading-icon="play_arrow"href="partida/partida.html" style="--md-elevated-button-label-text-line-height: 2.5rem; font-size: 2rem;">Jugar</md-elevated-button>
 
     <!-- Mute Icon -->
     <md-icon-button icon="mic_off" aria-label="mute" disabled>BV</md-icon-button>
@@ -44,21 +44,19 @@
 
   
   <!-- Bottom Navigation -->
-  <div class="bottom-nav">
-    <a style="text-align: center; text-decoration: none">
+  <div class="bottom-nav" style="text-align: center;    "">
+    <a style="text-align: center;  font-weight: bold">
         <md-filled-button leading-icon="play_arrow" name="Jugar" class="menu" label="Jugar" density="medium"  href="partida/partida.html"><md-icon>play_arrow</md-icon></md-filled-button>
-        <p>Jugar</p>
+        <p class="menutext">Jugar</p>
     </a>
-    <a style="text-align: center; text-decoration: none">
-        <md-icon-button leading-icon="bar_chart" class="menu" label="Estadísticas" density="medium"><md-icon>list</md-icon></md-icon-button>
-        <p>Estadisticas</p>
+    <a style="text-align: center; ">
+        <md-icon-button style="height: 2.5rem;" leading-icon="bar_chart" class="menu" label="Estadísticas" density="medium"><md-icon>list</md-icon></md-icon-button>
+        <p class="menutext">Estadisticas</p>
     </a>
-    <a style="text-align: center; text-decoration: none">
-        <md-icon-button leading-icon="settings" class="menu" label="Ajustes" density="medium"><md-icon>settings</md-icon></md-icon-button>
-        <p>Ajustes</p>
+    <a style="text-align: center;">
+        <md-icon-button style="height: 2.5rem;" leading-icon="settings" class="menu" label="Ajustes" density="medium"><md-icon>settings</md-icon></md-icon-button>
+        <p class="menutext";>Ajustes</p>
     </a>
   </div>
-
-
 </body>
 </html>
