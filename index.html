@@ -47,18 +47,18 @@
 
   <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">
-    <a style="text-align: center;  font-weight: bold;text-decoration: none;">
-        <md-filled-button leading-icon="play_arrow" name="Jugar" class="menu" label="Jugar" density="medium"><md-icon>play_arrow</md-icon></md-filled-button>
+    <a id="menuSelectedA">
+        <md-filled-button class="menuSelected" label="Jugar"><md-icon>play_arrow</md-icon></md-filled-button>
         <p style="color:black;"class="menutext">Jugar</p>
     </a>
 
-    <a style="text-align: center;text-decoration: none; "role="link" href="partida/estadisticas.html">
-        <md-icon-button style="height: 2.5rem;" leading-icon="bar_chart" class="menu" label="Estadísticas" density="medium"><md-icon>list</md-icon></md-icon-button>
-        <p  style="color:black;"class="menutext">Estadisticas</p>
+    <a class="menuNotSelectedA" role="link" href="partida/estadisticas.html">
+        <md-icon-button class="menu" label="Estadísticas"><md-icon>list</md-icon></md-icon-button>
+        <p style="color:black;"class="menutext">Estadisticas</p>
     </a>
 
-    <a style="text-align: center;">
-        <md-icon-button style="height: 2.5rem;" leading-icon="settings" class="menu" label="Ajustes" density="medium"><md-icon>settings</md-icon></md-icon-button>
+    <a class="menuNotSelectedA" role="link" href="partida/ajustes.html">
+        <md-icon-button class="menu" label="Ajustes"><md-icon>settings</md-icon></md-icon-button>
         <p style="color:black;"class="menutext";>Ajustes</p>
     </a>
   </div>

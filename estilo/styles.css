@@ -1,14 +1,29 @@
+@import "md-colors/light.css";
 
 /* Background styling */
 :root {
     /* Generated from Material Theme Builder Figma plugin
-       or `material-color-utilities`. */
+       or `material-color-utilities`. /
     --md-sys-color-primary: #2776bf;
-    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-on-primary: #e0f7fa;
     --md-sys-color-primary-container: #6FF7F6;
     --md-sys-color-on-primary-container: #002020;
-    --md-
+    --md-sys-color-secondary: #FFD7F6;
+    --md-sys-color-background: #e0f7fa;
+    --md-sys-color-surface: #e0f7fa;
+    --md-filled-button-container-color:var(--md-sys-color-background);
+    --md-fab-container-color:var(--md-sys-color-secondary);*/
     /* ... */
+    --colorFondo: var(--md-sys-color-background);
+    /*--colorFondo:#e0f7fa;
+    
+    /*
+    --md-elevated-button-container-color:var(--md-sys-color-secondary);
+    --md-elevated-button-label-text-color:var(--md-sys-color-on-secondary);
+    --md-fab-container-color:var(--md-sys-color-tertiary);
+    --md-fab-icon-color:var(--md-sys-color-on-tertiary);
+    */
+    
   }
 
 body {
@@ -41,7 +56,7 @@ body {
   justify-content: center;
   width: 15rem;
   height: 15rem;
-  background-color: #e0f7fa;
+  background-color: var(--colorFondo);
   border-radius: 3rem;
   font-weight: bold;
   font-size: 2.5rem;
@@ -65,9 +80,17 @@ body {
     padding-top: 0px;
     font-size: 1rem;
 }
+#menuSelectedA{
+  text-align: center;  
+  font-weight: bold;
+}
+a{
+  text-align: center;
+  text-decoration: none; 
+}
 
-.menu {
-  height: 2rem;
+.menu,.menuSelected {
+  height: 2.5rem;
   padding-bottom: 0px;
   margin-top: 0px;
 }
@@ -86,7 +109,7 @@ body {
   height: 10vh;
   display: flex;
   justify-content: space-around;
-  background-color: #e0f7fa;
+  background-color: var(--colorFondo);
   padding-top: 12px;
   padding-bottom: 12px;
 }
