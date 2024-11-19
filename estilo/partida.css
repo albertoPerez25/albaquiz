@@ -6,6 +6,7 @@
     --radio: 1.5rem;
     --borde: 1px solid black;
     --bordeSelec: 2px solid black;
+    --selectBackground: #C0C0C0E5;
   }
 body{
     background: linear-gradient(to bottom,#faf1e0,#f2fdfe,#fceaf4,#faf1e0);
@@ -26,12 +27,12 @@ body{
     padding-right: 11vh;
     padding-left: 11vh;
     width:fit-content;
-    height:5vh;
+    height:3rem;
     
 }
 .titleText{
     position:relative;
-    font-size:5vh;
+    font-size:3rem;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: -5px; 
     width:auto;
@@ -50,8 +51,8 @@ body{
 .jugadores > div > div > p{
     font-weight: bold;
     font-size: small;
-    margin-left: 1vh;
-    margin-right: 1vh;
+    margin-left: 1rem;
+    margin-right: .5rem;
     padding-top: 70%;
 }
 
@@ -59,8 +60,10 @@ body{
     position: relative;
     height: 5.5rem;
     width: 5.5rem;
-    background-color: #C0C0C0E5;
     border-radius: var(--radio);
+}
+.jugadores > div .act{
+    background-color: var(--selectBackground);
 }
 .tablero{
     margin-top: 2vh;
@@ -83,9 +86,10 @@ body{
    }
 .box > p{
     font-weight: bold;
-    margin-top: 80%;
-    margin-right: 15%;
+    margin-top: 85%;
+    margin-right: 10%;
     text-align: right;
+    font-size: 12px;
 } 
 .azul{
     background-color: var(--azul);
@@ -121,10 +125,12 @@ body{
     transform: scale(0.8);
     transition: all 0.5s ease-in-out;
     opacity: 0;
+    z-index: -1;
 }
 .pregunta.visible {
     opacity: 1;
     transform: scale(1);
+    z-index: 1;
     
 }
 #eTL{
@@ -138,6 +144,60 @@ body{
 }
 #eBR{
     border-bottom-right-radius: var(--radio);
+}
+
+#contenedorPB{
+
+}
+#parteBaja{
+    display: flex;
+    margin: auto;
+    width: auto;
+    height: fit-content;
+    margin-top: 4vh;
+    justify-content: space-around;
+    gap:5vw;
+}
+#btnAtras{
+    transform: translateY(.75cm);
+    
+}
+#dado{
+    background-color: var(--rojo);
+    border: var(--borde);
+    height: 6rem;
+    width: 6rem;
+    border-radius: var(--radio);
+    
+}
+#dado > div{
+    height: 50%;  
+    width: 50%;
+}
+#dAmarillo{
+    background-color: var(--amarillo);
+    border-bottom-left-radius: var(--radio);
+}
+#dAzul{
+    background-color: var(--azul);
+    margin-left: 50%;
+    border-top-right-radius: var(--radio);
+}
+.pbaja{
+    width: 6rem;
+    align-items: center;
+    transform: translateX(0);
+}
+#puntuacion{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0;
+}
+#jugador{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 /*VISTA MOVIL*//*
