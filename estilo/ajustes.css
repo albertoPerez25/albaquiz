@@ -1,0 +1,25 @@
+body {
+    font-family: 'Open Sans';font-size: 22px;
+   
+}
+/*Eliminar seleccion azul:*/
+::selection {
+    color: none;
+    background: none;
+}
+
+.contenedor{
+    position: relative; height: 10vh;
+}
+.contenedor > p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.textoDivider{
+    font-size: 12px;
+    padding-left: .5vh;
+    margin-top: 1px;
+}

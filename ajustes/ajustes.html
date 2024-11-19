@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALBA Quiz</title>
+  <!-- Import Material Components -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../estilo/ajustes.css" rel="stylesheet">
+  <!-- Iconos-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <!-- Open Sans-->
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+   <!-- Material Components Script -->
+   <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+   <script type="module">
+    // Import individual Material components if needed
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+
+</head>
+
+<body>
+    <div class="titulo"><h1>Ajustes</h1></div>
+    <div class="contenedor">
+        <md-ripple></md-ripple>
+        <p>Guardar estadisticas</p>
+    </div>
+    <div class="contenedor">
+        <md-ripple></md-ripple>
+        <p>Sensores</p>
+    </div>
+    <div class="contenedor">
+        <md-ripple></md-ripple>
+        <p>Idioma</p>
+    </div>
+    <md-divider inset-end></md-divider>
+    <p class="textoDivider">Personalizacion</p>
+    <div class="contenedor">
+        <md-ripple></md-ripple>
+        <p>Mas cosas</p>
+    </div>
+</body>

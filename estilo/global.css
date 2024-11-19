@@ -1,0 +1,9 @@
+body {
+    font-family: 'Open Sans';font-size: 22px;
+   
+}
+/*Eliminar seleccion azul:*/
+::selection {
+    color: none;
+    background: none;
+}
