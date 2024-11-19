@@ -3,7 +3,7 @@
     "short_name": "AlbaQuiz",
     "start_url": "/albaquiz/",
     "scope": "/albaquiz/",
-    "display": "minimal-ui",
+    "display": "standalone",
     "background_color": "#e0f7fa",
     "theme_color": "#196584",
     "orientation": "portrait-primary",
@@ -16,6 +16,10 @@
       {
         "src": "/albaquiz/imagenes/iconos/icon-512x512.png",
         "type": "image/png", "sizes": "512x512"
+      },
+      {
+        "src": "/albaquiz/imagenes/iconos/icon-700x700.png",
+        "type": "image/png", "sizes": "700x700"
       }
     ]
   } 
