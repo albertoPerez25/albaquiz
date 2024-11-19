@@ -33,11 +33,15 @@
     <div class="titulo"><h1>Ajustes</h1></div>
     <div class="contenedor">
         <md-ripple></md-ripple>
+        <md-switch class="switch"></md-switch>
         <p>Guardar estadisticas</p>
+        <p class="subtext">Guarda tus estadisticas del jugador</p>
     </div>
     <div class="contenedor">
         <md-ripple></md-ripple>
+        <md-switch class="switch"></md-switch>       
         <p>Sensores</p>
+        <p class="subtext">Activar movimiento en el menú mediante sensores</p>
     </div>
     <div class="contenedor">
         <md-ripple></md-ripple>
@@ -50,11 +54,28 @@
         <md-ripple></md-ripple>
         <p>Mas cosas</p>
     </div>
-    
+    <div class="contenedor"> 
+      <p class="subtext" font-size:2vh">Numero de jugadores </p>
+      <md-ripple></md-ripple>
+      <md-outlined-select>
+        <md-select-option selected value="1 jugador">
+          <div slot="headline">1 jugador</div>
+        </md-select-option>
+        <md-select-option value="2 jugadores">
+          <div slot="headline">2 jugadores</div>
+        </md-select-option>
+        <md-select-option value="3 jugadores">
+          <div slot="headline">3 jugadores</div>
+        </md-select-option>
+        <md-select-option value="4 jugadores">
+          <div slot="headline">4 jugadores</div>
+        </md-select-option>
+      </md-outlined-select>
+    </div>
     <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">
     <a class="menuNotSelectedA" role="link" href="../index.html">
-        <md-icon-button class="menu" label="Jugar"><md-icon>play_arrow</md-icon></md-icon-button>
+        <md-icon-button class="menuSelected" label="Jugar"><md-icon>play_arrow</md-icon></md-icon-button>
         <p style="color:black;"class="menutext">Jugar</p>
     </a>
 

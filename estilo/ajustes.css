@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-  margin: 0rem;
+    margin: 0rem;
     overflow-y: hidden;
 
 }
@@ -55,12 +55,24 @@ body {
     height: 8.5vh;
     display: flex;
     justify-content: space-around;
-    background-color: var(--md-sys-color-background);
+    background-color: #e0f7fa;
     padding-top: 12px;
     padding-bottom: 25px;
   }
   .menutext{
     padding-top: 0px;
     font-size: 1rem;
+}
+.switch{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+.subtext{
+    font-size: 1rem;
+    padding-top: 3rem;
+}.num-jugadores{
+    font-size: 1.5rem;
+    padding-top: 1rem;
 }
   
