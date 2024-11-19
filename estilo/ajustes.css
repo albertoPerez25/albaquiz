@@ -16,14 +16,16 @@ body {
 .contenedor{
     position: relative; height: 10vh;
 }
-/*
+
 .contenedor > p{
+    max-width: 70vw;
+    /*
     margin: 0;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}*/
+    transform: translateY(-50%);*/
+}
 .textoDivider{
     font-size: 12px;
     padding-left: .5vh;
