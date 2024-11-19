@@ -1,20 +1,20 @@
 {
     "name": "AlbaQuiz Web App",
     "short_name": "AlbaQuiz",
-    "start_url": "index.html",
-    "scope": "/",
-    "display": "standalone",
+    "start_url": "/albaquiz/",
+    "scope": "/albaquiz/",
+    "display": "minimal-ui",
     "background_color": "#e0f7fa",
     "theme_color": "#196584",
     "orientation": "portrait-primary",
     "description": "Trabajo de IPO",
     "icons": [
       {
-        "src": "/imagenes/iconos/icon-192x192.png",
+        "src": "/albaquiz/imagenes/iconos/icon-192x192.png",
         "type": "image/png", "sizes": "192x192"
       },
       {
-        "src": "/imagenes/iconos/icon-512x512.png",
+        "src": "/albaquiz/imagenes/iconos/icon-512x512.png",
         "type": "image/png", "sizes": "512x512"
       }
     ]
