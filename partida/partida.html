@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partida</title>
     <link rel="stylesheet" type="text/css" href="../estilo/partida.css">
-    <link rel="stylesheet" type="text/css" href="../estilo/global.css"
+    <link rel="stylesheet" type="text/css" href="../estilo/global.css">
     <script src="partida.js"></script>
       <!-- Iconos-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -26,7 +26,7 @@
           import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
       
           document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-      </script>
+    </script>
 
 </head>
 <body>
@@ -73,6 +73,13 @@
         </div>
         <div id="contenedorPtos"class="pbaja"><div></div><p id="jugador">Jugador 1</p><p id="puntuacion">10 ptos</p></div>
     </div>
-   
+    <div id="fondoSalida"></div>
+    <div class="salida" id="cajaSalida">
+        <h2>¿Quieres salir de la partida?</h2>
+        <p>Se perderá el progreso.</p>
+        <md-outlined-button class="btnSalida" id="no_salir">No, volver</md-outlined-button>
+        <md-filled-button class="btnSalida" id="si_salir">Si</md-filled-button>
+    </div>
+</div>
     
 </body>

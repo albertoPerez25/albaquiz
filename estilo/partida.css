@@ -1,3 +1,4 @@
+@import "md-colors/light.css";
 :root {
     --azul: #BCD1FF;
     --amarillo:#FFE6BC;
@@ -7,11 +8,12 @@
     --borde: 1px solid black;
     --bordeSelec: 2px solid black;
     --selectBackground: #C0C0C0E5;
+    --colorFondo: var(--md-sys-color-background);
   }
 body{
     background: linear-gradient(to bottom,#faf1e0,#f2fdfe,#fceaf4,#faf1e0);
     height: 80vh;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 .title{
     display: flex;
@@ -133,6 +135,54 @@ body{
     z-index: 1;
     
 }
+
+.salida {
+    display: block;
+    position:fixed;
+    width: 75vw;
+    top: 73vh;
+    left: -25vw;
+    transform: translate(-50%, -50%);
+    background-color: var(--colorFondo);
+    padding: 20px;
+    border: var(--borde);
+    border-radius: var(--radio);
+    transform: scale(0);
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: -1;
+}
+.salida.visible {
+    top: 25vh;
+    left: 7.5vw;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1; 
+}
+#fondoSalida{
+    display: block;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0000008a;
+    z-index: -1;
+    opacity: 0;
+    transition: all .5s;
+    border-color: var(--borde);
+}
+#fondoSalida.visible{
+    opacity: 1;
+    z-index: 1; 
+}
+
+.btnSalida{
+    position-anchor: relative;
+    right: -30vw;
+}
+
 #eTL{
     border-top-left-radius: var(--radio);
 }
@@ -144,10 +194,6 @@ body{
 }
 #eBR{
     border-bottom-right-radius: var(--radio);
-}
-
-#contenedorPB{
-
 }
 #parteBaja{
     display: flex;
