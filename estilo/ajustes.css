@@ -48,7 +48,8 @@ body {
   }
 /* Bottom navigation styling */
 .bottom-nav {
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     bottom: 0;
     width: 100%;
     height: 8.5vh;
@@ -58,6 +59,7 @@ body {
     padding-top: 12px;
     padding-bottom: 25px;
     margin-left: -4vw;
+    z-index: 1;
   }
   .menutext{
     padding-top: 0px;
@@ -70,6 +72,7 @@ body {
 }
 .text{
     margin-bottom: 0;
+    margin-top: 0;
 }
 .subtext{
     font-size: 1rem;
