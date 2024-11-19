@@ -5,14 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partida</title>
     <link rel="stylesheet" type="text/css" href="../estilo/partida.css">
+    <link rel="stylesheet" type="text/css" href="../estilo/global.css"
     <script src="partida.js"></script>
+      <!-- Iconos-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+      <!-- Open Sans-->
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+      <!-- Open Sans-->
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+      <!-- Material Components Script -->
+    <script type="importmap">
+    {
+        "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+        }
+    }</script>
+    <script type="module">
+        // Import individual Material components if needed
+        import '@material/web/all.js';
+          import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+      
+          document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+      </script>
+
 </head>
 <body>
     <div class="title">
         <h1 class="titleText">AlbaQuiz</h1>
     </div>
     <div class="jugadores">
-        <div id="j1"><div class="indicador"><p>Jugador 1</p></div></div>
+        <div id="j1"><div class="indicador act"><p>Jugador 1</p></div></div>
         <div id="j2"><div class="indicador"><p>Jugador 2</p></div></div>
         <div id="j3"><div class="indicador"><p>Jugador 3</p></div></div>
         <div id="j4"><div class="indicador"><p>Jugador 4</p></div></div>
@@ -42,4 +64,15 @@
         <input type="text" id="respuesta">
         <button id="aceptar">Aceptar</button>
     </div>
+    
+    <div id="parteBaja">
+        <md-icon-button id="btnAtras" class="pbaja" label="Atrás"><md-icon>arrow_back</md-icon></md-icon-button>
+        <div id="dado"class="pbaja">
+            <div id="dAzul"></div>         
+            <div id="dAmarillo"></div>
+        </div>
+        <div id="contenedorPtos"class="pbaja"><div></div><p id="jugador">Jugador 1</p><p id="puntuacion">10 ptos</p></div>
+    </div>
+   
+    
 </body>
