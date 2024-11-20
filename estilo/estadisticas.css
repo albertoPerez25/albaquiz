@@ -1,74 +1,24 @@
 @import "md-colors/light.css";
+@import "global.css";
+@import "navbar.css";
+@import "ajustes.css";
 
-body {
-    font-family: 'Open Sans';font-size: 22px;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-left: 4vw;
-    overflow-y: hidden;
-}
-/*Eliminar seleccion azul:*/
-::selection {
-    color: none;
-    background: none;
+body.is-transitioned{
+    animation: fade-in 2s forwards;
+    background-color: rgba(0, 0, 0, .25);
+    opacity: 0;
+    transform: translateY(50vh);
 }
 
-contenedor{
-    position: relative; height: 10vh;
-}.contenedor > p{
-    max-width: 70vw;
-    margin-bottom: 10px;
-}
-
-.textoDivider{
-    font-size: 15px;
-    padding-left: .5vh;
-    margin-top: 1px;
-    color: #4C5C92
-}
-.espaciador{
-    padding-top: 3vh;
-}
-/* Bottom navigation styling */
-.bottom-nav {
-    position: fixed;
-    overflow: hidden;
-    bottom: 0;
-    width: 100%;
-    height: 8.5vh;
-    display: flex;
-    justify-content: space-around;
-    background-color: #e0f7fa;
-    padding-top: 12px;
-    padding-bottom: 25px;
-    margin-left: -4vw;
-    z-index: 1;
-  }#menuSelectedA{
-    text-align: center;  
-    font-weight: bold;
-  }
-  a{
-    text-align: center;
-    text-decoration: none; 
-  }
-  
-  .menu,.menuSelected {
-    height: 2.5rem;
-    padding-bottom: 0px;
-    margin-top: 0px;
-  }
-  .menutext{
-    padding-top: 0px;
-    font-size: 1rem;
-}
-.text{
-    margin-bottom: 0;
-    margin-top: 0;
-}
-.subtext{
-    font-size: 1rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
+@keyframes fade-in{
+    from {
+        background-color: rgba(0, 0, 0, .25);
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+        opacity:1;
+        transform: translateY(0);
+    }
 }

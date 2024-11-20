@@ -1,0 +1,32 @@
+/* Bottom navigation styling */
+.bottom-nav {
+    position: fixed;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    height: 8.5vh;
+    display: flex;
+    justify-content: space-around;
+    background-color:var(--colorFondo);
+    padding-top: 12px;
+    padding-bottom: 25px;
+    margin-left: -4vw;
+    z-index: 1;
+  }#menuSelectedA{
+    text-align: center;  
+    font-weight: bold;
+  }
+  a{
+    text-align: center;
+    text-decoration: none; 
+  }
+  
+  .menu,.menuSelected {
+    height: 2.5rem;
+    padding-bottom: 0px;
+    margin-top: 0px;
+  }
+  .menutext{
+    padding-top: 0px;
+    font-size: 1rem;
+}

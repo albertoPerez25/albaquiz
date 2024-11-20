@@ -13,6 +13,8 @@
 body{
     background: linear-gradient(to bottom,#faf1e0,#f2fdfe,#fceaf4,#faf1e0);
     height: 80vh;
+    opacity: 0;
+    transition: opacity .5s;
     /*overflow-y: hidden;*/
 }
 .title{
