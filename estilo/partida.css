@@ -210,7 +210,6 @@ body{
 }
 #btnAtras{
     transform: translateY(.75cm);
-    
 }
 #dado{
     background-color: var(--rojo);
@@ -218,12 +217,24 @@ body{
     height: 6rem;
     width: 6rem;
     border-radius: var(--radio);
-    
 }
 #dado > div{
+    opacity:1;
     height: 50%;  
     width: 50%;
+    transition-duration: .25s;
 }
+
+#dado.seleccionando{
+    border: var(--bordeSelec);
+    filter:saturate(170%);
+    transition-duration: .1s;
+}
+
+#dado.seleccionando > div{
+    opacity:0;
+}
+
 #dAmarillo{
     background-color: var(--amarillo);
     border-bottom-left-radius: var(--radio);

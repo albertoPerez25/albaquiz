@@ -1,5 +1,8 @@
 //const casilla = document.querySelector('.box');
-
+var sleep = function(ms){
+    var esperarHasta = new Date().getTime() + ms;
+    while(new Date().getTime() < esperarHasta) continue;
+};
 
 window.onload=function(){
     /*
@@ -28,6 +31,14 @@ window.onload=function(){
     const no_salir = document.getElementById('no_salir');
     const si_salir = document.getElementById('si_salir');
     const fondoSalida = document.getElementById('fondoSalida');
+    const dado = document.getElementById('dado');
+    const amarillo = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--amarillo');
+    const azul = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--azul');      
+    const rojo = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--rojo');  
+    const colors = [amarillo, azul, rojo];
 
     atras.addEventListener('click', () => {
         cajaSalida.classList.add('visible');
@@ -44,6 +55,40 @@ window.onload=function(){
         setTimeout(function() { 
             window.location.href = '../index.html';
         }, 200)
+    });
+
+    dado.addEventListener('click', () => {
+        dado.classList.add('seleccionando');
+
+        
+        let iterationCount = 12;
+        let currentIteration = 0;
+        let lastColor = null;
+    
+        function changeColorWithCustomDelay() {
+            if (currentIteration >= iterationCount) {
+                //dado.classList.add('terminado'); 
+                dado.classList.remove('seleccionando');
+
+                dado.style.backgroundColor = rojo;
+                return;
+            }
+            
+            window.navigator.vibrate(30);
+
+            const colorsAvailable= colors.filter(color => color !== lastColor);
+            const randomColor = colorsAvailable[Math.floor(Math.random() * colorsAvailable.length)];
+            dado.style.backgroundColor = randomColor;
+            lastColor = randomColor;
+
+            currentIteration++;
+            // Custom delay calculation
+            const delay = 10 + (currentIteration/4 * 50) * currentIteration/4;
+            
+            setTimeout(changeColorWithCustomDelay, delay);
+        }
+    
+        changeColorWithCustomDelay();
     });
     document.querySelector('body').style.opacity = 1;
 }

@@ -9,6 +9,7 @@ export function animacionesSalidaNav(){
             document.querySelector('body').style.background = colorFondo;
             document.querySelector('#pantalla').style.opacity = 0;
             setTimeout(function() { 
+                window.navigator.vibrate([10]);
                 window.location.href = botonesNav[i].getAttribute('enlace');
             }, 200)
         });
