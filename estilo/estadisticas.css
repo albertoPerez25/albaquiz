@@ -3,22 +3,3 @@
 @import "navbar.css";
 @import "ajustes.css";
 
-body.is-transitioned{
-    animation: fade-in 2s forwards;
-    background-color: rgba(0, 0, 0, .25);
-    opacity: 0;
-    transform: translateY(50vh);
-}
-
-@keyframes fade-in{
-    from {
-        background-color: rgba(0, 0, 0, .25);
-        opacity: 0;
-        transform: translateY(50vh);
-    }
-    to {
-        background-color: rgba(0, 0, 0, 0);
-        opacity:1;
-        transform: translateY(0);
-    }
-}

@@ -39,12 +39,11 @@ window.onload=function(){
         fondoSalida.classList.remove('visible');
     });
     si_salir.addEventListener('click', () => {
-        document.querySelector('body').style.opacity = 0
+        document.querySelector('body').style.background = '#b3e5fc';
+        document.querySelector('body').style.opacity = 0;
         setTimeout(function() { 
-            window.location.href = '../index.html'
-        }, 500)
+            window.location.href = '../index.html';
+        }, 200)
     });
+    document.querySelector('body').style.opacity = 1;
 }
-document.addEventListener('DOMContentLoaded', function(event) {
-    document.querySelector('body').style.opacity = 1
-})

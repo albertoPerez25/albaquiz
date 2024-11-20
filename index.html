@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ALBAQuiz</title>
+
   <!-- Import Material Components -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="estilo/styles.css" rel="stylesheet">
@@ -22,34 +23,36 @@
    <script type="module">
     // Import individual Material components if needed
     import '@material/web/all.js';
-      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
   
-      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
   <!-- PARA LA PWA -->
   <link rel="canonical" href="https://albertoperez25.github.io/albaquiz/">
   <!--PWA Manifest (para hacer web app)-->
   <link rel="manifest" href="/albaquiz/manifest.webmanifest" />
-
+  <!-- Animaciones y mas-->
+  <script type="module" src="js/index.js"></script>
 </head>
 <body>
-  <!-- Main Container -->
-  <div class="container">
-    <!-- Logo Section -->
-    <div class="logo">
-      ALBA
-      <div class="quiz-text">Quiz</div>
+  <div id="pantalla">
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="logo">
+        ALBA
+        <div class="quiz-text">Quiz</div>
+      </div>
+
+      <!-- Play Button -->
+      <md-elevated-button class="play-button" label="Jugar" leading-icon="play_arrow"href="partida/partida.html" style="--md-elevated-button-label-text-line-height: 2.5rem; font-size: 2rem;">Jugar</md-elevated-button>
     </div>
 
-    <!-- Play Button -->
-    <md-elevated-button class="play-button" label="Jugar" leading-icon="play_arrow"href="partida/partida.html" style="--md-elevated-button-label-text-line-height: 2.5rem; font-size: 2rem;">Jugar</md-elevated-button>
+    <!-- Mute Icon -->
+    <div class="microfono">
+      <md-fab id="mic-button-on" aria-label="mute"><md-icon slot="icon">mic</md-icon></md-fab>
+    </div>
   </div>
-
-   <!-- Mute Icon -->
-  <div class="microfono">
-    <md-fab id="mic-button-on" aria-label="mute"><md-icon slot="icon">mic</md-icon></md-fab>
-  </div>
-
   <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">
     <a id="menuSelectedA">
@@ -57,12 +60,12 @@
         <p style="color:black;"class="menutext">Jugar</p>
     </a>
 
-    <a class="menuNotSelectedA" role="link" href="estadisticas/estadisticas.html">
+    <a class="menuNotSelectedA" role="link" enlace="estadisticas/estadisticas.html">
         <md-icon-button class="menu" label="Estadísticas"><md-icon>list</md-icon></md-icon-button>
         <p style="color:black;"class="menutext">Estadisticas</p>
     </a>
 
-    <a class="menuNotSelectedA" role="link" href="ajustes/ajustes.html">
+    <a class="menuNotSelectedA" role="link" enlace="ajustes/ajustes.html">
         <md-icon-button class="menu" label="Ajustes"><md-icon>settings</md-icon></md-icon-button>
         <p style="color:black;"class="menutext";>Ajustes</p>
     </a>

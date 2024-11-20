@@ -26,10 +26,12 @@
   
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
-
+  <!-- Animacion de entrada-->
+  <script type="module" src="ajustes.js"></script>
 </head>
 
 <body>
+  <div id="pantalla">
     <div class="titulo"><h1>Ajustes</h1></div>
     <div class="contenedor">
         <md-ripple></md-ripple>
@@ -72,14 +74,15 @@
         </md-select-option>
       </md-outlined-select>
     </div>
-    <!-- Bottom Navigation -->
+  </div>
+  <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">
-    <a class="menuNotSelectedA" role="link" href="../index.html">
+    <a class="menuNotSelectedA" role="link" enlace="../index.html">
         <md-icon-button class="menu" label="Jugar"><md-icon>play_arrow</md-icon></md-icon-button>
         <p style="color:black;"class="menutext">Jugar</p>
     </a>
 
-    <a class="menuNotSelectedA" role="link" href="../estadisticas/estadisticas.html">
+    <a class="menuNotSelectedA" role="link" enlace="../estadisticas/estadisticas.html">
         <md-icon-button class="menu" label="Estadísticas"><md-icon>list</md-icon></md-icon-button>
         <p style="color:black;"class="menutext">Estadisticas</p>
     </a>

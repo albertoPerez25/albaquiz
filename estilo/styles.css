@@ -78,25 +78,6 @@ body {
   height: 4rem;
 }
 
-.menutext{
-    padding-top: 0px;
-    font-size: 1rem;
-}
-#menuSelectedA{
-  text-align: center;  
-  font-weight: bold;
-}
-a{
-  text-align: center;
-  text-decoration: none; 
-}
-
-.menu,.menuSelected {
-  height: 2.5rem;
-  padding-bottom: 0px;
-  margin-top: 0px;
-}
-
 .microfono{
   position: fixed;
   bottom: 8rem;
@@ -106,4 +87,5 @@ a{
 /* Bottom navigation styling */
 .bottom-nav {
   margin-left: 0vw;
+  width: 100%;
 }

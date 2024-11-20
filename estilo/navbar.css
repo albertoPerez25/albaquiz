@@ -10,13 +10,15 @@
     background-color:var(--colorFondo);
     padding-top: 12px;
     padding-bottom: 25px;
-    margin-left: -4vw;
+    margin-left: -2vw;
     z-index: 1;
   }#menuSelectedA{
     text-align: center;  
     font-weight: bold;
   }
   a{
+    display: block;
+    width: 30vw;
     text-align: center;
     text-decoration: none; 
   }

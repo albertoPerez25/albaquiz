@@ -10,11 +10,7 @@ body {
     overflow-y: hidden;
     background-color: var(--colorFondoPagina);
 }
-/*Eliminar seleccion azul:*/
-::selection {
-    color: none;
-    background: none;
-}
+
 .titulo{
     margin-left: 2vw;
 }
@@ -51,12 +47,6 @@ body {
     text-decoration: none; 
   }
   
-  .menu,.menuSelected {
-    height: 2.5rem;
-    padding-bottom: 0px;
-    margin-top: 0px;
-  }
-
 .switch{
     position: absolute;
     bottom: 1.5vh;

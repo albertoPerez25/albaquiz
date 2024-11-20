@@ -26,10 +26,12 @@
   
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
-
+  <!-- Animaciones y mas-->
+  <script type="module" src="estadisticas.js"></script>
 </head>
 
 <body>
+  <div id="pantalla">
     <div class="titulo"><h1>Estadisticas</h1></div>
     <div class="contenedor">
         <md-ripple></md-ripple>
@@ -65,9 +67,10 @@
         <p class="text">Sin responder</p>
         <p class="subtext">10</p> <!-- Esto está puesto como ejemplo -->
     </div>
-    <!-- Bottom Navigation -->
+  </div>
+  <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">
-    <a class="menuNotSelectedA" role="link" href="../index.html">
+    <a class="menuNotSelectedA" role="link" enlace="../index.html">
         <md-icon-button class="menu" label="Jugar"><md-icon>play_arrow</md-icon></md-icon-button>
         <p style="color:black;"class="menutext">Jugar</p>
     </a>
@@ -77,7 +80,7 @@
         <p style="color:black;"class="menutext">Estadisticas</p>
     </a>
 
-    <a class="menuNotSelectedA" role="link" href="../ajustes/ajustes.html">
+    <a class="menuNotSelectedA" role="link" enlace="../ajustes/ajustes.html">
         <md-icon-button class="menu" label="Ajustes"><md-icon>settings</md-icon></md-icon-button>
         <p style="color:black;"class="menutext";>Ajustes</p>
     </a> 
