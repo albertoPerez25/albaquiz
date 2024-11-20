@@ -13,21 +13,14 @@ body {
     background: none;
 }
 
-.contenedor{
+contenedor{
     position: relative; height: 10vh;
+}.contenedor > p{
+    max-width: 70vw;
 }
 
-.contenedor > p{
-    max-width: 70vw;
-    /*
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);*/
-}
 .textoDivider{
-    font-size: 12px;
+    font-size: 15px;
     padding-left: .5vh;
     margin-top: 1px;
     color: #4C5C92
@@ -35,20 +28,6 @@ body {
 .espaciador{
     padding-top: 3vh;
 }
-#menuSelectedA{
-    text-align: center;  
-    font-weight: bold;
-  }
-  a{
-    text-align: center;
-    text-decoration: none; 
-  }
-  
-  .menu,.menuSelected {
-    height: 2.5rem;
-    padding-bottom: 0px;
-    margin-top: 0px;
-  }
 /* Bottom navigation styling */
 .bottom-nav {
     position: fixed;
@@ -63,15 +42,23 @@ body {
     padding-bottom: 25px;
     margin-left: -4vw;
     z-index: 1;
+  }#menuSelectedA{
+    text-align: center;  
+    font-weight: bold;
+  }
+  a{
+    text-align: center;
+    text-decoration: none; 
+  }
+  
+  .menu,.menuSelected {
+    height: 2.5rem;
+    padding-bottom: 0px;
+    margin-top: 0px;
   }
   .menutext{
     padding-top: 0px;
     font-size: 1rem;
-}
-.switch{
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
 }
 .text{
     margin-bottom: 0;
@@ -82,8 +69,4 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
-}.num-jugadores{
-    font-size: 1.5rem;
-    padding-top: 1rem;
 }
-  
