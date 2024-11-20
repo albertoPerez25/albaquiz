@@ -49,15 +49,22 @@
     </div>
     <div class="espaciador"></div>
     <md-divider inset-end></md-divider>
-    <p class="textoDivider" style="margin-bottom: 0;">Personalizacion</p>
-    <div class="contenedor" style="margin-top: 0;">
-        <md-ripple></md-ripple>
-        <p class="text">Mas cosas</p>
-    </div>
-    <div class="contenedor" style="padding-bottom: 2vh;"> 
-      <p class="subtext" font-size:2vh">Numero de jugadores </p>
+    <p class="textoDivider" style="margin-bottom: 15;">Personalizacion</p>
+
+    <div class="contenedor">
       <md-ripple></md-ripple>
-      <md-outlined-select>
+      <p class="text">Cambiar ficha</p>
+      
+    </div>
+
+    <div class="contenedor" style="margin-bottom: 15px;">
+      <md-outlined-text-field label="Limite de puntos" type="number">
+      </md-outlined-text-field>
+      <p class="subtext">Cambiar el limite de puntos para ganar una partida</p>
+    </div>
+
+    <div class="contenedor"> 
+      <md-outlined-select label="Numero de jugadores">
         <md-select-option selected value="1 jugador">
           <div slot="headline">1 jugador</div>
         </md-select-option>
