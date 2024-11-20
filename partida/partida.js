@@ -39,6 +39,12 @@ window.onload=function(){
         fondoSalida.classList.remove('visible');
     });
     si_salir.addEventListener('click', () => {
-        window.location.href = '../index.html';
+        document.querySelector('body').style.opacity = 0
+        setTimeout(function() { 
+            window.location.href = '../index.html'
+        }, 500)
     });
 }
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1
+})

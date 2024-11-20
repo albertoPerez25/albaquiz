@@ -1,21 +1,27 @@
 @import "md-colors/light.css";
+@import "global.css";
+@import "navbar.css";
 
 body {
-    font-family: 'Open Sans';font-size: 22px;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-left: 4vw;
+    margin-left: 2vw;
     overflow-y: hidden;
+    background-color: var(--colorFondoPagina);
 }
 /*Eliminar seleccion azul:*/
 ::selection {
     color: none;
     background: none;
 }
-
+.titulo{
+    margin-left: 2vw;
+}
 .contenedor{
-    position: relative; height: 10vh;
+    position: relative; /*height: 10vh;*/
+    height: fit-content;
+    padding:1vh;
 }
 
 .contenedor > p{
@@ -28,13 +34,13 @@ body {
     transform: translateY(-50%);*/
 }
 .textoDivider{
-    font-size: 12px;
-    padding-left: .5vh;
-    margin-top: 1px;
-    color: #4C5C92
+    font-size: 15px;
+    margin-top: 1vh;
+    padding-bottom: 2vh;
+    color: var(--md-sys-color-primary);
 }
 .espaciador{
-    padding-top: 3vh;
+    padding-top: 2vh;
 }
 #menuSelectedA{
     text-align: center;  
@@ -50,29 +56,11 @@ body {
     padding-bottom: 0px;
     margin-top: 0px;
   }
-/* Bottom navigation styling */
-.bottom-nav {
-    position: fixed;
-    overflow: hidden;
-    bottom: 0;
-    width: 100%;
-    height: 8.5vh;
-    display: flex;
-    justify-content: space-around;
-    background-color: #e0f7fa;
-    padding-top: 12px;
-    padding-bottom: 25px;
-    margin-left: -4vw;
-    z-index: 1;
-  }
-  .menutext{
-    padding-top: 0px;
-    font-size: 1rem;
-}
+
 .switch{
     position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 1.5vh;
+    right: 2vw;
 }
 .text{
     margin-bottom: 0;
@@ -87,4 +75,3 @@ body {
     font-size: 1.5rem;
     padding-top: 1rem;
 }
-  
