@@ -141,7 +141,6 @@ body{
 }
 
 .salida {
-    display: block;
     position:fixed;
     width: 75vw;
     top: 73vh;
@@ -260,6 +259,7 @@ body{
     text-align: center;
     margin-bottom: 0;
 }
+
 
 /*VISTA MOVIL*//*
 @media only screen and (max-width: 768px){

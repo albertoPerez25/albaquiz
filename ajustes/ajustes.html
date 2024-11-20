@@ -45,7 +45,7 @@
         <p class="text">Sensores</p>
         <p class="subtext">Activar movimiento en el menú mediante sensores</p>
     </div>
-    <div class="contenedor">
+    <div id="idioma" class="contenedor">
         <md-ripple></md-ripple>
         <p class="text">Idioma</p>
         <p class="subtext">Cambiar el idioma de la app</p>
@@ -89,6 +89,17 @@
       </md-outlined-select>
     </div>
   </div>
+  <!--Caja de seleccion de idioma-->
+  <div class="Idioma" id="cajaIdioma">
+    <ul>
+      <li class="liIdioma"><md-radio id="Español" name="idiomas" value="Español"checked></md-radio>      
+      <label for="Español" class="iText">Español<md-ripple></md-ripple></label></li>
+
+      <li class="liIdioma"><md-radio id="Ingles" name="idiomas" value="Ingles"></md-radio>      
+      <label for="Ingles" class="iText">Inglés<md-ripple></md-ripple></label></li>
+    </ul>
+   
+</div>
   <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">
     <a class="menuNotSelectedA" role="link" enlace="../index.html">

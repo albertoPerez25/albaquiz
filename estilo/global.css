@@ -1,6 +1,7 @@
 :root{
     --colorFondo: var(--md-sys-color-background);
     --colorFondoPagina: rgba(0, 238, 255, 0.04);
+    --radio: 1.5rem;
 }
 body {
     font-family: 'Roboto';font-size: 22px;
