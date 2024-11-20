@@ -6,6 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin-left: 4vw;
+    overflow-y: hidden;
 }
 /*Eliminar seleccion azul:*/
 ::selection {
@@ -17,6 +18,7 @@ contenedor{
     position: relative; height: 10vh;
 }.contenedor > p{
     max-width: 70vw;
+    margin-bottom: 10px;
 }
 
 .textoDivider{
