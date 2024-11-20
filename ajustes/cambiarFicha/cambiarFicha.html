@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar Ficha</title>
+  <!-- Import Material Components -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../../estilo/cambiarficha.css" rel="stylesheet">
+  <!-- Iconos-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <!-- Open Sans-->
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+   <!-- Material Components Script -->
+   <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+   <script type="module">
+    // Import individual Material components if needed
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <!-- Animacion de entrada-->
+  <script type="module" src="cambiarFicha.js"></script>
+</head>
+
+<body>
+    <div id="pantalla">
+        <div class="titulo"><h1>Cambiar Ficha</h1></div>
+</body>
+</html>
