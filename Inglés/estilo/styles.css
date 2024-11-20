@@ -1,0 +1,91 @@
+@import "md-colors/light.css";
+@import "global.css";
+@import "navbar.css";
+
+/* Background styling 
+:root {
+    /* Generated from Material Theme Builder Figma plugin
+       or `material-color-utilities`. /
+    --md-sys-color-primary: #2776bf;
+    --md-sys-color-on-primary: #e0f7fa;
+    --md-sys-color-primary-container: #6FF7F6;
+    --md-sys-color-on-primary-container: #002020;
+    --md-sys-color-secondary: #FFD7F6;
+    --md-sys-color-background: #e0f7fa;
+    --md-sys-color-surface: #e0f7fa;
+    --md-filled-button-container-color:var(--md-sys-color-background);
+    --md-fab-container-color:var(--md-sys-color-secondary);*/
+    /* ... 
+    --colorFondo: var(--md-sys-color-background);
+    /*--colorFondo:#e0f7fa;
+    
+    /*
+    --md-elevated-button-container-color:var(--md-sys-color-secondary);
+    --md-elevated-button-label-text-color:var(--md-sys-color-on-secondary);
+    --md-fab-container-color:var(--md-sys-color-tertiary);
+    --md-fab-icon-color:var(--md-sys-color-on-tertiary);
+    *
+    
+  }
+  */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0rem;
+  
+  background: linear-gradient(to bottom, #b3e5fc, #4fc3f7);
+  overflow-y: hidden;
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15vh;
+  max-width: 20rem;
+  margin-top: -35vh;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 15rem;
+  background-color: var(--colorFondo);
+  border-radius: 3rem;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: black;
+  border-style: solid;
+  border-color: #002020;
+}
+
+.logo .quiz-text {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+/* Play button styling */
+.play-button {
+  width: 15rem;
+  height: 4rem;
+}
+
+.microfono{
+  position: fixed;
+  bottom: 8rem;
+  right: 1.5rem;
+}
+
+/* Bottom navigation styling */
+.bottom-nav {
+  margin-left: 0vw;
+  width: 100%;
+}

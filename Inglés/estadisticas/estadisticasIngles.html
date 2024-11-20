@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALBAQuiz</title>
+  <!-- Import Material Components -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../estilo/estadisticas.css" rel="stylesheet">
+  <!-- Iconos-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <!-- Open Sans-->
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+   <!-- Material Components Script -->
+   <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+   <script type="module">
+    // Import individual Material components if needed
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <!-- Animaciones y mas-->
+  <script type="module" src="estadisticas.js"></script>
+</head>
+
+<body>
+  <div id="pantalla">
+    <div class="titulo"><h1>Stats</h1></div>
+    <div class="contenedor">
+        <md-ripple></md-ripple>
+        <p class="text">Times played</p>
+        <p class="subtext">777</p> <!-- Esto está puesto como ejemplo -->
+    </div>
+    <div class="contenedor" style="margin-top: 4px;">
+        <md-ripple></md-ripple>
+        <p class="text">Times won</p>
+        <p class="subtext">2</p> <!-- Esto está puesto como ejemplo -->
+    </div>
+    <div class="espaciador"></div>
+    <md-divider inset-end></md-divider>
+    <p class="textoDivider" style="margin-bottom: 0;">Questions</p>
+
+    <div class="contenedor" style="margin-top: 4px;">
+        <md-ripple></md-ripple>
+        <p class="text">Answered</p>
+        <p class="subtext">4200</p> <!-- Esto está puesto como ejemplo -->
+    </div>
+    <div class="contenedor" style="margin-top: 4px;">
+        <md-ripple></md-ripple>
+        <p class="text">Correct</p>
+        <p class="subtext">20</p> <!-- Esto está puesto como ejemplo -->
+    </div>
+    <div class="contenedor" style="margin-top: 4px;">
+        <md-ripple></md-ripple>
+        <p class="text">Failed</p>
+        <p class="subtext">4170</p> <!-- Esto está puesto como ejemplo -->
+    </div>
+    <div class="contenedor" style="margin-top: 4px;">
+        <md-ripple></md-ripple>
+        <p class="text">No answered</p>
+        <p class="subtext">10</p> <!-- Esto está puesto como ejemplo -->
+    </div>
+  </div>
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav" style="text-align: center; ">
+    <a class="menuNotSelectedA" role="link" enlace="../indexIngles.html">
+        <md-icon-button class="menu" label="Jugar"><md-icon>play_arrow</md-icon></md-icon-button>
+        <p style="color:black;"class="menutext">Jugar</p>
+    </a>
+
+    <a id="menuSelectedA">
+        <md-filled-button class="menuSelected" label="Estadísticas"><md-icon>list</md-icon></md-filled-button>
+        <p style="color:black;"class="menutext">Estadisticas</p>
+    </a>
+
+    <a class="menuNotSelectedA" role="link" enlace="../ajustes/ajustesIngles.html">
+        <md-icon-button class="menu" label="Ajustes"><md-icon>settings</md-icon></md-icon-button>
+        <p style="color:black;"class="menutext";>Ajustes</p>
+    </a> 
+  </div>
+</body>

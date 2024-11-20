@@ -1,0 +1,17 @@
+:root{
+    --colorFondo: var(--md-sys-color-background);
+    --colorFondoPagina: rgb(243, 254, 255);
+}
+body {
+    font-family: 'Roboto';font-size: 22px;
+    transition: opacity .2s;
+}
+#pantalla{
+    opacity: 0;
+    transition: opacity .2s;
+  }
+/*Eliminar seleccion azul:*/
+::selection {
+    color: none;
+    background: none;
+}
