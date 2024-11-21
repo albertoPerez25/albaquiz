@@ -1,2 +1,39 @@
 @import "md-colors/light.css";
 @import "global.css";
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 2vw;
+    background-color: var(--colorFondoPagina);
+    overflow-y: hidden;
+}
+.contenedor{
+    position: relative; /*height: 10vh;*/
+    height: fit-content;
+    padding:1vh;
+}
+.contenedorFicha{
+    background-color:darkgrey;
+    position: relative; /*height: 10vh;*/
+    padding:1vh;
+    width: 70vh;
+    height: 70vh;    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}.ficha{
+    background-color: white;
+    border: 1px solid black;
+    width: 30vh;
+    height: 30vh;
+    margin: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}.ficha:hover{
+    background-color: lightgrey;
+}
