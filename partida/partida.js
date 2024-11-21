@@ -1,70 +1,94 @@
-window.onload = function () {
+//const casilla = document.querySelector('.box');
+var sleep = function(ms){
+    var esperarHasta = new Date().getTime() + ms;
+    while(new Date().getTime() < esperarHasta) continue;
+};
+
+window.onload=function(){
+    /*
+    const casilla = document.getElementsByClassName('box');
+    //const casilla = document.getElementById('ejemplo');
+    const pregunta = document.getElementById('cajaPregunta');
+    const respuestaInput = document.getElementById('respuesta');
+    const aceptarBoton = document.getElementById('aceptar');
+
+    for(let i = 0; i < casilla.length; i++){
+        casilla[i].addEventListener('click', () => {
+            //pregunta.style.display = 'block';
+            pregunta.classList.add('visible');
+        });
+    }
+    
+    aceptarBoton.addEventListener('click', () => {
+        const answer = respuestaInput.value;
+        pregunta.classList.remove('visible');
+        //pregunta.style.display = 'none';
+    });
+
+    ////////////////*/
     const atras = document.getElementById('btnAtras');
     const cajaSalida = document.getElementById('cajaSalida');
     const no_salir = document.getElementById('no_salir');
     const si_salir = document.getElementById('si_salir');
     const fondoSalida = document.getElementById('fondoSalida');
     const dado = document.getElementById('dado');
-    const amarillo = getComputedStyle(document.documentElement).getPropertyValue('--amarillo');
-    const azul = getComputedStyle(document.documentElement).getPropertyValue('--azul');
-    const rojo = getComputedStyle(document.documentElement).getPropertyValue('--rojo');
+    const amarillo = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--amarillo');
+    const azul = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--azul');      
+    const rojo = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--rojo');  
     const colors = [amarillo, azul, rojo];
-    let dadoActivo = true; // Control para evitar múltiples clics durante la animación
 
     atras.addEventListener('click', () => {
         cajaSalida.classList.add('visible');
         fondoSalida.classList.add('visible');
-        window.navigator.vibrate([30, 50, 30]);
+        window.navigator.vibrate([30, 50, 30])
     });
-
     no_salir.addEventListener('click', () => {
         cajaSalida.classList.remove('visible');
         fondoSalida.classList.remove('visible');
     });
-
     si_salir.addEventListener('click', () => {
         document.querySelector('body').style.background = '#b3e5fc';
         document.querySelector('body').style.opacity = 0;
-        setTimeout(function () {
+        setTimeout(function() { 
             window.location.href = '../index.html';
-        }, 200);
+        }, 200)
     });
 
     dado.addEventListener('click', () => {
-        if (!dadoActivo) return; // Evitar múltiples clics durante la animación
-
-        dadoActivo = false; // Bloquea el clic mientras se realiza la animación
         dado.classList.add('seleccionando');
 
-        let iterationCount = 12; // Número de iteraciones para el cambio de colores
+        
+        let iterationCount = 12;
         let currentIteration = 0;
-        let finalColor = null; // Almacena el color final
-
+        let lastColor = null;
+    
         function changeColorWithCustomDelay() {
             if (currentIteration >= iterationCount) {
-                // Finaliza la animación, deja el último color
-                dado.style.backgroundColor = finalColor;
+                //dado.classList.add('terminado'); 
                 dado.classList.remove('seleccionando');
-                dadoActivo = true; // Permite clics nuevamente
+
+                dado.style.backgroundColor = rojo;
                 return;
             }
-
+            
             window.navigator.vibrate(30);
 
-            // Selección de un color aleatorio
-            finalColor = colors[Math.floor(Math.random() * colors.length)];
-            dado.style.backgroundColor = finalColor;
+            const colorsAvailable= colors.filter(color => color !== lastColor);
+            const randomColor = colorsAvailable[Math.floor(Math.random() * colorsAvailable.length)];
+            dado.style.backgroundColor = randomColor;
+            lastColor = randomColor;
 
             currentIteration++;
-            // Cálculo del retraso personalizado
-            const delay = 10 + (currentIteration / 4 * 50) * (currentIteration / 4);
-
+            // Custom delay calculation
+            const delay = 10 + (currentIteration/4 * 50) * currentIteration/4;
+            
             setTimeout(changeColorWithCustomDelay, delay);
         }
-
+    
         changeColorWithCustomDelay();
     });
-
     document.querySelector('body').style.opacity = 1;
-};
-
+}
