@@ -35,16 +35,22 @@
     <div class="titulo"><h1>Ajustes</h1></div>
     <div class="contenedor">
         <md-ripple></md-ripple>
-        <md-switch class="switch"></md-switch>
+        <md-switch disabled class="switch" aria-label="Guardar estadisticas"></md-switch>
         <p class="text">Guardar estadisticas</p>
         <p class="subtext">Guarda tus estadisticas de jugador</p>
     </div>
     <div class="contenedor">
         <md-ripple></md-ripple>
-        <md-switch class="switch"></md-switch>       
+        <md-switch disabled class="switch" aria-label="Activar sensores"></md-switch>       
         <p class="text">Sensores</p>
         <p class="subtext">Activar movimiento en el menú mediante sensores</p>
     </div>
+    <div class="contenedor" id="contraste">
+      <md-ripple></md-ripple>
+      <md-switch id="sContraste" class="switch" aria-label="Alto contraste"></md-switch>
+      <p class="text">Alto contraste</p>
+      <p class="subtext">Modo de alto contraste para personas con problemas de vista</p>
+  </div>
     <div id="idioma" class="contenedor">
         <md-ripple></md-ripple>
         <p class="text">Idioma</p>
