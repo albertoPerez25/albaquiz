@@ -13,7 +13,7 @@ window.onload = function() {
                 liIdioma[i].addEventListener('click', () => {
                         setTimeout(function() { 
                                 cajaIdioma.classList.remove('visible');
-                                alert("Idioma cambiado a " + liIdioma[0].textContent);
+                                alert("Idioma cambiado a " + liIdioma[i].textContent);
                         }, 300)
                 });
         }
