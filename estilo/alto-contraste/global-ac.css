@@ -1,0 +1,9 @@
+:root{
+    --colorFondo: var(--md-sys-color-background);
+    --colorFondoPagina: rgb(255, 255, 255);
+    --radio: 1.5rem;
+    --primario: var(--md-sys-color-primary);
+}
+p{
+    font-weight: 600;
+}

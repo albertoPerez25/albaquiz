@@ -1,5 +1,18 @@
 import {animacionesSalidaNav,animacionesEntradaNav} from '../js/animaciones.js';
 
+function changeCSS(cssFile, cssLinkIndex) {
+        document.getElementById('stylesheet').href=cssFile;
+/*
+    var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+    var newlink = document.createElement("link");
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", cssFile);
+
+    document.getElementsByTagName("head").item(cssLinkIndex).replaceChild(newlink, oldlink);*/
+}
+
 window.onload = function() {
         animacionesEntradaNav();
         animacionesSalidaNav();
@@ -32,10 +45,10 @@ window.onload = function() {
                 contraste = !contraste;
                 if (contraste) {
                         sContraste.setAttribute("selected", "true");
-                        document.documentElement.style.setProperty('--colorFondoPagina', '#FFFFF');
+                        changeCSS("../estilo/alto-contraste/ajustes-ac.css", 1);
                 } else {
                         sContraste.removeAttribute("selected");
-
+                        changeCSS("../estilo/ajustes.css", 1);
                 }
         });
 }

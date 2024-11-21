@@ -33,7 +33,7 @@ body {
     margin-top: 1vh;
     margin-bottom: 0;
     padding-bottom: 2vh;
-    color: var(--md-sys-color-primary);
+    color: var(--primario);
     margin-left: 2vw;
 }
 .espaciador{
