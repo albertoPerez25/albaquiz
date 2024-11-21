@@ -3,7 +3,6 @@ var sleep = function(ms){
     var esperarHasta = new Date().getTime() + ms;
     while(new Date().getTime() < esperarHasta) continue;
 };
-
 window.onload = function () {
     const atras = document.getElementById('btnAtras');
     const cajaSalida = document.getElementById('cajaSalida');
@@ -14,7 +13,7 @@ window.onload = function () {
     const dado = document.getElementById('dado');
     const casillas = Array.from(document.querySelectorAll('.box'));
     const preguntaCaja = document.getElementById('cajaPregunta');
-    const preguntaTexto = document.getElementById('preguntaTexto'); // Aquí capturamos el texto de la pregunta
+    const preguntaTexto = document.getElementById('preguntaTexto');
     const respuestaInput = document.getElementById('respuesta');
     const aceptarBoton = document.getElementById('aceptar');
     const puntuacion = document.getElementById('puntuacion');
@@ -68,26 +67,31 @@ window.onload = function () {
 
     // Función para tirar el dado
     function tirarDado() {
+        // Colores posibles para el dado (coinciden con los colores de las casillas)
         const colores = ['rojo', 'azul', 'amarillo'];
         const colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
 
         // Restablecer el estado visual de todas las casillas
         inicializarCasillas();
 
-        // Destacar casillas del color y deshabilitar el resto
-        casillas.forEach(casilla => {
-            if (casilla.classList.contains(colorSeleccionado)) {
-                casilla.classList.add('clicable'); // Habilitar
-            } else {
-                casilla.classList.add('gris'); // Deshabilitar
-            }
-        });
-
+        // Activar la animación en el dado (cambiando colores durante 2 segundos)
         dado.classList.add('seleccionando');
+        
+        // Después de 2 segundos, detener la animación y asignar el color final al dado
         setTimeout(() => {
             dado.classList.remove('seleccionando');
+            dado.style.backgroundColor = colorSeleccionado; // Establecer el color final del dado
             alert(`Color obtenido: ${colorSeleccionado.toUpperCase()}`);
-        }, 2000);
+
+            // Destacar las casillas correspondientes al color y deshabilitar el resto
+            casillas.forEach(casilla => {
+                if (casilla.classList.contains(colorSeleccionado)) {
+                    casilla.classList.add('clicable'); // Habilitar
+                } else {
+                    casilla.classList.add('gris'); // Deshabilitar
+                }
+            });
+        }, 2000); // Duración de la animación (2 segundos)
     }
 
     // Función para manejar la selección de una casilla
@@ -127,7 +131,7 @@ window.onload = function () {
     // Inicialización de la partida
     inicializarCasillas();
     document.querySelector('body').style.opacity = 1;
-
-
 };
+
+
 
