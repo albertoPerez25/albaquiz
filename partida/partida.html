@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
       <!-- Open Sans-->
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-      <!-- Open Sans-->
-    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
       <!-- Material Components Script -->
     <script type="importmap">
     {
@@ -24,54 +22,75 @@
         // Import individual Material components if needed
         import '@material/web/all.js';
           import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
-      
           document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-
 </head>
 <body>
     <div class="title">
         <h1 class="titleText">AlbaQuiz</h1>
     </div>
     <div class="jugadores">
-        <div id="j1"><div class="indicador act"><p>Jugador 1</p></div></div>
-        <div id="j2"><div class="indicador"><p>Jugador 2</p></div></div>
-        <div id="j3"><div class="indicador"><p>Jugador 3</p></div></div>
-        <div id="j4"><div class="indicador"><p>Jugador 4</p></div></div>
+        <div class="jugador" id="jugador1">
+            <div class="indicador act"></div>
+            <p>Jugador 1</p>
+        </div>
+        <div class="jugador" id="jugador2">
+            <div class="indicador"></div>
+            <p>Jugador 2</p>
+        </div>
+        <div class="jugador" id="jugador3">
+            <div class="indicador"></div>
+            <p>Jugador 3</p>
+        </div>
+        <div class="jugador" id="jugador4">
+            <div class="indicador"></div>
+            <p>Jugador 4</p>
+        </div>
     </div>
-    <div class = "tablero">
-        
-        <div class="box rojo" id="eTL"><p>1</p><a href="#" class="fill-div"></a></div> <div class="box azul"><p>2</p><a href="#" class="fill-div"></a></div>
-        <div class="box amarillo"><p>3</p></div> <div class="box azul"><p>4</p></div>
-        <div class="box rojo" id="eTR"><p>5</p></div> <div class="box azul"><p>16</p></div>
-        <div class="fondo"></div> <div class="box rojo"><p>17</p></div>
-        <div class="fondo"></div> <div class="box azul"><p>6</p></div>
-        
-        <div class="box amarillo"><p>15</p></div> <div class="box rojo"><p>18</p></div>
-        <div class="box amarillo"><p>19</p></div> <div class="box rojo"><p>20</p></div>
-        <div class="box amarillo"><p>7</p></div> <div class="box azul"><p>14</p></div>
-        <div class="fondo"></div> <div class="box rojo"><p>21</p></div>
-        <div class="fondo"></div> <div class="box azul"><p>8</p></div>
-        
-        <div class="box rojo" id="eBL"><p>13</p></div> <div class="box azul"><p>12</p></div>
-        <div class="box amarillo"><p>11</p></div> <div class="box azul"><p>10</p></div>
+    <div class="tablero">
+        <div class="box rojo" id="eTL"><p>1</p><a href="#" class="fill-div"></a></div> 
+        <div class="box azul"><p>2</p><a href="#" class="fill-div"></a></div>
+        <div class="box amarillo"><p>3</p></div> 
+        <div class="box azul"><p>4</p></div>
+        <div class="box rojo" id="eTR"><p>5</p></div> 
+        <div class="box azul"><p>16</p></div>
+        <div class="fondo"></div> 
+        <div class="box rojo"><p>17</p></div>
+        <div class="fondo"></div> 
+        <div class="box azul"><p>6</p></div>
+        <div class="box amarillo"><p>15</p></div> 
+        <div class="box rojo"><p>18</p></div>
+        <div class="box amarillo"><p>19</p></div> 
+        <div class="box rojo"><p>20</p></div>
+        <div class="box amarillo"><p>7</p></div> 
+        <div class="box azul"><p>14</p></div>
+        <div class="fondo"></div> 
+        <div class="box rojo"><p>21</p></div>
+        <div class="fondo"></div> 
+        <div class="box azul"><p>8</p></div>
+        <div class="box rojo" id="eBL"><p>13</p></div> 
+        <div class="box azul"><p>12</p></div>
+        <div class="box amarillo"><p>11</p></div> 
+        <div class="box azul"><p>10</p></div>
         <div class="box rojo" id="eBR"><p>9</p></div> 
-        
     </div>
     <div class="pregunta" id="cajaPregunta">
-            <h2>Pregunta:</h2>
-            <p>¿Cual es la capital de Albacete?</p>
+        <h2>Pregunta:</h2>
+        <p id="preguntaTexto">¿Cual es la capital de Albacete?</p>
         <input type="text" id="respuesta">
         <button id="aceptar">Aceptar</button>
     </div>
-    
     <div id="parteBaja">
         <md-icon-button id="btnAtras" class="pbaja dado" label="Atrás"><md-icon>arrow_back</md-icon></md-icon-button>
-        <div id="dado"class="pbaja">
+        <div id="dado" class="pbaja">
             <div id="dAzul"></div>         
             <div id="dAmarillo"></div>
         </div>
-        <div id="contenedorPtos"class="pbaja"><div></div><p id="jugador">Jugador 1</p><p id="puntuacion">10 ptos</p></div>
+        <div id="contenedorPtos" class="pbaja">
+            <div></div>
+            <p id="jugador">Jugador 1</p>
+            <p id="puntuacion">0 ptos</p>
+        </div>
     </div>
     <div id="fondoSalida"></div>
     <div class="salida" id="cajaSalida">
@@ -80,6 +99,5 @@
         <md-outlined-button class="btnSalida" id="no_salir">No, volver</md-outlined-button>
         <md-filled-button class="btnSalida" id="si_salir">Si</md-filled-button>
     </div>
-</div>
-    
 </body>
+</html>
