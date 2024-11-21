@@ -1,4 +1,5 @@
 @import "md-colors/light.css";
+@import "../estilo/global.css";
 :root {
     --azul: #BCD1FF;
     --amarillo:#FFE6BC;

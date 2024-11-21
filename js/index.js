@@ -1,8 +1,12 @@
 import {animacionesSalidaNav,animacionesEntradaNav} from './animaciones.js';
-
+import {getCookie,changeCSS} from '../js/cookies.js';
 
 window.onload = function() {
-//Animacion al cargar la pagina
+        //Si es alto contraste está activado usamos su css
+        if (getCookie("alto-contraste")=="true"){
+                changeCSS("../estilo/alto-contraste/styles-ac.css", 1);
+        }
+        //Animacion al cargar la pagina
         document.querySelector('body').style.opacity = 1;
         animacionesEntradaNav();
         animacionesSalidaNav();
