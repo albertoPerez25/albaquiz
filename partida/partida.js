@@ -18,6 +18,15 @@ window.onload = function () {
     const aceptarBoton = document.getElementById('aceptar');
     const puntuacion = document.getElementById('puntuacion');
     const jugadorActualTexto = document.getElementById('jugador');
+
+    //Variables con los colores de css para animar el dado
+    const amarillo = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--amarillo');
+    const azul = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--azul');      
+    const rojo = getComputedStyle(document.documentElement)
+                    .getPropertyValue('--rojo');  
+    const colors = [amarillo, azul, rojo];//array de los colores para evitar hacer un switch
     
     let turnoActual = 0;
     let puntajes = [0, 0, 0, 0];
@@ -67,6 +76,63 @@ window.onload = function () {
 
     // Función para tirar el dado
     function tirarDado() {
+        
+        dado.classList.add('seleccionando');
+
+        
+        let iteraciones = 13;
+        let iteracionActual = 0;
+        let ultimoColor = null;
+    
+        function cambiarColor() {
+            if (iteracionActual >= iteraciones) {
+                switch(ultimoColor){
+                    case amarillo:
+                        destacarCasillas("amarillo");
+                        break;
+                    case azul:
+                        destacarCasillas("azul");
+                        break;
+                    case rojo:
+                        destacarCasillas("rojo");
+                        break;
+                    default:
+                        destacarCasillas("ERROR");
+                }
+                dado.classList.remove('seleccionando');
+                dado.style.backgroundColor = rojo;//Para reestaurar apariencia original
+                return;
+            }
+            
+            window.navigator.vibrate(30);
+
+            const coloresDisponibles = colors.filter(color => color !== ultimoColor);
+            const colorRandom = coloresDisponibles[Math.floor(Math.random() * coloresDisponibles.length)];
+            dado.style.backgroundColor = colorRandom;
+            ultimoColor = colorRandom;
+
+            iteracionActual++;
+            // Calcular retraso nuevo
+            const retraso = 10 + (iteracionActual/4 * 50) * iteracionActual/4;
+            //Llamada recursiva en la que aumentamos el retraso
+            setTimeout(cambiarColor, retraso);
+        }
+
+        function destacarCasillas(colorElegido){
+            //alert(`Color obtenido: ${colorElegido.toUpperCase()}`);
+            casillas.forEach(casilla => {
+                if (casilla.classList.contains(colorElegido)) {
+                    casilla.classList.add('clicable'); // Habilitar
+                } else {
+                    casilla.classList.add('gris'); // Deshabilitar
+                }
+            });
+        }
+    
+        cambiarColor();
+        inicializarCasillas();
+   
+        /*
         // Colores posibles para el dado (coinciden con los colores de las casillas)
         const colores = ['rojo', 'azul', 'amarillo'];
         const colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
@@ -91,7 +157,7 @@ window.onload = function () {
                     casilla.classList.add('gris'); // Deshabilitar
                 }
             });
-        }, 2000); // Duración de la animación (2 segundos)
+        }, 2000); // Duración de la animación (2 segundos)*/
     }
 
     // Función para manejar la selección de una casilla

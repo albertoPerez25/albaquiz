@@ -272,7 +272,8 @@ body{
     text-align: center;
     margin-bottom: 0;
 }
-/* Animación de cambio de color para el dado */
+
+/* Animación de cambio de color para el dado 
 @keyframes cambioColorDado {
     0% { background-color: var(--azul); }
     25% { background-color: var(--amarillo) }
@@ -281,16 +282,16 @@ body{
     100% { background-color: var(--azul)}
 }
 
-/* Estilo para el dado cuando está "seleccionando" el color */
+/* Estilo para el dado cuando está "seleccionando" el color 
 #dado.seleccionando {
     animation: cambioColorDado 2s linear infinite;
 }
 
-/* Cuando el dado deja de animar, se detiene en el color seleccionado */
+/* Cuando el dado deja de animar, se detiene en el color seleccionado 
 #dado {
-    transition: background-color 0.5s ease-out; /* Para hacer que el color se suavice al final */
+    transition: background-color 0.5s ease-out; /* Para hacer que el color se suavice al final 
 }
-
+*/
 /*VISTA MOVIL*//*
 @media only screen and (max-width: 768px){
     .tablero{
