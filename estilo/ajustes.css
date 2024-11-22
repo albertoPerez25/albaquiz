@@ -5,7 +5,7 @@
 body {
     justify-content: center;
     align-items: center;
-    height: 120vh;
+    height: 125vh;
     margin-left: 2vw;
     background-color: var(--colorFondoPagina);
 }
