@@ -41,4 +41,7 @@ body {
     border-radius: 3vh;
 }.ficha:hover{
     background-color: lightgray;
+}.icono{
+    margin-left: 8.5vh;
+    margin-top: 1.8vh;
 }
