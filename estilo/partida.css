@@ -46,21 +46,24 @@ body{
     height: 1rem;
     font-weight: 400;
 }
-
+.icono{
+    position: relative;
+    margin-left: 2.2vh;
+    margin-top: 1vh;
+}
 .jugadores{
     display:flex;
     justify-content: center;
     margin-top: .5vh;
     margin: auto;
     width: 5rem;
-   
 }
 .jugadores > div > div > p{
     font-weight: bold;
     font-size: small;
     margin-left: 1rem;
     margin-right: .5rem;
-    padding-top: 70%;
+    margin-top:0;
 }
 
 .jugadores > div .indicador{
