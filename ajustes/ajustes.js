@@ -28,6 +28,17 @@ window.onload = function() {
                         break;
         }
 
+        window.addEventListener('scroll', function() {
+                const title = document.getElementById('titulo');
+                const scrollY = window.scrollY;
+            
+                if (scrollY > 1) {
+                  title.classList.add('fixed');
+                } else {
+                  title.classList.remove('fixed');
+                }
+              });
+
         btnIdioma.addEventListener('click', () => {
                 cajaIdioma.classList.add('visible');
         });

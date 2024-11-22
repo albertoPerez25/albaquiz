@@ -9,9 +9,32 @@ body {
     margin-left: 2vw;
     background-color: var(--colorFondoPagina);
 }
-
-.titulo{
-    margin-left: 2vw;
+header{
+    height: 17vh;
+}
+#titulo{
+    position: fixed;
+    top: 0;
+    transition: all 0.3s;
+    font-size: 30px;
+    padding: 0;
+    margin: 2rem;
+    margin-left: -2vw;
+}
+#titulo.fixed{
+    
+    
+    font-size: 20px;
+    margin: 0rem;
+    margin-left: -2vw;
+    z-index: 999;
+    background-color: var(--colorFondo);
+    width: 100%;
+    transition: all 0.3s;
+}
+#titulo > h1{
+    margin: 1vh;
+    margin-left: 4vw;
 }
 .contenedor{
     position: relative; /*height: 10vh;*/
