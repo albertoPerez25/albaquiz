@@ -1,4 +1,4 @@
-import {animacionesSalidaNav,animacionesEntradaNav} from '../js/animaciones.js';
+import {animacionesSalidaNav,animacionesEntradaNav,animacionHeader} from '../js/animaciones.js';
 import {setCookie,getCookie,changeCSS} from '../js/cookies.js';
 
 window.onload = function() {
@@ -11,7 +11,6 @@ window.onload = function() {
         const sContraste = document.getElementById("sContraste");
         const divContraste = document.getElementById("contraste");
         let contraste = (/true/).test(getCookie("alto-contraste"));
-        let seleccionado = contraste;
 
         switch (contraste){
                 case true:
@@ -28,16 +27,8 @@ window.onload = function() {
                         break;
         }
 
-        window.addEventListener('scroll', function() {
-                const title = document.getElementById('titulo');
-                const scrollY = window.scrollY;
-            
-                if (scrollY > 1) {
-                  title.classList.add('fixed');
-                } else {
-                  title.classList.remove('fixed');
-                }
-              });
+        //Efecto header hacerse pequeño al deslizar
+        animacionHeader();
 
         btnIdioma.addEventListener('click', () => {
                 cajaIdioma.classList.add('visible');

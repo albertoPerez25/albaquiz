@@ -3,6 +3,7 @@
     --colorFondoPagina: rgba(0, 238, 255, 0.04);
     --radio: 1.5rem;
     --primario: var(--md-sys-color-primary);
+    --colorHeader: rgba(246, 254, 255, 0.99);
 }
 body {
     font-family: 'Roboto';font-size: 22px;

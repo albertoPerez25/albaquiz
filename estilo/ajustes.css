@@ -22,13 +22,12 @@ header{
     margin-left: -2vw;
 }
 #titulo.fixed{
-    
-    
     font-size: 20px;
+    font-weight:lighter;
     margin: 0rem;
     margin-left: -2vw;
     z-index: 999;
-    background-color: var(--colorFondo);
+    background-color: var(--colorHeader);
     width: 100%;
     transition: all 0.3s;
 }

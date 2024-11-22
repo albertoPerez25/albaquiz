@@ -3,6 +3,7 @@
     --colorFondoPagina: rgb(255, 255, 255);
     --radio: 1.5rem;
     --primario: var(--md-sys-color-primary);
+    --colorHeader: rgba(255, 255, 255, 0.99);
 }
 p{
     font-weight: 600;

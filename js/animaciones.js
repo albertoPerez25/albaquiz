@@ -18,7 +18,20 @@ export function animacionesSalidaNav(){
 export function animacionesEntradaNav(){
     document.querySelector('#pantalla').style.opacity = 1;
 }
+//Efecto header hacerse pequeño al deslizar
+export function animacionHeader(){
+    window.addEventListener('scroll', function() {
+        const title = document.getElementById('titulo');
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 30) {
+                title.classList.add('fixed');
+        } else {
+                title.classList.remove('fixed');
+        }
+});
 
+}
 /*
 document.addEventListener('DOMContentLoaded', function(event) {
     document.querySelector('body').style.opacity = 1

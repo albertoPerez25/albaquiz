@@ -1,4 +1,4 @@
-import {animacionesSalidaNav,animacionesEntradaNav} from '../js/animaciones.js';
+import {animacionesSalidaNav,animacionesEntradaNav,animacionHeader} from '../js/animaciones.js';
 import {getCookie,changeCSS} from '../js/cookies.js';
 
 window.onload = function() {
@@ -7,5 +7,7 @@ window.onload = function() {
         }
         animacionesEntradaNav();
         animacionesSalidaNav();
-        
+        //Efecto header hacerse pequeño al deslizar
+        animacionHeader();
+
 }

@@ -48,8 +48,11 @@ body{
 }
 .icono{
     position: relative;
-    margin-left: 2.2vh;
+    margin-left: 4vw;
     margin-top: 1vh;
+}
+#circulo{
+    margin-left: 3vw;
 }
 .jugadores{
     display:flex;
@@ -71,6 +74,7 @@ body{
     height: 5.5rem;
     width: 5.5rem;
     border-radius: var(--radio);
+    margin-top: 1vh;
 }
 .jugadores > div .act{
     background-color: var(--selectBackground);
