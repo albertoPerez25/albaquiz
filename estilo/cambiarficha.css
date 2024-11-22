@@ -2,12 +2,15 @@
 @import "global.css";
 
 body {
-    justify-content: center;
     align-items: center;
     height: 100vh;
     margin-left: 2vw;
     background-color: var(--colorFondoPagina);
     overflow-y: hidden;
+    display:flex;
+}.titulo{
+    margin-left: 2vw;
+    margin-top: -15vh;
 }
 .contenedor{
     position: relative; /*height: 10vh;*/
@@ -15,25 +18,27 @@ body {
     padding:1vh;
 }
 .contenedorFicha{
-    background-color:darkgrey;
-    position: relative; /*height: 10vh;*/
     padding:1vh;
-    width: 70vh;
-    height: 70vh;    
+    width: 60vh;
+    height: 60vh;    
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
 }.ficha{
     background-color: white;
-    border: 1px solid black;
-    width: 30vh;
-    height: 30vh;
+    border: 2px solid black;
+    width: 25vh;
+    height: 25vh;
     margin: 1vh;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 3vh;
 }.ficha:hover{
-    background-color: lightgrey;
+    background-color: lightgray;
 }
