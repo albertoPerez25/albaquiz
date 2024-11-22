@@ -35,29 +35,40 @@
 
     <header><div id="titulo" class="titulo"><h1>Ajustes</h1></div></header>
 
-    <div class="contenedor">
+    <div class="contenedor disabled">
         <md-ripple></md-ripple>
         <md-switch disabled class="switch" aria-label="Guardar estadisticas"></md-switch>
         <p class="text">Guardar estadisticas</p>
         <p class="subtext">Guarda tus estadisticas de jugador</p>
     </div>
-    <div class="contenedor">
+    <div class="contenedor disabled">
         <md-ripple></md-ripple>
         <md-switch disabled class="switch" aria-label="Activar sensores"></md-switch>       
         <p class="text">Sensores</p>
         <p class="subtext">Activar movimiento en el menú mediante sensores</p>
     </div>
+    <div id="idioma" class="contenedor">
+      <md-ripple></md-ripple>
+      <p class="text">Idioma</p>
+      <p class="subtext">Cambiar el idioma de la app</p>
+    </div>
+
+    <div class="espaciador"></div>
+    <md-divider inset-end></md-divider>
+    <p class="textoDivider" style="margin-bottom: 0;">Accesibilidad</p>
     <div class="contenedor" id="contraste">
       <md-ripple></md-ripple>
       <md-switch id="sContraste" class="switch" aria-label="Alto contraste"></md-switch>
       <p class="text">Alto contraste</p>
       <p class="subtext">Modo de alto contraste para personas con problemas de vista</p>
-  </div>
-    <div id="idioma" class="contenedor">
-        <md-ripple></md-ripple>
-        <p class="text">Idioma</p>
-        <p class="subtext">Cambiar el idioma de la app</p>
     </div>
+    <div class="contenedor" id="daltonismo">
+      <md-ripple></md-ripple>
+      <md-switch id="sDaltonismo" class="switch" aria-label="Modo daltonismo azul-amarillo"></md-switch>
+      <p class="text">Modo daltonismo</p>
+      <p class="subtext">Modo de daltonismo azul-amarillo que cambia dichos colores</p>
+    </div>
+
     <div class="espaciador"></div>
     <md-divider inset-end></md-divider>
     <p class="textoDivider" style="margin-bottom: 0;">Personalizacion</p>
@@ -94,6 +105,7 @@
     </div>
   </div>
   <!--Caja de seleccion de idioma-->
+  <div id="fondoPopup"></div>
   <div class="Idioma" id="cajaIdioma">
     <ul>
       <li class="liIdioma"><md-radio id="Español" name="idiomas" value="Español"checked></md-radio>      
@@ -102,7 +114,8 @@
       <li class="liIdioma"><md-radio id="Ingles" name="idiomas" value="Ingles"></md-radio>      
       <label for="Ingles" class="iText">Inglés<md-ripple></md-ripple></label></li>
     </ul>
-   
+  </div>
+
 </div>
   <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">

@@ -12,6 +12,11 @@ body {
 header{
     height: 17vh;
 }
+
+.disabled > p{
+    color: grey;
+}
+
 #titulo{
     position: fixed;
     top: 0;
@@ -97,18 +102,37 @@ md-divider{
     background-color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     /* Asegurarse que el menú esté centrado */
-    top: 55%;
+    top: 50%;
     left: -55%;
    
 }
 
 .Idioma.visible {
     opacity: 1; /* Aumentar la opacidad */
-    left: 35%;
-    transform: translate(-25%, -50%) scale(1); /* Restablecer la escala */
-    z-index: 1; /* Asegurarse de que esté encima */
+    left: 20%;
+    transform: scale(1); /* Restablecer la escala */
+    z-index: 999; /* Asegurarse de que esté encima */
 }
 
+#fondoPopup{
+    display: block;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000038;
+    z-index: -1;
+    opacity: 0;
+    transition: all .5s;
+    border-color: var(--borde);
+}
+#fondoPopup.visible{
+    opacity: 1;
+    z-index: 999; 
+}
+
+/*Para los cuadros desplegables:*/
 .menu-container {
     position: relative; /* Necessary for positioning the dropdown */
 }

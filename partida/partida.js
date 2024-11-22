@@ -1,8 +1,14 @@
-//const casilla = document.querySelector('.box');
-var sleep = function(ms){
-    var esperarHasta = new Date().getTime() + ms;
-    while(new Date().getTime() < esperarHasta) continue;
-};
+import {getCookie,changeCSS} from '../js/cookies.js';
+
+//Cookies
+if (getCookie("alto-contraste")=="true"){
+    changeCSS("../estilo/alto-contraste/partida-ac.css", 1);
+}
+
+if (getCookie("daltonismo")=="true"){
+    changeCSS("../estilo/daltonismo/partida-d.css", 1);
+}
+
 window.onload = function () {
     const atras = document.getElementById('btnAtras');
     const cajaSalida = document.getElementById('cajaSalida');
@@ -19,7 +25,6 @@ window.onload = function () {
     const puntuacion = document.getElementById('puntuacion');
     const jugadorActualTexto = document.getElementById('jugador');
     const audioDado = new Audio('../audio/Guitarra1Edited.mp3');
-    
 
     //Variables con los colores de css para animar el dado
     const amarillo = getComputedStyle(document.documentElement)
@@ -48,6 +53,10 @@ window.onload = function () {
 
     // Si no quiere salir
     no_salir.addEventListener('click', () => {
+        cajaSalida.classList.remove('visible');
+        fondoSalida.classList.remove('visible');
+    });
+    fondoSalida.addEventListener('click', () => {
         cajaSalida.classList.remove('visible');
         fondoSalida.classList.remove('visible');
     });
