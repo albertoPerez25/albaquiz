@@ -18,6 +18,8 @@ window.onload = function () {
     const aceptarBoton = document.getElementById('aceptar');
     const puntuacion = document.getElementById('puntuacion');
     const jugadorActualTexto = document.getElementById('jugador');
+    const audioDado = new Audio('../audio/Guitarra1Edited.mp3');
+    
 
     //Variables con los colores de css para animar el dado
     const amarillo = getComputedStyle(document.documentElement)
@@ -86,6 +88,7 @@ window.onload = function () {
     
         function cambiarColor() {
             if (iteracionActual >= iteraciones) {
+                audioDado.play();
                 switch(ultimoColor){
                     case amarillo:
                         destacarCasillas("amarillo");
