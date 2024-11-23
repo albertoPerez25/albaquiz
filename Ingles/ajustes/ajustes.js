@@ -64,7 +64,7 @@ window.onload = function() {
                                 cajaIdioma.classList.remove('visible');
                                 fondoPopup.classList.remove('visible');
                                 // Verificar si el idioma seleccionado es "Inglés"
-                                if (liIdioma[i].textContent.trim() === "Español") 
+                                if (liIdioma[i].textContent.trim() === "Spanish") 
                                         window.location.href = "../../ajustes/ajustes.html";
                                 //alert("Idioma cambiado a " + liIdioma[i].textContent);
 
