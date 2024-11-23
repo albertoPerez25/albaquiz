@@ -1,0 +1,12 @@
+@import "md-colors/light.css";
+@import "../estilo/global.css";
+@import "../partida.css";
+
+:root {
+    --azul: #9ccaff;
+    --amarillo:#eaff00;
+    --rojo:#cea3ff;
+}
+p{
+    font-weight: bold;
+}

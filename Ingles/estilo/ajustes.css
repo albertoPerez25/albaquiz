@@ -1,0 +1,164 @@
+@import "md-colors/light.css";
+@import "global.css";
+@import "navbar.css";
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 145vh;
+    margin-left: 2vw;
+    background-color: var(--colorFondoPagina);
+}
+header{
+    height: 17vh;
+}
+
+.disabled > p{
+    color: grey;
+}
+
+#titulo{
+    position: fixed;
+    top: 0;
+    transition: all 0.3s;
+    font-size: 30px;
+    padding: 0;
+    margin: 2rem;
+    margin-left: -2vw;
+}
+#titulo.fixed{
+    font-size: 20px;
+    font-weight:lighter;
+    margin: 0rem;
+    margin-left: -2vw;
+    z-index: 999;
+    background-color: var(--colorHeader);
+    width: 100%;
+    transition: all 0.3s;
+}
+#titulo > h1{
+    margin: 1vh;
+    margin-left: 4vw;
+}
+.contenedor{
+    position: relative; /*height: 10vh;*/
+    height: fit-content;
+    padding:1vh;
+}
+
+.contenedor > p{
+    max-width: 70vw;
+    /*
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);*/
+}
+.textoDivider{
+    font-size: 15px;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    padding-bottom: 2vh;
+    color: var(--primario);
+    margin-left: 2vw;
+}
+.espaciador{
+    padding-top: 2vh;
+}
+md-divider{
+    margin-left: 2vw;
+}
+.switch{
+    position: absolute;
+    bottom: 1.5vh;
+    right: 2vw;
+}
+.text{
+    font-size: 25px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.subtext{
+    font-size: 17px;
+    margin-top: .7vh;
+    margin-bottom: 0;
+    padding: 0;
+}.num-jugadores{
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+.Idioma {
+    position: fixed;
+    width: 50vw;
+    background-color: whitesmoke;
+    padding: 1rem;
+    padding-left: 0rem;
+    border-radius: var(--radio);
+    transform: scale(0.8);
+    transition: all 0.5s ease; /* Añadir transición */
+    opacity: 1;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Asegurarse que el menú esté centrado */
+    top: 50%;
+    left: -55%;
+   
+}
+
+.Idioma.visible {
+    opacity: 1; /* Aumentar la opacidad */
+    left: 20%;
+    transform: scale(1); /* Restablecer la escala */
+    z-index: 999; /* Asegurarse de que esté encima */
+}
+
+#fondoPopup{
+    display: block;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000038;
+    z-index: -1;
+    opacity: 0;
+    transition: all .5s;
+    border-color: var(--borde);
+}
+#fondoPopup.visible{
+    opacity: 1;
+    z-index: 999; 
+}
+
+/*Para los cuadros desplegables:*/
+.menu-container {
+    position: relative; /* Necessary for positioning the dropdown */
+}
+
+.menu-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.Idioma ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Idioma li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.iText {
+    position: relative;
+    top: -.3vh;
+    margin-left: 3vw; /* Adjust margin as needed */
+    padding: 2vw;
+  }
+  

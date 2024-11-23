@@ -1,0 +1,8 @@
+@import "../navbar.css";
+@import "../styles.css";
+@import "../md-colors/light-hc.css";
+@import "./global-ac.css";
+
+body{
+     background: linear-gradient(to bottom, #3e81a0, #015f8a);
+}

@@ -1,5 +1,5 @@
-import {animacionesSalidaNav,animacionesEntradaNav,animacionHeader} from '../js/animaciones.js';
-import {setCookie,getCookie,changeCSS} from '../js/cookies.js';
+import {animacionesSalidaNav,animacionesEntradaNav,animacionHeader} from '../../js/animaciones.js';
+import {setCookie,getCookie,changeCSS} from '../../js/cookies.js';
 
 window.onload = function() {
         //getCookie("alto-contraste") == "true" ? changeCSS("../estilo/alto-contraste/ajustes-ac.css", 1) : changeCSS("../estilo/ajustes.css", 1);
@@ -63,8 +63,8 @@ window.onload = function() {
                                 cajaIdioma.classList.remove('visible');
                                 fondoPopup.classList.remove('visible');
                                 // Verificar si el idioma seleccionado es "Inglés"
-                                if (liIdioma[i].textContent.trim() === "Inglés") 
-                                        window.location.href = "../Ingles/ajustes/ajustesIngles.html";
+                                if (liIdioma[i].textContent.trim() === "Español") 
+                                        window.location.href = "../../ajustes/ajustes.html";
                                 //alert("Idioma cambiado a " + liIdioma[i].textContent);
 
                         }, 300);

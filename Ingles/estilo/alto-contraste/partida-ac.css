@@ -1,0 +1,20 @@
+@import "md-colors/light.css";
+@import "global-ac.css";
+@import "../partida.css";
+
+:root {
+    --azul: #568bff;
+    --amarillo:#ffa200;
+    --rojo:#ff60ba;
+    --gris:white;
+}
+
+body{
+    background: fixed;
+    background-color: white;
+}
+p{
+    background-color: white;
+    padding-right: 5px;
+    border-radius: .2rem;
+}

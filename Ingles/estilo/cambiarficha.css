@@ -1,0 +1,47 @@
+@import "md-colors/light.css";
+@import "global.css";
+
+body {
+    align-items: center;
+    height: 100vh;
+    margin-left: 2vw;
+    background-color: var(--colorFondoPagina);
+    overflow-y: hidden;
+    display:flex;
+}.titulo{
+    margin-left: 2vw;
+    margin-top: -15vh;
+}
+.contenedor{
+    position: relative; /*height: 10vh;*/
+    height: fit-content;
+    padding:1vh;
+}
+.contenedorFicha{
+    padding:1vh;
+    width: 60vh;
+    height: 60vh;    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+}.ficha{
+    background-color: white;
+    border: 2px solid black;
+    width: 25vh;
+    height: 25vh;
+    margin: 1vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3vh;
+}.ficha:hover{
+    background-color: lightgray;
+}.icono{
+    margin-left: 8.5vh;
+    margin-top: 1.8vh;
+}

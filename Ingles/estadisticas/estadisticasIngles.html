@@ -6,7 +6,7 @@
   <title>ALBAQuiz</title>
   <!-- Import Material Components -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="../estilo/estadisticas.css" rel="stylesheet">
+  <link id="stylesheet" href="../estilo/estadisticas.css" rel="stylesheet">
   <!-- Iconos-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
   <!-- Open Sans-->
@@ -32,7 +32,9 @@
 
 <body>
   <div id="pantalla">
-    <div class="titulo"><h1>Stats</h1></div>
+
+    <header><div id="titulo" class="titulo"><h1>Stats</h1></div></header>
+    
     <div class="contenedor">
         <md-ripple></md-ripple>
         <p class="text">Times played</p>
@@ -72,17 +74,17 @@
   <div class="bottom-nav" style="text-align: center; ">
     <a class="menuNotSelectedA" role="link" enlace="../indexIngles.html">
         <md-icon-button class="menu" label="Jugar"><md-icon>play_arrow</md-icon></md-icon-button>
-        <p style="color:black;"class="menutext">Jugar</p>
+        <p style="color:black;"class="menutext">Play</p>
     </a>
 
     <a id="menuSelectedA">
         <md-filled-button class="menuSelected" label="Estadísticas"><md-icon>list</md-icon></md-filled-button>
-        <p style="color:black;"class="menutext">Estadisticas</p>
+        <p style="color:black;"class="menutext">Stats</p>
     </a>
 
     <a class="menuNotSelectedA" role="link" enlace="../ajustes/ajustesIngles.html">
         <md-icon-button class="menu" label="Ajustes"><md-icon>settings</md-icon></md-icon-button>
-        <p style="color:black;"class="menutext";>Ajustes</p>
+        <p style="color:black;"class="menutext";>Settings</p>
     </a> 
   </div>
 </body>

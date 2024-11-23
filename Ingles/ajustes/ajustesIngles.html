@@ -6,7 +6,7 @@
   <title>ALBAQuiz</title>
   <!-- Import Material Components -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="../estilo/ajustes.css" rel="stylesheet">
+  <link id="stylesheet" href="../estilo/ajustes.css" rel="stylesheet">
   <!-- Iconos-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
   <!-- Open Sans-->
@@ -32,41 +32,59 @@
 
 <body>
   <div id="pantalla">
-    <div class="titulo"><h1>Settings</h1></div>
-    <div class="contenedor">
+
+    <header><div id="titulo" class="titulo"><h1>Settings</h1></div></header>
+
+    <div class="contenedor disabled">
         <md-ripple></md-ripple>
-        <md-switch class="switch"></md-switch>
+        <md-switch disabled class="switch" aria-label="Guardar estadisticas"></md-switch>
         <p class="text">Save stats</p>
         <p class="subtext">Save your player's stats</p>
     </div>
-    <div class="contenedor">
+    <div class="contenedor disabled">
         <md-ripple></md-ripple>
-        <md-switch class="switch"></md-switch>       
+        <md-switch disabled class="switch" aria-label="Activar sensores"></md-switch>       
         <p class="text">Sensors</p>
         <p class="subtext">Activate movement in the menu through sensors</p>
     </div>
-    <div class="contenedor">
-        <md-ripple></md-ripple>
-        <p class="text">Languajes</p>
-    </div>
-    <div class="espaciador"></div>
-    <md-divider inset-end "></md-divider>
-    <p class="textoDivider" style="margin-bottom: 0;">Personalization</p>
-    <div class="contenedor" style="margin-top: 0;">
-        <md-ripple></md-ripple>
-        <p class="text">More things</p>
-    </div>
-    <div class="contenedor" style="padding-bottom: 2vh;"> 
-      <p class="subtext" font-size:2vh">Number of players </p>
+    <div id="idioma" class="contenedor">
       <md-ripple></md-ripple>
-      <p class="text">Change piece</p>
-      
+      <p class="text">Languaje</p>
+      <p class="subtext">Change app's languaje</p>
     </div>
 
-    <div class="contenedor" style="margin-bottom: 15px;">
-      <md-outlined-text-field label="Points limit" type="number">
+    <div class="espaciador"></div>
+    <md-divider inset-end></md-divider>
+    <p class="textoDivider" style="margin-bottom: 0;">Accesibility</p>
+    <div class="contenedor" id="contraste">
+      <md-ripple></md-ripple>
+      <md-switch id="sContraste" class="switch" aria-label="Alto contraste"></md-switch>
+      <p class="text">High contrast</p>
+      <p class="subtext">High-contrast mode for the visually impaired</p>
+    </div>
+    <div class="contenedor" id="daltonismo">
+      <md-ripple></md-ripple>
+      <md-switch id="sDaltonismo" class="switch" aria-label="Modo daltonismo azul-amarillo"></md-switch>
+      <p class="text">Colour blind mode</p>
+      <p class="subtext">Blue-yellow colour-blindness mode that changes these colours</p>
+    </div>
+
+    <div class="espaciador"></div>
+    <md-divider inset-end></md-divider>
+    <p class="textoDivider" style="margin-bottom: 0;">Customization</p>
+
+    <div class="contenedor"> 
+      <a role="link" href="cambiarFicha/cambiarFicha.html" style="text-align: left; color: inherit; width: 40vh;"> 
+        <md-ripple></md-ripple>
+        <p class="text">Change token</p>
+        <p class="subtext">Change the token of each player</p>
+      </a>
+    </div>
+
+    <div class="contenedor" style="margin-bottom: 15px; margin-top: 15px;">
+      <md-outlined-text-field label="Point limit" type="number">
       </md-outlined-text-field>
-      <p class="subtext">Change the points limit to win a game</p>
+      <p class="subtext">Change the point limit to win a game</p>
     </div>
 
     <div class="contenedor"> 
@@ -86,6 +104,19 @@
       </md-outlined-select>
     </div>
   </div>
+  <!--Caja de seleccion de idioma-->
+  <div id="fondoPopup"></div>
+  <div class="Idioma" id="cajaIdioma">
+    <ul>
+      <li class="liIdioma"><md-radio id="Español" name="idiomas" value="Español"checked></md-radio>      
+      <label for="Español" class="iText">Español<md-ripple></md-ripple></label></li>
+
+      <li class="liIdioma"><md-radio id="Ingles" name="idiomas" value="Ingles"></md-radio>      
+      <label for="Ingles" class="iText">Inglés<md-ripple></md-ripple></label></li>
+    </ul>
+  </div>
+
+</div>
   <!-- Bottom Navigation -->
   <div class="bottom-nav" style="text-align: center; ">
     <a class="menuNotSelectedA" role="link" enlace="../indexIngles.html">

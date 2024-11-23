@@ -3,3 +3,6 @@
 @import "navbar.css";
 @import "ajustes.css";
 
+body {
+    height: 99vh;
+}

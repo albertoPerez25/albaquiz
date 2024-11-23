@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
 
   <!-- Import Material Components -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="estilo/styles.css" rel="stylesheet">
+  <link id="stylesheet" href="estilo/styles.css" rel="stylesheet">
   <!-- Iconos-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
   <!-- Open Sans-->
@@ -31,6 +31,8 @@
   <link rel="canonical" href="https://albertoperez25.github.io/albaquiz/">
   <!--PWA Manifest (para hacer web app)-->
   <link rel="manifest" href="../manifest.webmanifest" />
+  <!--Icono-->
+  <link rel="icon" type="image/x-icon" href="/imagenes/favicon.ico">
   <!-- Animaciones y mas-->
   <script type="module" src="../js/index.js"></script>
 </head>
@@ -45,7 +47,7 @@
       </div>
 
       <!-- Play Button -->
-      <md-elevated-button class="play-button" label="Play" leading-icon="play_arrow"href="partida/partidaIngles.html" style="--md-elevated-button-label-text-line-height: 2.5rem; font-size: 2rem;">Play</md-elevated-button>
+      <md-elevated-button class="play-button" label="Jugar" leading-icon="play_arrow" enlace="partida/partidaIngles.html" style="--md-elevated-button-label-text-line-height: 2.5rem; font-size: 2rem;">Play</md-elevated-button>
     </div>
 
     <!-- Mute Icon -->
@@ -74,7 +76,7 @@
     //Codigo para hacer instalable la PWA
     if (navigator.serviceWorker) {
       navigator.serviceWorker.register (
-        '/albaquiz/sw.js',
+        '../albaquiz/sw.js',
         {scope: '/albaquiz/'}
       )
     }

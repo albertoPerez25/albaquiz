@@ -1,4 +1,5 @@
 @import "md-colors/light.css";
+@import "../estilo/global.css";
 :root {
     --azul: #BCD1FF;
     --amarillo:#FFE6BC;
@@ -45,21 +46,27 @@ body{
     height: 1rem;
     font-weight: 400;
 }
-
+.icono{
+    position: relative;
+    margin-left: 4vw;
+    margin-top: 1vh;
+}
+#circulo{
+    margin-left: 3vw;
+}
 .jugadores{
     display:flex;
     justify-content: center;
     margin-top: .5vh;
     margin: auto;
     width: 5rem;
-   
 }
 .jugadores > div > div > p{
     font-weight: bold;
     font-size: small;
     margin-left: 1rem;
     margin-right: .5rem;
-    padding-top: 70%;
+    margin-top:0;
 }
 
 .jugadores > div .indicador{
@@ -67,6 +74,7 @@ body{
     height: 5.5rem;
     width: 5.5rem;
     border-radius: var(--radio);
+    margin-top: 1vh;
 }
 .jugadores > div .act{
     background-color: var(--selectBackground);
@@ -96,7 +104,19 @@ body{
     margin-right: 10%;
     text-align: right;
     font-size: 12px;
-} 
+} /* Casillas deshabilitadas (grises) */
+.box.gris {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Casillas activas */
+.box.clicable {
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+}
 .azul{
     background-color: var(--azul);
 }
@@ -141,7 +161,6 @@ body{
 }
 
 .salida {
-    display: block;
     position:fixed;
     width: 75vw;
     top: 73vh;
@@ -210,7 +229,6 @@ body{
 }
 #btnAtras{
     transform: translateY(.75cm);
-    
 }
 #dado{
     background-color: var(--rojo);
@@ -218,12 +236,24 @@ body{
     height: 6rem;
     width: 6rem;
     border-radius: var(--radio);
-    
 }
 #dado > div{
+    opacity:1;
     height: 50%;  
     width: 50%;
+    transition-duration: .25s;
 }
+
+#dado.seleccionando{
+    border: var(--bordeSelec);
+    filter:saturate(170%);
+    transition-duration: .1s;
+}
+
+#dado.seleccionando > div{
+    opacity:0;
+}
+
 #dAmarillo{
     background-color: var(--amarillo);
     border-bottom-left-radius: var(--radio);
@@ -250,6 +280,25 @@ body{
     margin-bottom: 0;
 }
 
+/* Animación de cambio de color para el dado 
+@keyframes cambioColorDado {
+    0% { background-color: var(--azul); }
+    25% { background-color: var(--amarillo) }
+    50% { background-color: var(--rojo) }
+    75% { background-color: var(--amarillo) }
+    100% { background-color: var(--azul)}
+}
+
+/* Estilo para el dado cuando está "seleccionando" el color 
+#dado.seleccionando {
+    animation: cambioColorDado 2s linear infinite;
+}
+
+/* Cuando el dado deja de animar, se detiene en el color seleccionado 
+#dado {
+    transition: background-color 0.5s ease-out; /* Para hacer que el color se suavice al final 
+}
+*/
 /*VISTA MOVIL*//*
 @media only screen and (max-width: 768px){
     .tablero{

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar Ficha</title>
+  <!-- Import Material Components -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="../../estilo/cambiarficha.css" rel="stylesheet">
+  <!-- Iconos-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <!-- Open Sans-->
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+   <!-- Material Components Script -->
+   <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+   <script type="module">
+    // Import individual Material components if needed
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+  
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <!-- Animacion de entrada-->
+  <script type="module" src="cambiarFicha.js"></script>
+</head>
+
+<body>
+    <div id="pantalla">
+        <div class="titulo"><h1>Cambiar Ficha</h1></div>
+        <div class="contenedor">
+          <md-icon-button id="atras" label="Atrás"><md-icon>arrow_back</md-icon></md-icon-button>
+        </div>
+
+        <div class="contenedorFicha">
+          <div class="ficha">
+            <div>
+              <img class="icono" src="../../imagenes/fichas/ficha1.png" alt="Ficha 1" width="100 vh">
+            </div>
+            <div>
+              <md-outlined-select>
+                <md-select-option selected value="Jugador 1">
+                  <div slot="headline">Jugador 1</div>
+                </md-select-option>
+                <md-select-option value="Jugador 2">
+                  <div slot="headline">Jugador 2</div>
+                </md-select-option>
+                <md-select-option value="Jugador 3">
+                  <div slot="headline">Jugador 3</div>
+                </md-select-option>
+                <md-select-option value="Jugador 4">
+                  <div slot="headline">Jugador 4</div>
+                </md-select-option>
+              </md-outlined-select>
+            </div>
+          </div>
+          <div class="ficha">
+            <div>
+              <img class="icono" src="../../imagenes/fichas/ficha2.png" alt="Ficha 2" width="100 vh">
+            </div>
+            <div>
+              <md-outlined-select>
+                <md-select-option value="Jugador 1">
+                  <div slot="headline">Jugador 1</div>
+                </md-select-option>
+                <md-select-option selected value="Jugador 2">
+                  <div slot="headline">Jugador 2</div>
+                </md-select-option>
+                <md-select-option value="Jugador 3">
+                  <div slot="headline">Jugador 3</div>
+                </md-select-option>
+                <md-select-option value="Jugador 4">
+                  <div slot="headline">Jugador 4</div>
+                </md-select-option>
+              </md-outlined-select>
+            </div>
+          </div>
+          <div class="ficha">
+            <div>
+              <img class="icono" src="../../imagenes/fichas/ficha3.png" alt="Ficha 3" width="100 vh">
+            </div>
+            <div>
+              <md-outlined-select>
+                <md-select-option value="Jugador 1">
+                  <div slot="headline">Jugador 1</div>
+                </md-select-option>
+                <md-select-option value="Jugador 2">
+                  <div slot="headline">Jugador 2</div>
+                </md-select-option>
+                <md-select-option selected value="Jugador 3">
+                  <div slot="headline">Jugador 3</div>
+                </md-select-option>
+                <md-select-option value="Jugador 4">
+                  <div slot="headline">Jugador 4</div>
+                </md-select-option>
+              </md-outlined-select>
+            </div>
+          </div>
+          <div class="ficha">
+            <div>
+              <img class="icono" src="../../imagenes/fichas/ficha4.png" alt="Ficha 4" width="100 vh">
+            </div>
+            <div>
+              <md-outlined-select>
+                <md-select-option value="Jugador 1">
+                  <div slot="headline">Jugador 1</div>
+                </md-select-option>
+                <md-select-option value="Jugador 2">
+                  <div slot="headline">Jugador 2</div>
+                </md-select-option>
+                <md-select-option value="Jugador 3">
+                  <div slot="headline">Jugador 3</div>
+                </md-select-option>
+                <md-select-option  selected value="Jugador 4">
+                  <div slot="headline">Jugador 4</div>
+                </md-select-option>
+              </md-outlined-select>
+            </div>
+          </div>
+        </div>
+</body>
+</html>
