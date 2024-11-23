@@ -117,6 +117,6 @@ window.onload = function() {
                 document.querySelector('#pantalla').style.opacity = 0;
                 setTimeout(function() { 
                         window.location.href = divCambiarFicha.getAttribute('enlace');
-                }, 200);
+                }, 100);
         });
 }
