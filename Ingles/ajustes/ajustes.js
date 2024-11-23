@@ -13,6 +13,7 @@ window.onload = function() {
         const fondoPopup = document.getElementById("fondoPopup");
         const sDaltonismo = document.getElementById("sDaltonismo");
         const divDaltonismo = document.getElementById("daltonismo");
+        const divCambiarFicha = document.getElementById("cambiarFicha");
         //Cookies
         let contraste = (/true/).test(getCookie("alto-contraste"));
         let daltonismo = (/true/).test(getCookie("daltonismo"));
@@ -110,5 +111,12 @@ window.onload = function() {
                                 divContraste.classList.remove("disabled");
                         }
                 }
+        });
+
+        divCambiarFicha.addEventListener('click', () => {
+                document.querySelector('#pantalla').style.opacity = 0;
+                setTimeout(function() { 
+                        window.location.href = divCambiarFicha.getAttribute('enlace');
+                }, 200);
         });
 }
