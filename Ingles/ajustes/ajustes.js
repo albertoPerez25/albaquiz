@@ -2,7 +2,6 @@ import {animacionesSalidaNav,animacionesEntradaNav,animacionHeader} from '../../
 import {setCookie,getCookie,changeCSS} from '../../js/cookies.js';
 
 window.onload = function() {
-        //getCookie("alto-contraste") == "true" ? changeCSS("../estilo/alto-contraste/ajustes-ac.css", 1) : changeCSS("../estilo/ajustes.css", 1);
         animacionesEntradaNav();
         animacionesSalidaNav();
         const btnIdioma = document.getElementById("idioma");
@@ -67,7 +66,6 @@ window.onload = function() {
                                 if (liIdioma[i].textContent.trim() === "Spanish") 
                                         window.location.href = "../../ajustes/ajustes.html";
                                 //alert("Idioma cambiado a " + liIdioma[i].textContent);
-
                         }, 300);
                 });
         }

@@ -9,5 +9,4 @@ window.onload = function() {
         animacionesSalidaNav();
         //Efecto header hacerse pequeño al deslizar
         animacionHeader();
-
 }
