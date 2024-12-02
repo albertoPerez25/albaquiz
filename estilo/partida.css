@@ -158,6 +158,8 @@ body{
     transform: scale(1);
     z-index: 1;
     
+}#cajaPreguntaAzul{
+    background-color: var(--azul);
 }
 
 .salida {
