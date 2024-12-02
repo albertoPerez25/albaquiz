@@ -2,7 +2,6 @@ import {animacionesSalidaNav,animacionesEntradaNav,animacionHeader} from '../../
 import {setCookie,getCookie,changeCSS} from '../../js/cookies.js';
 
 window.onload = function() {
-        //getCookie("alto-contraste") == "true" ? changeCSS("../estilo/alto-contraste/ajustes-ac.css", 1) : changeCSS("../estilo/ajustes.css", 1);
         animacionesEntradaNav();
         animacionesSalidaNav();
         const btnIdioma = document.getElementById("idioma");
@@ -13,6 +12,7 @@ window.onload = function() {
         const fondoPopup = document.getElementById("fondoPopup");
         const sDaltonismo = document.getElementById("sDaltonismo");
         const divDaltonismo = document.getElementById("daltonismo");
+        const divCambiarFicha = document.getElementById("cambiarFicha");
         //Cookies
         let contraste = (/true/).test(getCookie("alto-contraste"));
         let daltonismo = (/true/).test(getCookie("daltonismo"));
@@ -63,10 +63,9 @@ window.onload = function() {
                                 cajaIdioma.classList.remove('visible');
                                 fondoPopup.classList.remove('visible');
                                 // Verificar si el idioma seleccionado es "Inglés"
-                                if (liIdioma[i].textContent.trim() === "Español") 
+                                if (liIdioma[i].textContent.trim() === "Spanish") 
                                         window.location.href = "../../ajustes/ajustes.html";
                                 //alert("Idioma cambiado a " + liIdioma[i].textContent);
-
                         }, 300);
                 });
         }
@@ -110,5 +109,12 @@ window.onload = function() {
                                 divContraste.classList.remove("disabled");
                         }
                 }
+        });
+
+        divCambiarFicha.addEventListener('click', () => {
+                document.querySelector('#pantalla').style.opacity = 0;
+                setTimeout(function() { 
+                        window.location.href = divCambiarFicha.getAttribute('enlace');
+                }, 100);
         });
 }

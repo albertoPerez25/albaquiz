@@ -25,6 +25,9 @@ window.onload = function () {
     const puntuacion = document.getElementById('puntuacion');
     const jugadorActualTexto = document.getElementById('jugador');
     const audioDado = new Audio('../audio/Guitarra1Edited.mp3');
+    const audioCorrecta = new Audio('../audio/RespuestaCorrecta.m4a');
+    const audioIncorrecta = new Audio('../audio/RespuestaIncorrecta.m4a');
+
 
     //Variables con los colores de css para animar el dado
     const amarillo = getComputedStyle(document.documentElement)
@@ -56,6 +59,7 @@ window.onload = function () {
         cajaSalida.classList.remove('visible');
         fondoSalida.classList.remove('visible');
     });
+
     fondoSalida.addEventListener('click', () => {
         cajaSalida.classList.remove('visible');
         fondoSalida.classList.remove('visible');
@@ -89,7 +93,6 @@ window.onload = function () {
     function tirarDado() {
         
         dado.classList.add('seleccionando');
-
         
         let iteraciones = 13;
         let iteracionActual = 0;
@@ -143,33 +146,6 @@ window.onload = function () {
     
         cambiarColor();
         inicializarCasillas();
-   
-        /*
-        // Colores posibles para el dado (coinciden con los colores de las casillas)
-        const colores = ['rojo', 'azul', 'amarillo'];
-        const colorSeleccionado = colores[Math.floor(Math.random() * colores.length)];
-
-        // Restablecer el estado visual de todas las casillas
-        inicializarCasillas();
-
-        // Activar la animación en el dado (cambiando colores durante 2 segundos)
-        dado.classList.add('seleccionando');
-        
-        // Después de 2 segundos, detener la animación y asignar el color final al dado
-        setTimeout(() => {
-            dado.classList.remove('seleccionando');
-            dado.style.backgroundColor = colorSeleccionado; // Establecer el color final del dado
-            alert(`Color obtenido: ${colorSeleccionado.toUpperCase()}`);
-
-            // Destacar las casillas correspondientes al color y deshabilitar el resto
-            casillas.forEach(casilla => {
-                if (casilla.classList.contains(colorSeleccionado)) {
-                    casilla.classList.add('clicable'); // Habilitar
-                } else {
-                    casilla.classList.add('gris'); // Deshabilitar
-                }
-            });
-        }, 2000); // Duración de la animación (2 segundos)*/
     }
 
     // Función para manejar la selección de una casilla
@@ -189,8 +165,14 @@ window.onload = function () {
             if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
                 puntajes[turnoActual] += 10;
                 puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
+                //AUDIO CORRECTO
+                audioCorrecta.play();
+                window.navigator.vibrate([30, 50, 30]);
                 alert('Respuesta correcta!');
             } else {
+                //AUDIO INCORRECTO
+                audioIncorrecta.play();
+                window.navigator.vibrate([500]);
                 alert('Respuesta incorrecta!');
             }
             preguntaCaja.classList.remove('visible');
