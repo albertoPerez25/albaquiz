@@ -138,7 +138,8 @@ body{
     display: block;
     position:fixed;
     width: 80%;
-    top: 70%;
+    top: 10%;
+    height: fit-content;
     margin-left:5%;
     margin-right: 5%;
     /*Lo pone en medio:*/
@@ -159,7 +160,25 @@ body{
     z-index: 1;
     
 }#cajaPreguntaAzul{
-    background-color: var(--azul);
+    background-color: var(--colorFondo);
+}
+.RespuestaAzul{
+    position: center;
+    align-items: center;
+}#ubi-button{
+    transform: scale(2.5);
+    width: fit-content;
+    height: fit-content;
+    margin-left: 32.5vw;
+    margin-top: 12.5vh;
+}#ayudaUbi{
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--colorFondo);
+    transform:scale(1.12);
+    margin-left: 3vw;
+}.azulAbajo{
+    margin-top: 20vh;
 }
 
 .salida {

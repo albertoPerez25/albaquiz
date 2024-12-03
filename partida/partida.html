@@ -78,10 +78,22 @@
         <div class="box rojo" id="eBR"><p>9</p></div> 
     </div>
     <div class="pregunta" id="cajaPreguntaAzul">
-        <h2>Pregunta:</h2>
+        <h2>Ubicaciones</h2>
         <p id="preguntaTexto">¿Cual es la capital de Albacete?</p>
-        <input type="text" id="respuesta">
-        <button id="aceptar">Aceptar</button>
+        <div class="RespuestaAzul">
+            <md-fab id="ubi-button"><md-icon slot="icon">location_on</md-icon></md-fab>
+        </div>
+        <div class="azulAbajo">
+            <p style="font-size: 16px;">¿Muy dificil? Averigua donde estás</p>
+            <div style="display:grid; grid-template-columns: 1fr 1fr;">
+                <md-elevated-button id="ayudaUbi">¿Donde estoy?</md-elevated-button>
+                <div style="font-size: 16px; width:fit-content; margin-top: -2.5vh;">
+                    <p>Solo 1 uso y x0.5</p>
+                    <p>puntos</p>
+                </div>
+            </div>
+        </div>
+        
     </div>
     <div class="pregunta" id="cajaPreguntaRoja">
         <h2>Pregunta:</h2>
