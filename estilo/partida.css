@@ -161,6 +161,8 @@ body{
     
 }#cajaPreguntaAzul{
     background-color: var(--colorFondo);
+    min-height:70vh;
+    border: 1px solid black;
 }
 .RespuestaAzul{
     position: center;
@@ -179,6 +181,19 @@ body{
     margin-left: 3vw;
 }.azulAbajo{
     margin-top: 20vh;
+}
+
+#cajaPreguntaRoja{
+    background-color: #FFD7F6;
+    min-height:70vh;
+    border: 1px solid black;
+}#answer-button{
+    transform: scale(2.5);
+    width: fit-content;
+    height: fit-content;
+    margin-left: 32.5vw;
+    margin-top: 12.5vh;
+    color:#FFD7F6
 }
 
 .salida {
