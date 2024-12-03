@@ -18,7 +18,10 @@ window.onload = function () {
     const jugadores = Array.from(document.getElementsByClassName('jugador'));
     const dado = document.getElementById('dado');
     const casillas = Array.from(document.querySelectorAll('.box'));
-    const preguntaCaja = document.getElementById('cajaPreguntaAzul');
+    const preguntaCaja = document.getElementsByClassName('pregunta');
+    const preguntaCajaAzul = document.getElementById('cajaPreguntaAzul');
+    const preguntaCajaAmarilla = document.getElementById('cajaPreguntaAmarilla');
+    const preguntaCajaRoja = document.getElementById('cajaPreguntaRojo');
     const preguntaTexto = document.getElementById('preguntaTexto');
     const respuestaInput = document.getElementById('respuesta');
     const aceptarBoton = document.getElementById('aceptar');
@@ -150,15 +153,31 @@ window.onload = function () {
 
     // Función para manejar la selección de una casilla
     function seleccionarCasilla(event) {
+        var color;
         const casilla = event.target.closest('.box');
         if (!casilla || !casilla.classList.contains('clicable')) {
             return; // Ignorar clic en casillas no válidas
         }
 
+        switch (casilla.classList[1]){
+            case 'amarillo':
+                color = 'amarillo';
+                preguntaCajaAmarilla.classList.add('visible');
+                break;
+            case 'rojo':
+                color = 'rojo';
+                preguntaCajaRoja.classList.add('visible');
+                break;
+            case 'azul':
+                color = 'azul';
+                preguntaCajaAzul.classList.add('visible');
+                break;
+        }
+
         // Mostrar la pregunta
         const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
+
         preguntaTexto.innerText = pregunta.texto;
-        preguntaCaja.classList.add('visible');
 
         aceptarBoton.onclick = () => {
             const respuesta = respuestaInput.value.trim();
@@ -175,7 +194,19 @@ window.onload = function () {
                 window.navigator.vibrate([500]);
                 alert('Respuesta incorrecta!');
             }
-            preguntaCaja.classList.remove('visible');
+            
+            switch(color){
+                case 'amarillo':
+                    preguntaCajaAmarilla.classList.remove('visible');
+                    break;
+                case 'rojo':
+                    preguntaCajaRoja.classList.remove('visible');
+                    break;
+                case 'azul':
+                    preguntaCajaAzul.classList.remove('visible');
+                    break;
+            }
+
             respuestaInput.value = '';
             siguienteTurno();
 
