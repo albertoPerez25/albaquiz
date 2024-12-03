@@ -194,6 +194,17 @@ body{
     margin-left: 32.5vw;
     margin-top: 12.5vh;
     color:#FFD7F6
+}#cajaPreguntaAmarilla{
+    background-color: var(--amarillo);
+    min-height:70vh;
+    border: 1px solid black;
+}#answer-button{
+    transform: scale(2.5);
+    width: fit-content;
+    height: fit-content;
+    margin-left: 32.5vw;
+    margin-top: 12.5vh;
+    color:#FFD7F6
 }
 
 .salida {
