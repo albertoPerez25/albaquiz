@@ -197,7 +197,7 @@ window.onload = function () {
                 aceptarBoton = aceptarBotonAmarilla;
                 logicaPreguntaAmarilla();
                 break;
-            case 'rojo':grados,IzqDer,ArrAba
+            case 'rojo':
                 preguntaCajaRoja.classList.add('visible');
                 window.addEventListener('deviceorientation', function(){orientacion();});
                 //window.removeEventListener('devicemotion', function(){orientacion();})
@@ -241,7 +241,7 @@ window.onload = function () {
 
         
         preguntaCajaRoja.classList.remove('visible');
-        aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
+        //aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
    
         siguienteTurno();
 
