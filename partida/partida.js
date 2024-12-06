@@ -213,6 +213,7 @@ window.onload = function () {
     }
 
     function aceptarRespuestaRojo(grados,IzqDer,ArrAba) {
+        window.alert("Listener boton")
         tituloRespuesta[0].innerText = 'Orientacion';
         window.removeEventListener('devicemotion', function(){orientacion();})
 
