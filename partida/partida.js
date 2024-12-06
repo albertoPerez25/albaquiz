@@ -60,7 +60,7 @@ window.onload = function () {
         { texto: "¿Cuántos continentes existen?", respuesta: "7" }
     ];
 
-    let grados = 0;
+    let grados = 69;
 
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
     function orientacion(eventData){
@@ -73,7 +73,7 @@ window.onload = function () {
         let ArrAba = eventData.beta;
 
     }
-    aceptarBotonRoja.addEventListener('click', function(){window.alert("en el listener");aceptarRespuestaRojo()});
+    aceptarBotonRoja.addEventListener('click', function(){window.alert(grados);aceptarRespuestaRojo()});
 
     // Evento de retroceder
     atras.addEventListener('click', () => {
@@ -197,7 +197,7 @@ window.onload = function () {
                 aceptarBoton = aceptarBotonAmarilla;
                 logicaPreguntaAmarilla();
                 break;
-            case 'rojo':
+            case 'rojo':grados,IzqDer,ArrAba
                 preguntaCajaRoja.classList.add('visible');
                 window.addEventListener('deviceorientation', function(){orientacion();});
                 //window.removeEventListener('devicemotion', function(){orientacion();})
@@ -215,7 +215,7 @@ window.onload = function () {
     }
 
     function aceptarRespuestaRojo() {
-        window.alert("Listener boton")
+        window.alert("Listener boton"+grados)
         tituloRespuesta[0].innerText = 'Orientacion';
         window.removeEventListener('devicemotion', function(){orientacion();})
 
@@ -241,7 +241,7 @@ window.onload = function () {
 
         
         preguntaCajaRoja.classList.remove('visible');
-        aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
+        //aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
    
         siguienteTurno();
 
