@@ -200,7 +200,7 @@ window.onload = function () {
                 break;
             case 'rojo':
                 preguntaCajaRoja.classList.add('visible');
-                window.addEventListener('deviceorientation', function(){orientacion();});
+                window.addEventListener('deviceorientationabsolute', (event) => {orientacion(event);});
                 //window.removeEventListener('devicemotion', function(){orientacion();})
                 break;
             case 'azul':
