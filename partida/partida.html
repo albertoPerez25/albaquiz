@@ -81,12 +81,12 @@
         <h2>Ubicaciones</h2>
         <p id="preguntaTexto">¿Cual es la capital de Albacete?</p>
         <div class="aceptarBoton">
-            <md-fab id="ubi-button"><md-icon slot="icon">location_on</md-icon></md-fab>
+            <md-fab lowered id="ubi-button" class="bazul"><md-icon slot="icon">location_on</md-icon></md-fab>
         </div>
         <div class="azulAbajo">
             <p style="font-size: 16px;">¿Muy dificil? Averigua donde estás</p>
             <div style="display:grid; grid-template-columns: 1fr 1fr;">
-                <md-elevated-button id="ayudaUbi">¿Donde estoy?</md-elevated-button>
+                <md-outlined-button id="ayudaUbi">¿Donde estoy?</md-outlined-button>
                 <div style="font-size: 16px; width:fit-content; margin-top: -2.5vh;">
                     <p>Solo 1 uso y x0.5</p>
                     <p>puntos</p>
@@ -96,19 +96,41 @@
     </div>
     <div class="pregunta" id="cajaPreguntaRoja">
         <h2>Orientación</h2>
-        <p id="preguntaTexto">¿Cual es la capital de Albacete?</p>
+        <p class="preguntaTexto">¿Cual es la capital de Albacete?</p>
         <div class="aceptarBoton">
-            <md-fab variant="surface" id="answer-button">
+            <md-fab lowered variant="surface" id="rojo-button" class="answer-button brojo">
                 <md-icon slot="icon">check</md-icon>
             </md-fab>
         </div>
     </div>
     <div class="pregunta" id="cajaPreguntaAmarilla">
         <h2>Idiomas</h2>
-        <p id="preguntaTexto">¿Cual es la capital de Albacete?</p>
+        <p class="preguntaTexto">¿Cual es la capital de Albacete?</p>
         <div class="aceptarBoton">
-            <md-fab variant="surface" id="answer-button">
+            <md-fab lowered variant="surface" id="amarillo-button" class="answer-button bamarillo">
                 <md-icon slot="icon">mic</md-icon>
+            </md-fab>
+        </div>
+    </div>
+    <div class="pregunta" id="respuestaCorrecta">
+        <h2 class="tituloRespuesta">Idiomas</h2>
+        <p class="preguntaTexto">¡Respuesta correcta!</p>
+        <p id="puntuacionCaja" class="preguntaTexto puntuacion">+ 10 ptos</p>
+        <md-icon class="iconoRespuesta" slot="icon">check</md-icon>
+        <div class="aceptarBoton">
+            <md-fab lowered variant="surface" id="ok-button" class="answer-button bverdeRespuesta">
+                <md-icon slot="icon">arrow_back</md-icon>
+            </md-fab>
+        </div>
+    </div>
+    <div class="pregunta" id="respuestaIncorrecta">
+        <h2 class="tituloRespuesta">Idiomas</h2>
+        <p class="preguntaTexto">Respuesta incorrecta :(</p>
+        <p class="preguntaTexto">+ 0 ptos</p>
+        <md-icon class="iconoRespuesta" slot="icon">close</md-icon>
+        <div class="aceptarBoton">
+            <md-fab lowered variant="surface" id="notok-button" class="answer-button brojoRespuesta">
+                <md-icon slot="icon">arrow_back</md-icon>
             </md-fab>
         </div>
     </div>

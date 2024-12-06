@@ -4,6 +4,13 @@
     --azul: #BCD1FF;
     --amarillo:#FFE6BC;
     --rojo:#FFC4E5;
+    --rojoMal: #FFC2C2;
+    --verdeBien: #DCFFED;
+    --azulFondo: #F2F4FF;
+    --amarilloFondo: #fff5d5;
+    --rojoFondo:#FFF2FF;
+    --verdeFondo: #F2FFFB;
+    --rojoMalFondo:#FFE2E2;
     --gris:#D9D9D9;
     --radio: 1.5rem;
     --borde: 1px solid black;
@@ -87,17 +94,17 @@ body{
     justify-content: center;
     border-radius: 120px;
     padding: 0;
-   }
+}
 .box {
     border: 1px solid black;
     cursor: pointer;
-   } 
+} 
 .box:hover {
     /*background-color: #c2c2c2;*/
     filter:brightness(120%);
     border: 2px solid black;
     transition-duration: .25s;
-   }
+}
 .box > p{
     font-weight: bold;
     margin-top: 85%;
@@ -148,7 +155,6 @@ body{
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: var(--radio);
-    background-color: whitesmoke;
     transform: scale(0.8);
     transition: all 0.5s ease-in-out;
     opacity: 0;
@@ -158,11 +164,13 @@ body{
     opacity: 1;
     transform: scale(1);
     z-index: 1;
-    
-}#cajaPreguntaAzul{
-    background-color: var(--colorFondo);
     min-height:70vh;
-    border: 1px solid black;
+    border: 1px solid black;  
+    --md-fab-icon-color: black;
+}
+#cajaPreguntaAzul{
+    --md-fab-lowered-container-color:var(--azul);
+    background-color: var(--azulFondo);
 }
 .RespuestaAzul{
     position: center;
@@ -173,32 +181,25 @@ body{
     height: fit-content;
     margin-left: 32.5vw;
     margin-top: 12.5vh;
+    
 }#ayudaUbi{
     width: fit-content;
     height: fit-content;
-    background-color: var(--colorFondo);
+    background-color: var(--azulFondo);
     transform:scale(1.12);
     margin-left: 3vw;
 }.azulAbajo{
     margin-top: 20vh;
 }
-
 #cajaPreguntaRoja{
-    background-color: #FFD7F6;
-    min-height:70vh;
-    border: 1px solid black;
-}#answer-button{
-    transform: scale(2.5);
-    width: fit-content;
-    height: fit-content;
-    margin-left: 32.5vw;
-    margin-top: 12.5vh;
-    color:#FFD7F6
-}#cajaPreguntaAmarilla{
-    background-color: var(--amarillo);
-    min-height:70vh;
-    border: 1px solid black;
-}#answer-button{
+    --md-fab-lowered-container-color:var(--rojo);
+    background-color: var(--rojoFondo);
+}
+#cajaPreguntaAmarilla{
+    --md-fab-lowered-container-color:var(--amarillo);
+    background-color: var(--amarilloFondo);
+}
+.answer-button{
     transform: scale(2.5);
     width: fit-content;
     height: fit-content;

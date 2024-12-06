@@ -18,14 +18,24 @@ window.onload = function () {
     const jugadores = Array.from(document.getElementsByClassName('jugador'));
     const dado = document.getElementById('dado');
     const casillas = Array.from(document.querySelectorAll('.box'));
-    const preguntaCaja = document.getElementsByClassName('pregunta');
+    //const preguntaCaja = document.getElementsByClassName('pregunta');
     const preguntaCajaAzul = document.getElementById('cajaPreguntaAzul');
     const preguntaCajaAmarilla = document.getElementById('cajaPreguntaAmarilla');
     const preguntaCajaRoja = document.getElementById('cajaPreguntaRoja');
+    const RespuestaCorrecta = document.getElementById('respuestaCorrecta');
+    const RespuestaIncorrecta = document.getElementById('respuestaIncorrecta');
+    const tituloRespuesta = document.getElementsByClassName('tituloRespuesta')
     const preguntaTexto = document.getElementById('preguntaTexto');
     const respuestaInput = document.getElementById('respuesta');
-    const aceptarBoton = document.getElementById('aceptar');
+    //const aceptarBoton = document.getElementsByClassName('aceptar');
+    const aceptarBotonAzul = document.getElementById('ubi-button');
+    const aceptarBotonAmarilla = document.getElementById('amarillo-button');
+    const aceptarBotonRoja = document.getElementById('rojo-button');
+    const aceptarCorrecta = document.getElementById('ok-button');
+    const aceptarIncorrecta = document.getElementById('notok-button');
+    //
     const puntuacion = document.getElementById('puntuacion');
+    const puntuacionCaja = document.getElementById('puntuacionCaja');
     const jugadorActualTexto = document.getElementById('jugador');
     const audioDado = new Audio('../audio/Guitarra1Edited.mp3');
     const audioCorrecta = new Audio('../audio/RespuestaCorrecta.m4a');
@@ -49,6 +59,19 @@ window.onload = function () {
         { texto: "¿Quién pintó la Mona Lisa?", respuesta: "Leonardo da Vinci" },
         { texto: "¿Cuántos continentes existen?", respuesta: "7" }
     ];
+
+    //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
+    function orientacion(eventData){
+        window.alert("orientacion")
+        //direccion a donde apunta el dispositivo
+        let grados = eventData.alpha;
+        //Inclinar hacia izquierda o derecha. Hacia la derecha es positivo
+        let IzqDer = eventData.gamma;
+        //Inclinar hacia arriba o abajo. Hacia arriba es positivo
+        let ArrAba = eventData.beta;
+
+        aceptarBotonRoja.addEventListener('click', function(){aceptarRespuestaRojo(grados, IzqDer, ArrAba)});
+    }
 
     // Evento de retroceder
     atras.addEventListener('click', () => {
@@ -82,6 +105,7 @@ window.onload = function () {
         casillas.forEach(casilla => {
             casilla.classList.remove('gris', 'clicable');
         });
+        dado.classList.add('clicable');
     }
 
     // Función para el siguiente turno
@@ -94,13 +118,16 @@ window.onload = function () {
 
     // Función para tirar el dado
     function tirarDado() {
-        
+        if (!dado.classList.contains('clicable')) {
+            return; // Ignorar clic 
+        }
+
         dado.classList.add('seleccionando');
         
         let iteraciones = 13;
         let iteracionActual = 0;
         let ultimoColor = null;
-    
+        
         function cambiarColor() {
             if (iteracionActual >= iteraciones) {
                 audioDado.play();
@@ -128,7 +155,7 @@ window.onload = function () {
             const colorRandom = coloresDisponibles[Math.floor(Math.random() * coloresDisponibles.length)];
             dado.style.backgroundColor = colorRandom;
             ultimoColor = colorRandom;
-
+            ultimoColor = rojo;
             iteracionActual++;
             // Calcular retraso nuevo
             const retraso = 10 + (iteracionActual/4 * 50) * iteracionActual/4;
@@ -145,6 +172,7 @@ window.onload = function () {
                     casilla.classList.add('gris'); // Deshabilitar
                 }
             });
+            dado.classList.remove('clicable');
         }
     
         cambiarColor();
@@ -154,66 +182,70 @@ window.onload = function () {
     // Función para manejar la selección de una casilla
     function seleccionarCasilla(event) {
         var color;
+        var aceptarBoton;
         const casilla = event.target.closest('.box');
         if (!casilla || !casilla.classList.contains('clicable')) {
             return; // Ignorar clic en casillas no válidas
         }
 
-        switch (casilla.classList[1]){
+        color = casilla.classList[1]
+        switch (color){
             case 'amarillo':
-                color = 'amarillo';
                 preguntaCajaAmarilla.classList.add('visible');
+                aceptarBoton = aceptarBotonAmarilla;
+                logicaPreguntaAmarilla();
                 break;
             case 'rojo':
-                color = 'rojo';
                 preguntaCajaRoja.classList.add('visible');
+                window.addEventListener('deviceorientation', function(){orientacion();});
+                //window.removeEventListener('devicemotion', function(){orientacion();})
                 break;
             case 'azul':
-                color = 'azul';
                 preguntaCajaAzul.classList.add('visible');
+                aceptarBoton = aceptarBotonAzul;
+                logicaPreguntaAzul();
                 break;
         }
 
-        // Mostrar la pregunta
-        const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
+        // Mostrar la preguntaorientacion
+        //const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
+ 
+    }
 
-        preguntaTexto.innerText = pregunta.texto;
+    function aceptarRespuestaRojo(grados,IzqDer,ArrAba) {
+        tituloRespuesta[0].innerText = 'Orientacion';
+        window.removeEventListener('devicemotion', function(){orientacion();})
 
-        aceptarBoton.onclick = () => {
-            const respuesta = respuestaInput.value.trim();
-            if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
-                puntajes[turnoActual] += 10;
-                puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
+        //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
+        if (grados<150 && grados>0){
+            puntajes[turnoActual] += 10;
+            puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
+            puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
+            RespuestaCorrecta.classList.add('visible');
+            setTimeout(function() {
                 //AUDIO CORRECTO
                 audioCorrecta.play();
                 window.navigator.vibrate([30, 50, 30]);
                 alert('Respuesta correcta!');
-            } else {
-                //AUDIO INCORRECTO
-                audioIncorrecta.play();
-                window.navigator.vibrate([500]);
-                alert('Respuesta incorrecta!');
-            }
-            
-            switch(color){
-                case 'amarillo':
-                    preguntaCajaAmarilla.classList.remove('visible');
-                    break;
-                case 'rojo':
-                    preguntaCajaRoja.classList.remove('visible');
-                    break;
-                case 'azul':
-                    preguntaCajaAzul.classList.remove('visible');
-                    break;
-            }
+            }, 300);
 
-            respuestaInput.value = '';
-            siguienteTurno();
+        } else {
+            //AUDIO INCORRECTO
+            audioIncorrecta.play();
+            window.navigator.vibrate([500]);
+            alert('Respuesta incorrecta!');
+        }
 
-            // Restaurar casillas para el siguiente turno
-            inicializarCasillas();
-        };
-    }
+        
+        preguntaCajaRoja.classList.remove('visible');
+        aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
+   
+        siguienteTurno();
+
+        // Restaurar casillas para el siguiente turno
+        inicializarCasillas();
+    };
+
 
     // Agregar eventos
     dado.addEventListener('click', tirarDado);
@@ -222,6 +254,8 @@ window.onload = function () {
     // Inicialización de la partida
     inicializarCasillas();
     document.querySelector('body').style.opacity = 1;
+
+
 };
 
 

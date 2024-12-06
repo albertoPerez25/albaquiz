@@ -1,5 +1,5 @@
 window.onload = function(){
-    window.addEventListener('deviceorientation', (eventData) => {
+    window.addEventListener('deviceorientationabsolute', (eventData) => {
         //direccion a donde apunta el dispositivo
         const grados = eventData.alpha;
         //Inclinar hacia izquierda o derecha. Hacia la derecha es positivo
