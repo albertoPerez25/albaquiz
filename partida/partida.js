@@ -70,7 +70,7 @@ window.onload = function () {
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
-        aceptarBotonRoja.addEventListener('click', function(){aceptarRespuestaRojo(grados, IzqDer, ArrAba)});
+        aceptarBotonRoja.addEventListener('click', function(){window.alert("en el listener");aceptarRespuestaRojo(grados, IzqDer, ArrAba)});
     }
 
     // Evento de retroceder
