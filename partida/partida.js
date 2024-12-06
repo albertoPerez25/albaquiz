@@ -62,7 +62,7 @@ window.onload = function () {
 
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
     function orientacion(eventData){
-        window.alert("orientacion")
+        //window.alert("orientacion")
         //direccion a donde apunta el dispositivo
         let grados = eventData.alpha;
         //Inclinar hacia izquierda o derecha. Hacia la derecha es positivo
