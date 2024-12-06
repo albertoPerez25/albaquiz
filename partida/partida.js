@@ -60,18 +60,20 @@ window.onload = function () {
         { texto: "¿Cuántos continentes existen?", respuesta: "7" }
     ];
 
+    let grados = 0;
+
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
     function orientacion(eventData){
         //window.alert("orientacion")
         //direccion a donde apunta el dispositivo
-        let grados = eventData.alpha;
+        grados = eventData.alpha;
         //Inclinar hacia izquierda o derecha. Hacia la derecha es positivo
         let IzqDer = eventData.gamma;
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
-        aceptarBotonRoja.addEventListener('click', function(){window.alert("en el listener");aceptarRespuestaRojo(grados, IzqDer, ArrAba)});
     }
+    aceptarBotonRoja.addEventListener('click', function(){window.alert("en el listener");aceptarRespuestaRojo()});
 
     // Evento de retroceder
     atras.addEventListener('click', () => {
@@ -212,7 +214,7 @@ window.onload = function () {
  
     }
 
-    function aceptarRespuestaRojo(grados,IzqDer,ArrAba) {
+    function aceptarRespuestaRojo() {
         window.alert("Listener boton")
         tituloRespuesta[0].innerText = 'Orientacion';
         window.removeEventListener('devicemotion', function(){orientacion();})
