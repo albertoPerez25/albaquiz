@@ -59,7 +59,7 @@ window.onload = function () {
         { texto: "¿Quién pintó la Mona Lisa?", respuesta: "Leonardo da Vinci" },
         { texto: "¿Cuántos continentes existen?", respuesta: "7" }
     ];
-
+    const debug = document.getElementById("debug");
     let grados = 69;
 
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
@@ -67,6 +67,7 @@ window.onload = function () {
         //window.alert("orientacion")
         //direccion a donde apunta el dispositivo
         grados = eventData.alpha;
+        debug.innerText = "alpha: "+grados;
         //Inclinar hacia izquierda o derecha. Hacia la derecha es positivo
         let IzqDer = eventData.gamma;
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
