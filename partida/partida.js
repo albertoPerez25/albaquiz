@@ -241,7 +241,7 @@ window.onload = function () {
 
         
         preguntaCajaRoja.classList.remove('visible');
-        //aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
+        aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
    
         siguienteTurno();
 
