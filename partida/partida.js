@@ -60,6 +60,7 @@ window.onload = function () {
         { texto: "¿Cuántos continentes existen?", respuesta: "7" }
     ];
     const debug = document.getElementById("debug");
+    const debug2 = document.getElementsByClassName("debug2");
     let grados = 69;
 
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
@@ -162,7 +163,7 @@ window.onload = function () {
             const colorRandom = coloresDisponibles[Math.floor(Math.random() * coloresDisponibles.length)];
             dado.style.backgroundColor = colorRandom;
             ultimoColor = colorRandom;
-            ultimoColor = rojo;
+            ultimoColor = azul;
             iteracionActual++;
             // Calcular retraso nuevo
             const retraso = 10 + (iteracionActual/4 * 50) * iteracionActual/4;
@@ -238,7 +239,7 @@ window.onload = function () {
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
             puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
             RespuestaCorrecta.classList.add('visible');
-            debug.innerText = "latitud: "+latitude+" longitud: "+longitude;
+            debug2[0].innerText = "latitud: "+latitude+" longitud: "+longitude;
             setTimeout(function() {
                 //AUDIO CORRECTO
                 audioCorrecta.play();
@@ -249,6 +250,7 @@ window.onload = function () {
         } else {
             //AUDIO INCORRECTO
             RespuestaIncorrecta.classList.add('visible');
+            debug2[1].innerText = "latitud: "+latitude+" longitud: "+longitude;
             audioIncorrecta.play();
             window.navigator.vibrate([500]);
         }
@@ -260,7 +262,7 @@ window.onload = function () {
         tituloRespuesta[1].innerText = 'Orientacion';
 
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
-        if (grados<150 && grados>0){
+        if (grados<150 && grados>340){
             puntajes[turnoActual] += 10;
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
             puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
