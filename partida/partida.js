@@ -124,10 +124,13 @@ window.onload = function () {
                 //Poner el mapa en una ubicacion cercana a la actual
                 map.setView([position.coords.latitude + Math.random() * variacionPermitida
                     , position.coords.longitude + Math.random() * variacionPermitida], 13);
-        
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(map);
             });
             haUsadoAyuda = 1;
-            window.alert(haUsadoAyuda)
+            //window.alert(haUsadoAyuda)
             ayudaUbi.setAttribute("disabled", "true");
             setTimeout(function() {
                 preguntaCajaAzul.classList.remove('visible');

@@ -208,6 +208,14 @@ body{
     --md-fab-lowered-container-color:var(--amarillo);
     background-color: var(--amarilloFondo);
 }
+#respuestaCorrecta{
+    --md-fab-lowered-container-color:var(--verdeBien);
+    background-color: var(--verdeFondo);
+}
+#respuestaIncorrecta{
+    --md-fab-lowered-container-color:var(--rojoMal);
+    background-color: var(--rojo);
+}
 .answer-button{
     transform: scale(2.5);
     width: fit-content;
