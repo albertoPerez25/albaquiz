@@ -214,7 +214,7 @@ body{
 }
 #respuestaIncorrecta{
     --md-fab-lowered-container-color:var(--rojoMal);
-    background-color: var(--rojo);
+    background-color: var(--rojoMalFondo);
 }
 .answer-button{
     transform: scale(2.5);

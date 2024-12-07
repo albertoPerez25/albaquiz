@@ -45,6 +45,7 @@ window.onload = function () {
     const ayudaUbi = document.getElementById("ayudaUbi");
     const volverUbi = document.getElementById("volverUbi");
     let haUsadoAyuda = 0;
+    let puntuacionCorrecta = 10;
     //Mapa
     const variacionPermitida = 0.010
     var map = L.map('map');
@@ -136,7 +137,6 @@ window.onload = function () {
                 preguntaCajaAzul.classList.remove('visible');
                 cajaAyudaUbi.classList.add('visible');
             }, 200);
-
         }
     });
     //volver a la pregunta
@@ -266,9 +266,6 @@ window.onload = function () {
 
         const latesperada = 39.394363;
         const lonesperada = -3.2189677;
-
-        let puntuacionCorrecta = 10;
-
 
         if ((latitude<latesperada+variacionPermitida && latitude>latesperada-variacionPermitida) 
                 && (longitude<lonesperada+10 && longitude>lonesperada-10)){
