@@ -44,8 +44,10 @@ window.onload = function () {
     const cajaAyudaUbi = document.getElementById("cajaAyudaUbi");
     const ayudaUbi = document.getElementById("ayudaUbi");
     const volverUbi = document.getElementById("volverUbi");
-    const haUsadoAyuda = 0;
-
+    let haUsadoAyuda = 0;
+    //Mapa
+    const variacionPermitida = 0.010
+    var map = L.map('map');
 
     //Variables con los colores de css para animar el dado
     const amarillo = getComputedStyle(document.documentElement)
@@ -115,20 +117,31 @@ window.onload = function () {
 
     // Botones para ayuda ubi y volver
     ayudaUbi.addEventListener('click', () => {
-        if (haUsadoAyuda > 0){
-            return
-        }
-        setTimeout(function() { 
+        //window.alert("evento click")
+        if (haUsadoAyuda < 1){
+        
+            navigator.geolocation.getCurrentPosition((position) => {
+                //Poner el mapa en una ubicacion cercana a la actual
+                map.setView([position.coords.latitude + Math.random() * variacionPermitida
+                    , position.coords.longitude + Math.random() * variacionPermitida], 13);
+        
+            });
             haUsadoAyuda = 1;
+            window.alert(haUsadoAyuda)
             ayudaUbi.setAttribute("disabled", "true");
-            cajaAyudaUbi.classList.add('visible');
-        }, 200);
+            setTimeout(function() {
+                preguntaCajaAzul.classList.remove('visible');
+                cajaAyudaUbi.classList.add('visible');
+            }, 200);
+
+        }
     });
-    //volver
+    //volver a la pregunta
     volverUbi.addEventListener('click', () => {
         setTimeout(function() {
             cajaAyudaUbi.classList.remove('visible');
-        }, 200)
+            preguntaCajaAzul.classList.add('visible');
+        }, 200);
     });
 
     // Inicialización: asegurar que todas las casillas se vean normales
@@ -252,7 +265,7 @@ window.onload = function () {
         const lonesperada = -3.2189677;
 
         let puntuacionCorrecta = 10;
-        const variacionPermitida = 0.010
+
 
         if ((latitude<latesperada+variacionPermitida && latitude>latesperada-variacionPermitida) 
                 && (longitude<lonesperada+10 && longitude>lonesperada-10)){
