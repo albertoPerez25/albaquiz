@@ -41,6 +41,11 @@ window.onload = function () {
     const audioCorrecta = new Audio('../audio/RespuestaCorrecta.m4a');
     const audioIncorrecta = new Audio('../audio/RespuestaIncorrecta.m4a');
 
+    const cajaAyudaUbi = document.getElementById("cajaAyudaUbi");
+    const ayudaUbi = document.getElementById("ayudaUbi");
+    const volverUbi = document.getElementById("volverUbi");
+    const haUsadoAyuda = 0;
+
 
     //Variables con los colores de css para animar el dado
     const amarillo = getComputedStyle(document.documentElement)
@@ -106,6 +111,24 @@ window.onload = function () {
         setTimeout(function() { 
             window.location.href = '../index.html';
         }, 200);
+    });
+
+    // Botones para ayuda ubi y volver
+    ayudaUbi.addEventListener('click', () => {
+        if (haUsadoAyuda > 0){
+            return
+        }
+        setTimeout(function() { 
+            haUsadoAyuda = 1;
+            ayudaUbi.setAttribute("disabled", "true");
+            cajaAyudaUbi.classList.add('visible');
+        }, 200);
+    });
+    //volver
+    volverUbi.addEventListener('click', () => {
+        setTimeout(function() {
+            cajaAyudaUbi.classList.remove('visible');
+        }, 200)
     });
 
     // Inicialización: asegurar que todas las casillas se vean normales
@@ -200,7 +223,7 @@ window.onload = function () {
         switch (color){
             case 'amarillo':
                 preguntaCajaAmarilla.classList.add('visible');
-                
+
                 break;
             case 'rojo':
                 preguntaCajaRoja.classList.add('visible');
@@ -253,7 +276,15 @@ window.onload = function () {
             audioIncorrecta.play();
             window.navigator.vibrate([500]);
         }
-    }
+        
+        ayudaUbi.removeAttribute("disabled");
+        haUsadoAyuda = 0;
+        siguienteTurno();
+
+        // Restaurar casillas para el siguiente turno
+        inicializarCasillas();
+    };
+
 
     function aceptarRespuestaRojo() {
         //window.alert("Listener boton"+grados)

@@ -168,7 +168,7 @@ body{
     border: 1px solid black;  
     --md-fab-icon-color: black;
 }
-#cajaPreguntaAzul{
+.cajaPreguntaAzul{
     --md-fab-lowered-container-color:var(--azul);
     background-color: var(--azulFondo);
 }
@@ -326,6 +326,13 @@ body{
     font-weight: bold;
     text-align: center;
     margin-bottom: 0;
+}
+#map{
+    height: 10vh;
+    width: 20vw;
+}
+.centrado{
+    margin: 0 auto;
 }
 
 /* Animación de cambio de color para el dado 
