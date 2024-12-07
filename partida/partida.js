@@ -74,7 +74,11 @@ window.onload = function () {
         let ArrAba = eventData.beta;
 
     }
-    aceptarBotonRoja.addEventListener('click', function(){window.alert(grados);aceptarRespuestaRojo()});
+    aceptarBotonRoja.addEventListener('click', function(){aceptarRespuestaRojo()});
+    aceptarBotonAzul.addEventListener('click', function(){
+        navigator.geolocation.getCurrentPosition((position) => {aceptarRespuestaAzul(position)});
+    });
+
 
     // Evento de retroceder
     atras.addEventListener('click', () => {
@@ -201,7 +205,6 @@ window.onload = function () {
             case 'rojo':
                 preguntaCajaRoja.classList.add('visible');
                 window.addEventListener('deviceorientationabsolute', (event) => {orientacion(event);});
-                //window.removeEventListener('devicemotion', function(){orientacion();})
                 break;
             case 'azul':
                 preguntaCajaAzul.classList.add('visible');
@@ -215,10 +218,46 @@ window.onload = function () {
  
     }
 
+    function aceptarRespuestaAzul(position){
+        tituloRespuesta[0].innerText = 'Ubicacion';
+        tituloRespuesta[1].innerText = 'Ubicacion';
+
+        const latitude = position.coords.latitude
+        const longitude = position.coords.longitude
+
+        const latesperada = 39.394363;
+        const lonesperada = -3.2189677;
+
+        let puntuacionCorrecta = 10;
+        const variacionPermitida = 0.010
+
+        if ((latitude<latesperada+variacionPermitida && latitude>latesperada-variacionPermitida) 
+                && (longitude<lonesperada+10 && longitude>lonesperada-10)){
+            window.alert(Math.floor(((latitude-latesperada) + (longitude-lonesperada))/2))
+            puntajes[turnoActual] += puntuacionCorrecta;
+            puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
+            puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
+            RespuestaCorrecta.classList.add('visible');
+            debug.innerText = "latitud: "+latitude+" longitud: "+longitude;
+            setTimeout(function() {
+                //AUDIO CORRECTO
+                audioCorrecta.play();
+                window.navigator.vibrate([30, 50, 30]);
+                //alert('Respuesta correcta!');
+            }, 300);
+
+        } else {
+            //AUDIO INCORRECTO
+            RespuestaIncorrecta.classList.add('visible');
+            audioIncorrecta.play();
+            window.navigator.vibrate([500]);
+        }
+    }
+
     function aceptarRespuestaRojo() {
-        window.alert("Listener boton"+grados)
+        //window.alert("Listener boton"+grados)
         tituloRespuesta[0].innerText = 'Orientacion';
-        window.removeEventListener('devicemotion', function(){orientacion();})
+        tituloRespuesta[1].innerText = 'Orientacion';
 
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
         if (grados<150 && grados>0){
@@ -230,17 +269,18 @@ window.onload = function () {
                 //AUDIO CORRECTO
                 audioCorrecta.play();
                 window.navigator.vibrate([30, 50, 30]);
-                alert('Respuesta correcta!');
+                //alert('Respuesta correcta!');
             }, 300);
 
         } else {
             //AUDIO INCORRECTO
+            RespuestaIncorrecta.classList.add('visible');
             audioIncorrecta.play();
             window.navigator.vibrate([500]);
-            alert('Respuesta incorrecta!');
+            //alert('Respuesta incorrecta!');
         }
 
-        
+        window.removeEventListener('deviceorientationabsolute', (event) => {orientacion(event);})
         preguntaCajaRoja.classList.remove('visible');
         //aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
    
