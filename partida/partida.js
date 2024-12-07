@@ -200,17 +200,16 @@ window.onload = function () {
         switch (color){
             case 'amarillo':
                 preguntaCajaAmarilla.classList.add('visible');
-                aceptarBoton = aceptarBotonAmarilla;
-                logicaPreguntaAmarilla();
+                
                 break;
             case 'rojo':
                 preguntaCajaRoja.classList.add('visible');
+                fondoSalida.classList.add('visible');
                 window.addEventListener('deviceorientationabsolute', (event) => {orientacion(event);});
                 break;
             case 'azul':
                 preguntaCajaAzul.classList.add('visible');
-                aceptarBoton = aceptarBotonAzul;
-                logicaPreguntaAzul();
+                fondoSalida.classList.add('visible');
                 break;
         }
 
