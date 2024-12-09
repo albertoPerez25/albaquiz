@@ -71,6 +71,18 @@ window.onload = function () {
     const debug2 = document.getElementsByClassName("debug2");
     let grados = 69;
 
+    //Agitar el dado
+
+    window.addEventListener('devicemotion', function(eventData){detectarAgitado(eventData,tirarDado)});
+    function detectarAgitado(event,func) {
+        document.getElementById('sensor').innerHTML = "llego a detectar";
+        if ((Math.abs(event.rotationRate.alpha > 900) || 
+            Math.abs(event.rotationRate.beta > 900) || 
+            Math.abs(event.rotationRate.gamma > 900))) 
+        {
+            func();
+        }
+    }
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
     function orientacion(eventData){
         //window.alert("orientacion")
@@ -202,7 +214,7 @@ window.onload = function () {
             const colorRandom = coloresDisponibles[Math.floor(Math.random() * coloresDisponibles.length)];
             dado.style.backgroundColor = colorRandom;
             ultimoColor = colorRandom;
-            ultimoColor = azul;
+            //ultimoColor = poner color para hacer pruebas;
             iteracionActual++;
             // Calcular retraso nuevo
             const retraso = 10 + (iteracionActual/4 * 50) * iteracionActual/4;
