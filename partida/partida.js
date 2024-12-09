@@ -320,8 +320,13 @@ window.onload = function () {
         tituloRespuesta[1].innerText = 'Orientacion';
 
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
-        if (grados<150 && grados>340){
-            puntajes[turnoActual] += 10;
+        if (grados<60 || grados>300){
+            if(grados < 30 || grados > 330){
+                puntajes[turnoActual] += 10;
+            }
+            else{
+                puntajes[turnoActual] += 5;
+            }
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
             puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
             RespuestaCorrecta.classList.add('visible');
