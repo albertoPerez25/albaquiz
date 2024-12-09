@@ -115,7 +115,7 @@ window.onload = function () {
         console.log(textoReconocido);
         debugAmarilla.innerHTML = textoReconocido.results[textoReconocido.results.length - 1][0].transcript;
         setTimeout(() => {
-            aceptarRespuestaAmarillo(textoReconocido);
+            aceptarRespuestaAmarillo(textoReconocido.results[e.results.length - 1][0].transcript);
         }, 200);
         //Con el + se añade a lo que ya estaba las nuevas palabras, sin el + se sustituye
         });
