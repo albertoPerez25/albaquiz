@@ -107,6 +107,7 @@ window.onload = function () {
     }
 
     //Reconocimiento de voz. Amarilla
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.interimResults = false; //Nose que es, pero funciona
     recognition.lang = "es-ES";
