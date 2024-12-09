@@ -86,9 +86,6 @@ window.onload = function () {
             //window.alert("SE AGITAAAAAAAAA");
             window.removeEventListener('devicemotion', (event) => {detectarAgitado(event)});
             tirarDado();
-            setTimeout(function() { 
-                setMotionListeners();
-            }, 1000);
         }
     }
     setMotionListeners();
@@ -263,6 +260,7 @@ window.onload = function () {
     
         cambiarColor();
         inicializarCasillas();
+        setMotionListeners();
     }
 
     // Función para manejar la selección de una casilla
