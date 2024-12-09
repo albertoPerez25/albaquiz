@@ -75,21 +75,25 @@ window.onload = function () {
 
     /* FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV */
     //Agitar el dado
+    let handleMotion = (event) => detectarAgitado(event);
+
     function setMotionListeners() {
-        window.addEventListener('devicemotion', (event) => {detectarAgitado(event)});
+        window.addEventListener('devicemotion', handleMotion);
     }
+    
     function detectarAgitado(event) {
         if ((Math.abs(event.rotationRate.alpha > 900) || 
             Math.abs(event.rotationRate.beta > 900) || 
             Math.abs(event.rotationRate.gamma > 900))) 
         {
             //window.alert("SE AGITAAAAAAAAA");
-            window.removeEventListener('devicemotion', (event) => {detectarAgitado(event)});
+            window.removeEventListener('devicemotion', handleMotion);
             tirarDado();
         }
     }
     setMotionListeners();
 
+    let handleOrientacion = (eventData) => orientacion(eventData);
     //Brujula. Roja/rosada
     function orientacion(eventData){
         //window.alert("orientacion")
@@ -280,7 +284,7 @@ window.onload = function () {
             case 'rojo':
                 preguntaCajaRoja.classList.add('visible');
                 fondoSalida.classList.add('visible');
-                window.addEventListener('deviceorientationabsolute', (event) => {orientacion(event);});
+                window.addEventListener('deviceorientationabsolute', handleOrientacion);
                 break;
             case 'azul':
                 preguntaCajaAzul.classList.add('visible');
@@ -363,7 +367,7 @@ window.onload = function () {
             //alert('Respuesta incorrecta!');
         }
 
-        window.removeEventListener('deviceorientationabsolute', (event) => {orientacion(event);})
+        window.removeEventListener('deviceorientationabsolute', handleOrientacion)
         preguntaCajaRoja.classList.remove('visible');
         //aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
    
@@ -401,7 +405,6 @@ window.onload = function () {
             //alert('Respuesta incorrecta!');
         }
 
-        window.removeEventListener('deviceorientationabsolute', (event) => {orientacion(event);})
         preguntaCajaRoja.classList.remove('visible');
         //aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
    
@@ -409,7 +412,7 @@ window.onload = function () {
 
         // Restaurar casillas para el siguiente turno
         inicializarCasillas();
-        setMotionListeners();
+        setMotionListeners();//Inicializar evento de agitar
     };
 
 
