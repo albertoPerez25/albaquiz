@@ -380,7 +380,7 @@ window.onload = function () {
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
         if (textoReconocido == "culo"){
            
-            puntajes[turnoActual] += 5;
+            puntajes[turnoActual] += 10;
         
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
             puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
