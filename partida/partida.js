@@ -73,14 +73,15 @@ window.onload = function () {
 
     //Agitar el dado
 
-    window.addEventListener('devicemotion', function(eventData){detectarAgitado(eventData,tirarDado)});
-    function detectarAgitado(event,func) {
+    window.addEventListener('devicemotion', function(event){detectarAgitado(event)});
+    function detectarAgitado(event) {
         document.getElementById('sensor').innerHTML = "llego a detectar";
         if ((Math.abs(event.rotationRate.alpha > 900) || 
             Math.abs(event.rotationRate.beta > 900) || 
             Math.abs(event.rotationRate.gamma > 900))) 
         {
-            func();
+            window.alert("SE AGITAAAAAAAAA");
+            tirarDado();
         }
     }
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
