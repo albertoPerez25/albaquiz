@@ -9,6 +9,7 @@ if (getCookie("daltonismo")=="true"){
     changeCSS("../estilo/daltonismo/partida-d.css", 1);
 }
 
+
 window.onload = function () {
     const atras = document.getElementById('btnAtras');
     const cajaSalida = document.getElementById('cajaSalida');
@@ -72,18 +73,20 @@ window.onload = function () {
     let grados = 69;
 
     //Agitar el dado
-
-    window.addEventListener('devicemotion', function(event){detectarAgitado(event)});
+    function setMotionListeners() {
+        window.addEventListener('devicemotion', (event) => {detectarAgitado(event)});
+    }
     function detectarAgitado(event) {
         document.getElementById('sensor').innerHTML = "llego a detectar";
         if ((Math.abs(event.rotationRate.alpha > 900) || 
             Math.abs(event.rotationRate.beta > 900) || 
             Math.abs(event.rotationRate.gamma > 900))) 
         {
-            window.alert("SE AGITAAAAAAAAA");
+            //window.alert("SE AGITAAAAAAAAA");
             tirarDado();
         }
     }
+    setMotionListeners();
     //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
     function orientacion(eventData){
         //window.alert("orientacion")
@@ -356,8 +359,6 @@ window.onload = function () {
     // Inicialización de la partida
     inicializarCasillas();
     document.querySelector('body').style.opacity = 1;
-
-
 };
 
 
