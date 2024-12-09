@@ -68,10 +68,12 @@ window.onload = function () {
         { texto: "¿Quién pintó la Mona Lisa?", respuesta: "Leonardo da Vinci" },
         { texto: "¿Cuántos continentes existen?", respuesta: "7" }
     ];
-    const debug = document.getElementById("debug");
+    const debugRoja = document.getElementById("debugRoja");
+    const debugAmarilla = document.getElementById("debugAmarilla");
     const debug2 = document.getElementsByClassName("debug2");
     let grados = 69;
 
+    /* FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV */
     //Agitar el dado
     function setMotionListeners() {
         window.addEventListener('devicemotion', (event) => {detectarAgitado(event)});
@@ -82,28 +84,49 @@ window.onload = function () {
             Math.abs(event.rotationRate.gamma > 900))) 
         {
             //window.alert("SE AGITAAAAAAAAA");
+            window.removeEventListener('devicemotion', (event) => {detectarAgitado(event)});
             tirarDado();
+            setTimeout(function() { 
+                setMotionListeners();
+            }, 1000);
         }
     }
     setMotionListeners();
-    //FUNCIONES PARA LOS EVENTLISTENERS DE LOS SENSORES, TRAIDO DE /DEV
+
+    //Brujula. Roja/rosada
     function orientacion(eventData){
         //window.alert("orientacion")
         //direccion a donde apunta el dispositivo
         grados = eventData.alpha;
-        debug.innerText = "alpha: "+grados;
+        debugRoja.innerText = "alpha: "+grados;
         //Inclinar hacia izquierda o derecha. Hacia la derecha es positivo
         let IzqDer = eventData.gamma;
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
     }
+
+    //Reconocimiento de voz. Amarilla
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = false; //Nose que es, pero funciona
+    recognition.lang = "es-ES";
+    recognition.addEventListener("result", (textoReconocido) => {
+        console.log(textoReconocido);
+        debugAmarilla.innerHTML = textoReconocido.results[textoReconocido.results.length - 1][0].transcript;
+        setTimeout(() => {
+            aceptarRespuestaAmarillo(textoReconocido);
+        }, 200);
+        //Con el + se añade a lo que ya estaba las nuevas palabras, sin el + se sustituye
+        });
+    //La ubicacion (Azul) va de otra manera, no necesita eventListener
+
     aceptarBotonRoja.addEventListener('click', function(){aceptarRespuestaRojo()});
     aceptarBotonAzul.addEventListener('click', function(){
         navigator.geolocation.getCurrentPosition((position) => {aceptarRespuestaAzul(position)});
     });
+    aceptarBotonAmarilla.addEventListener('click', function(){recognition.start()});
 
-
+    //* ******************************* */
     // Evento de retroceder
     atras.addEventListener('click', () => {
         cajaSalida.classList.add('visible');
@@ -266,10 +289,6 @@ window.onload = function () {
                 fondoSalida.classList.add('visible');
                 break;
         }
-
-        // Mostrar la preguntaorientacion
-        //const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
- 
     }
 
     function aceptarRespuestaAzul(position){
@@ -327,6 +346,43 @@ window.onload = function () {
             else{
                 puntajes[turnoActual] += 5;
             }
+            puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
+            puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
+            RespuestaCorrecta.classList.add('visible');
+            setTimeout(function() {
+                //AUDIO CORRECTO
+                audioCorrecta.play();
+                window.navigator.vibrate([30, 50, 30]);
+                //alert('Respuesta correcta!');
+            }, 300);
+
+        } else {
+            //AUDIO INCORRECTO
+            RespuestaIncorrecta.classList.add('visible');
+            audioIncorrecta.play();
+            window.navigator.vibrate([500]);
+            //alert('Respuesta incorrecta!');
+        }
+
+        window.removeEventListener('deviceorientationabsolute', (event) => {orientacion(event);})
+        preguntaCajaRoja.classList.remove('visible');
+        //aceptarBotonRoja.removeEventListener('click', aceptarRespuestaRojo);
+   
+        siguienteTurno();
+
+        // Restaurar casillas para el siguiente turno
+        inicializarCasillas();
+    };
+
+    function aceptarRespuestaAmarillo(textoReconocido) {
+        tituloRespuesta[0].innerText = 'Pronunciación';
+        tituloRespuesta[1].innerText = 'Pronunciación';
+
+        //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
+        if (textoReconocido == "culo"){
+           
+            puntajes[turnoActual] += 5;
+        
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
             puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
             RespuestaCorrecta.classList.add('visible');
