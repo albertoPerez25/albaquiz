@@ -77,7 +77,6 @@ window.onload = function () {
         window.addEventListener('devicemotion', (event) => {detectarAgitado(event)});
     }
     function detectarAgitado(event) {
-        document.getElementById('sensor').innerHTML = "llego a detectar";
         if ((Math.abs(event.rotationRate.alpha > 900) || 
             Math.abs(event.rotationRate.beta > 900) || 
             Math.abs(event.rotationRate.gamma > 900))) 
