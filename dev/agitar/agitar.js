@@ -1,7 +1,7 @@
 //Necesita https
 window.onload = function(){
     function setMotionListeners(func){
-        window.addEventListener('devicemotion', function(){detectar(event,func)});
+        window.addEventListener('devicemotion', function(event){detectar(event,func)});
     }
     
     function detectar(event,func) {
@@ -23,6 +23,6 @@ window.onload = function(){
             document.body.style.backgroundColor = "grey";
         }, 2500)
     }
-    
+
     setMotionListeners(resetear);
 }
