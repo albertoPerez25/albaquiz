@@ -260,7 +260,6 @@ window.onload = function () {
     
         cambiarColor();
         inicializarCasillas();
-        setMotionListeners();
     }
 
     // Función para manejar la selección de una casilla
@@ -329,6 +328,7 @@ window.onload = function () {
 
         // Restaurar casillas para el siguiente turno
         inicializarCasillas();
+        setMotionListeners();
     };
 
 
@@ -371,6 +371,7 @@ window.onload = function () {
 
         // Restaurar casillas para el siguiente turno
         inicializarCasillas();
+        setMotionListeners();
     };
 
     function aceptarRespuestaAmarillo(textoReconocido) {
@@ -408,6 +409,7 @@ window.onload = function () {
 
         // Restaurar casillas para el siguiente turno
         inicializarCasillas();
+        setMotionListeners();
     };
 
 
