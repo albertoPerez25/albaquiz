@@ -211,17 +211,19 @@ body{
 #respuestaCorrecta{
     --md-fab-lowered-container-color:var(--verdeBien);
     background-color: var(--verdeFondo);
+    height: 80vh;
 }
 #respuestaIncorrecta{
     --md-fab-lowered-container-color:var(--rojoMal);
     background-color: var(--rojoMalFondo);
+    height: 80vh;
 }
 .answer-button{
     transform: scale(2.5);
     width: fit-content;
     height: fit-content;
     margin-left: 32.5vw;
-    margin-top: 12.5vh;
+    margin-top: 5vh;
     color:#FFD7F6
 }
 
