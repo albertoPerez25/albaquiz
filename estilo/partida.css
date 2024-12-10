@@ -351,7 +351,11 @@ body{
 .centrado{
     margin: 0 auto;
 }
-
+.iconoRespuesta{
+    margin-top: 2vh;
+    margin-left: 7vw;
+    --md-icon-size: 256px;
+}
 /* Animación de cambio de color para el dado 
 @keyframes cambioColorDado {
     0% { background-color: var(--azul); }

@@ -274,12 +274,24 @@ window.onload = function () {
         if (!casilla || !casilla.classList.contains('clicable')) {
             return; // Ignorar clic en casillas no válidas
         }
+        function volverAPartida(){
+            fondoSalida.classList.remove('visible');
+            preguntaCajaAmarilla.classList.remove('visible');
+            preguntaCajaAzul.classList.remove('visible');
+            preguntaCajaRoja.classList.remove('visible');
+            RespuestaCorrecta.classList.remove('visible');
+            RespuestaIncorrecta.classList.remove('visible');
+            aceptarCorrecta.RemoveEventListener('click', volverAPartida); //Para mejorar rendimiento pagina
+            aceptarIncorrecta.RemoveEventListener('click', volverAPartida);
+        }
+        aceptarCorrecta.addEventListener('click', volverAPartida);
+        aceptarIncorrecta.addEventListener('click', volverAPartida);
 
         color = casilla.classList[1]
         switch (color){
             case 'amarillo':
                 preguntaCajaAmarilla.classList.add('visible');
-
+                fondoSalida.classList.add('visible');
                 break;
             case 'rojo':
                 preguntaCajaRoja.classList.add('visible');
