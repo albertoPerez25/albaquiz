@@ -19,4 +19,31 @@ window.onload = function() {
                         window.location.href = btnJugar.getAttribute('enlace');
                 }, 200)},200)
         });
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        let palabra = "";
+        recognition.interimResults = false; //Nose que es, pero funciona
+        recognition.lang = "es-ES";
+        recognition.addEventListener("result", (textoReconocido) => {
+                console.log(textoReconocido.results[textoReconocido.results.length - 1][0].transcript);
+                palabra = textoReconocido.results[textoReconocido.results.length - 1][0].transcript;
+                switch (palabra) {
+                        case "jugar":
+                                btnJugar.click();
+                                break;
+                        case "ajustes":
+                                botonesNav[2].click();
+                                break;
+                        case "estadisticas":
+                                botonesNav[1].click();
+                                break;
+                        default:
+                                break;
+                }
+        //Con el + se añade a lo que ya estaba las nuevas palabras, sin el + se sustituye
+        });
+        const btnmicro = document.getElementById("mic-button-on");
+        btnmicro.addEventListener('click', () => {
+                
+        });
 }

@@ -201,6 +201,7 @@ window.onload = function () {
         turnoActual = (turnoActual + 1) % jugadores.length;
         jugadores[turnoActual].querySelector('.indicador').classList.add('act');
         jugadorActualTexto.innerText = `Jugador ${turnoActual + 1}`;
+        puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
     }
 
     // Función para tirar el dado
