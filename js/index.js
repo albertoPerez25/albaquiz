@@ -44,6 +44,6 @@ window.onload = function() {
         });
         const btnmicro = document.getElementById("mic-button-on");
         btnmicro.addEventListener('click', () => {
-                
+                recognition.start()
         });
 }
