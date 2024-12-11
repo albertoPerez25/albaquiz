@@ -320,7 +320,7 @@ window.onload = function () {
             window.alert(Math.floor(((latitude-latesperada) + (longitude-lonesperada))/2))
             puntajes[turnoActual] += puntuacionCorrecta;
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
-            puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
+            puntuacionCaja.innerText = `+ ${puntuacionCorrecta} ptos`;
             RespuestaCorrecta.classList.add('visible');
             debug2[0].innerText = "latitud: "+latitude+" longitud: "+longitude;
             setTimeout(function() {
@@ -355,14 +355,17 @@ window.onload = function () {
 
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
         if (grados<60 || grados>300){
+            window.alert(turnoActual,puntajes[turnoActual]);
             if(grados < 30 || grados > 330){
-                puntajes[turnoActual] += 10;
+                puntuacionCorrecta = 10;
             }
             else{
-                puntajes[turnoActual] += 5;
+                puntuacionCorrecta = 5;
+                
             }
+            puntajes[turnoActual] += puntuacionCorrecta;
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
-            puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
+            puntuacionCaja.innerText = `+ ${puntuacionCorrecta} ptos`;
             RespuestaCorrecta.classList.add('visible');
             setTimeout(function() {
                 //AUDIO CORRECTO
@@ -396,12 +399,13 @@ window.onload = function () {
 
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
         if (textoReconocido == "culo"){
-           
-            puntajes[turnoActual] += 10;
+            puntuacionCorrecta = 10;
+            puntajes[turnoActual] += puntuacionCorrecta;
         
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
-            puntuacionCaja.innerText = `+ ${puntajes[turnoActual]} ptos`;
+            puntuacionCaja.innerText = `+ ${puntuacionCorrecta} ptos`;
             RespuestaCorrecta.classList.add('visible');
+            window.alert(turnoActual,puntajes[turnoActual]);
             setTimeout(function() {
                 //AUDIO CORRECTO
                 audioCorrecta.play();
