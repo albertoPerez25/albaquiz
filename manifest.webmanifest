@@ -3,7 +3,6 @@
     "short_name": "AlbaQuiz",
     "start_url": "/albaquiz/",
     "scope": "/albaquiz/",
-    "display": "standalone",
     "background_color": "#e0f7fa",
     "theme_color": "#196584",
     "orientation": "portrait-primary",
