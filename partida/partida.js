@@ -117,6 +117,8 @@ window.onload = function () {
             window.navigator.vibrate(30);
         }
         gradosAntes = grados
+        debug2[0].innerText = "Grados: "+grados;
+        debug2[1].innerText = "Grados: "+grados;
     }
 
     //Reconocimiento de voz. Amarilla

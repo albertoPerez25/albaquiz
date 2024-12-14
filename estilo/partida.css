@@ -211,12 +211,12 @@ body{
 #respuestaCorrecta{
     --md-fab-lowered-container-color:var(--verdeBien);
     background-color: var(--verdeFondo);
-    height: 80vh;
+    height: 75vh;
 }
 #respuestaIncorrecta{
     --md-fab-lowered-container-color:var(--rojoMal);
     background-color: var(--rojoMalFondo);
-    height: 80vh;
+    height: 75vh;
 }
 .answer-button{
     transform: scale(2.5);
@@ -355,8 +355,8 @@ body{
 }
 .iconoRespuesta{
     margin-top: 2vh;
-    margin-left: 7vw;
-    --md-icon-size: 256px;
+    margin-left: 22vw;
+    --md-icon-size: 128px;
 }
 @media (orientation: landscape) AND (min-width: 600px) { 
     body {
