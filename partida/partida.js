@@ -95,7 +95,7 @@ window.onload = function () {
 
     let handleOrientacion = (eventData) => orientacion(eventData);
     //Brujula. Roja/rosada
-    let gradosAntes = 0;
+    //let gradosAntes = 0;
     function orientacion(eventData){
         //window.alert("orientacion")
         //direccion a donde apunta el dispositivo
@@ -107,16 +107,22 @@ window.onload = function () {
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
-        if (IzqDer+ArrAba != 10 ){
-            debugRoja.innerText = "TIP: Mantén el dispositivo sin inclinar";
+        if (IzqDer+ArrAba > 10 ){
+            debugRoja.innerText = "TIP: Mantén el dispositivo sin inclinar"+IzqDer+" "+ArrAba;
         } 
-        if (grados == 0 || grados == 270 || grados == 90 || grados ==180){
-            window.navigator.vibrate(40);
-        } 
-        if (Math.abs(gradosAntes-grados)>15){
-            window.navigator.vibrate(20);
+        else{
+            debugRoja.innerText = "";
+
         }
-        gradosAntes = grados
+        if (grados == 0 || grados == 270 || grados == 90 || grados == 180){
+            window.navigator.vibrate(60);
+        } 
+        /*if (Math.abs(gradosAntes-grados)>20){
+            window.navigator.vibrate(30);
+        }*/
+        //gradosAntes = grados
+        debug2[0].innerText = "Grados: "+grados;
+        debug2[1].innerText = "Grados: "+grados;
     }
 
     //Reconocimiento de voz. Amarilla
@@ -177,17 +183,17 @@ window.onload = function () {
                 //Poner el mapa en una ubicacion cercana a la actual
                 let lat = position.coords.latitude + Math.random() * variacionPermitida;
                 let lon = position.coords.longitude + Math.random() * variacionPermitida
-                map.setView([lat, lon], 6);
+                map.setView([lat, lon], 23);
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 40,
+                    maxZoom: 19,
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                     }).addTo(map);
                   //Circulo en el mapa
                 var circle = L.circle([lat, lon], {
-                color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: 500
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: 500
                 }).addTo(map);
                 circle.bindPopup("Se encuentra en esta zona");
             });
