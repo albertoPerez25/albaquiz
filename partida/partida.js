@@ -133,7 +133,7 @@ window.onload = function () {
     window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.interimResults = false; //Nose que es, pero funciona
-    recognition.lang = "es-ES";
+    recognition.lang = "en-US";
     recognition.addEventListener("result", (textoReconocido) => {
         console.log(textoReconocido);
         debugAmarilla.innerHTML = textoReconocido.results[textoReconocido.results.length - 1][0].transcript;
@@ -430,7 +430,7 @@ window.onload = function () {
         tituloRespuesta[1].innerText = 'Pronunciación';
 
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
-        if (textoReconocido == "culo"){
+        if (textoReconocido == "hello"){
             puntuacionCorrecta = 10;
             puntajes[turnoActual] += puntuacionCorrecta;
         
