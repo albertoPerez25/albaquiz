@@ -114,12 +114,12 @@ window.onload = function () {
             debugRoja.innerText = "";
 
         }
-        if (   (grados < 5 && grados > 355) 
+        if (   (grados < 5 || grados > 355) 
             || (grados < 275 && grados >265) 
             || (grados < 95 && grados > 85) 
             || (grados < 185 && grados > 175)
         ){
-            window.navigator.vibrate(60);
+            window.navigator.vibrate(30);
         } 
         /*if (Math.abs(gradosAntes-grados)>20){
             window.navigator.vibrate(30);
