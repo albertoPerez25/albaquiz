@@ -107,14 +107,18 @@ window.onload = function () {
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
-        if (IzqDer+ArrAba > 10 ){
+        if (IzqDer+ArrAba > 20 ){
             debugRoja.innerText = "TIP: Mantén el dispositivo sin inclinar"+IzqDer+" "+ArrAba;
         } 
         else{
             debugRoja.innerText = "";
 
         }
-        if (grados == 0 || grados == 270 || grados == 90 || grados == 180){
+        if (   (grados < 5 && grados > 355) 
+            || (grados < 275 && grados >265) 
+            || (grados < 95 && grados > 85) 
+            || (grados < 185 && grados > 175)
+        ){
             window.navigator.vibrate(60);
         } 
         /*if (Math.abs(gradosAntes-grados)>20){
