@@ -6,7 +6,7 @@
     "display": "standalone",
     "background_color": "#e0f7fa",
     "theme_color": "#196584",
-    "orientation": "any",
+    "orientation": "portrait-primary",
     "description": "Trabajo de IPO",
     "icons": [
       {
