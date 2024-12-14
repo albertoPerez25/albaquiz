@@ -177,17 +177,17 @@ window.onload = function () {
                 //Poner el mapa en una ubicacion cercana a la actual
                 let lat = position.coords.latitude + Math.random() * variacionPermitida;
                 let lon = position.coords.longitude + Math.random() * variacionPermitida
-                map.setView([lat, lon], 6);
+                map.setView([lat, lon], 23);
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 40,
+                    maxZoom: 19,
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                     }).addTo(map);
                   //Circulo en el mapa
                 var circle = L.circle([lat, lon], {
-                color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: 500
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: 500
                 }).addTo(map);
                 circle.bindPopup("Se encuentra en esta zona");
             });
