@@ -95,7 +95,7 @@ window.onload = function () {
 
     let handleOrientacion = (eventData) => orientacion(eventData);
     //Brujula. Roja/rosada
-    let gradosAntes = 0;
+    //let gradosAntes = 0;
     function orientacion(eventData){
         //window.alert("orientacion")
         //direccion a donde apunta el dispositivo
@@ -107,16 +107,20 @@ window.onload = function () {
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
-        if (IzqDer+ArrAba > 50 ){
+        if (IzqDer+ArrAba > 10 ){
             debugRoja.innerText = "TIP: Mantén el dispositivo sin inclinar"+IzqDer+" "+ArrAba;
         } 
-        if (grados == 0 || grados == 270 || grados == 90 || grados ==180){
+        else{
+            debugRoja.innerText = "";
+
+        }
+        if (grados == 0 || grados == 270 || grados == 90 || grados == 180){
             window.navigator.vibrate(60);
         } 
-        if (Math.abs(gradosAntes-grados)>20){
+        /*if (Math.abs(gradosAntes-grados)>20){
             window.navigator.vibrate(30);
-        }
-        gradosAntes = grados
+        }*/
+        //gradosAntes = grados
         debug2[0].innerText = "Grados: "+grados;
         debug2[1].innerText = "Grados: "+grados;
     }
