@@ -107,14 +107,14 @@ window.onload = function () {
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
-        if (IzqDer+ArrAba != 10 ){
-            debugRoja.innerText = "TIP: Mantén el dispositivo sin inclinar";
+        if (IzqDer+ArrAba > 50 ){
+            debugRoja.innerText = "TIP: Mantén el dispositivo sin inclinar"+IzqDer+" "+ArrAba;
         } 
         if (grados == 0 || grados == 270 || grados == 90 || grados ==180){
-            window.navigator.vibrate(40);
+            window.navigator.vibrate(60);
         } 
-        if (Math.abs(gradosAntes-grados)>15){
-            window.navigator.vibrate(20);
+        if (Math.abs(gradosAntes-grados)>20){
+            window.navigator.vibrate(30);
         }
         gradosAntes = grados
     }
