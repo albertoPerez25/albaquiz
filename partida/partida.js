@@ -220,6 +220,9 @@ window.onload = function () {
 
     // Inicialización: asegurar que todas las casillas se vean normales
     function inicializarCasillas() {
+        debugRoja.innerText = "";
+        debugAmarilla.innerText = "";
+        debug2[0].innerText = "";
         casillas.forEach(casilla => {
             casilla.classList.remove('gris', 'clicable');
         });
@@ -349,7 +352,7 @@ window.onload = function () {
 
         if ((latitude<latesperada+variacionPermitida && latitude>latesperada-variacionPermitida) 
                 && (longitude<lonesperada+10 && longitude>lonesperada-10)){
-            window.alert(Math.floor(((latitude-latesperada) + (longitude-lonesperada))/2))
+            //window.alert(Math.floor(((latitude-latesperada) + (longitude-lonesperada))/2))
             puntajes[turnoActual] += puntuacionCorrecta;
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
             puntuacionCaja.innerText = `+ ${puntuacionCorrecta} ptos`;
@@ -387,7 +390,7 @@ window.onload = function () {
 
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
         if (grados<60 || grados>300){
-            window.alert(turnoActual,puntajes[turnoActual]);
+            //window.alert(turnoActual,puntajes[turnoActual]);
             if(grados < 20 || grados > 340){
                 puntuacionCorrecta = 10;
             }
@@ -437,7 +440,7 @@ window.onload = function () {
             puntuacion.innerText = `${puntajes[turnoActual]} ptos`;
             puntuacionCaja.innerText = `+ ${puntuacionCorrecta} ptos`;
             RespuestaCorrecta.classList.add('visible');
-            window.alert(turnoActual,puntajes[turnoActual]);
+            //window.alert(turnoActual,puntajes[turnoActual]);
             setTimeout(function() {
                 //AUDIO CORRECTO
                 audioCorrecta.play();
