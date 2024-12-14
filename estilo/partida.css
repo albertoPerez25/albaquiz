@@ -223,7 +223,7 @@ body{
     width: fit-content;
     height: fit-content;
     margin-left: 32.5vw;
-    margin-top: 5vh;
+    margin-top: 15vh;
     color:#FFD7F6
 }
 
@@ -358,6 +358,9 @@ body{
     margin-left: 22vw;
     --md-icon-size: 128px;
 }
+.azulAbajo>div>div{
+    font-size: 16px; width:fit-content; margin-top: -2.5vh;
+}
 @media (orientation: landscape) AND (min-width: 600px) { 
     body {
         height: 100vh;
@@ -372,13 +375,16 @@ body{
 
     /* Título debajo a la derecha */
     .title {
-        opacity: 0;
+        position:fixed;
+        opacity: 1;
+        z-index: -1;
+        margin-left: 60vw;
     }
 
     /* Contenedor de jugadores */
     .jugadores {
         position: fixed;
-        top: 5vh; /* Ajuste de la posición para que estén más arriba */
+        top: 0vh; /* Ajuste de la posición para que estén más arriba */
         left: 0vw;
         display: flex;
         flex-direction: column;
@@ -414,6 +420,7 @@ body{
         text-align: center;
         font-size: 0.7rem; /* Reducir más el tamaño de la fuente */
         margin-top: 0.1rem; /* Reducción del espacio para los nombres */
+        margin-left: 3vw;
     }
     .jugadores > div .indicador{
         position: relative;
@@ -429,7 +436,7 @@ body{
         grid-template-rows: repeat(5, 50px);
         justify-content: center;
         margin-top: 10vh;
-        margin-left: -18vw; /* Reducido margen entre los jugadores y el tablero */
+        margin-left: 20vw; /* Reducido margen entre los jugadores y el tablero */
     }
 
     .box {
@@ -438,9 +445,17 @@ body{
         width: 50px;
     }
 
+    .box > p{
+        font-weight: bold;
+        margin-top: 65%;
+        margin-right: 10%;
+        text-align: right;
+        font-size: 10px;
+    }
+
     #dado {
-        height: 3.5rem;
-        width: 3.5rem;
+        height: 5.5rem;
+        width: 5.5rem;
         margin-left: 1vw; /* Ajuste para que quede más cerca del tablero */
         margin-top: 2vh;
     }
@@ -463,13 +478,14 @@ body{
         flex-direction: row;
         justify-content: center;
         gap: 1vw; /* Reducido el espacio entre botones */
-        margin-top: 2vh;
+        margin-top: 40vh;
     }
 
     #ubi-button {
         margin: auto;
         margin-top: 1vh;
-        transform: scale(2);
+        transform: scale(1);
+        margin-left: 13vw;
     }
 
     #volverUbi {
@@ -480,10 +496,11 @@ body{
 
     /* Caja de la pregunta */
     .pregunta {
-        top: 12%;
-        width: 65vw;
-        left: 17.5vw;
+        top: 5%;
+        width: 35vw;
+        left: 55vw;
         font-size: 1rem;
+        height: 80vh;
     }
 
     /* Respuesta Correcta e Incorrecta */
@@ -498,6 +515,26 @@ body{
     .iconoRespuesta {
         margin-left: 2vw;
         font-size: 2rem;
+    }
+    .salida.visible {
+        top: 20vh;
+        left: 20vw;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        transform: scale(1);
+        z-index: 1; 
+        width: 50vw;
+    }
+    .azulAbajo{
+        margin-top: 0vh;
+    }
+    .azulAbajo>div>div{
+        margin-top: 0vh;
+        font-size: 12px; width:fit-content; margin-top: 0vh;
+    }
+    #ayudaUbi{
+        transform:scale(1);
+        margin-left: 0vw;
     }
 }
 /* Animación de cambio de color para el dado 
