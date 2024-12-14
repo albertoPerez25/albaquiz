@@ -48,7 +48,7 @@ window.onload = function () {
     let haUsadoAyuda = 0;
     let puntuacionCorrecta = 10;
     //Mapa
-    const variacionPermitida = 0.010
+    const variacionPermitida = 0.0001
     var map = L.map('map');
 
     //Variables con los colores de css para animar el dado
@@ -107,14 +107,18 @@ window.onload = function () {
         //Inclinar hacia arriba o abajo. Hacia arriba es positivo
         let ArrAba = eventData.beta;
 
-        if (IzqDer+ArrAba > 10 ){
+        if (IzqDer+ArrAba > 20 ){
             debugRoja.innerText = "TIP: Mantén el dispositivo sin inclinar"+IzqDer+" "+ArrAba;
         } 
         else{
             debugRoja.innerText = "";
 
         }
-        if (grados == 0 || grados == 270 || grados == 90 || grados == 180){
+        if (   (grados < 5 && grados > 355) 
+            || (grados < 275 && grados >265) 
+            || (grados < 95 && grados > 85) 
+            || (grados < 185 && grados > 175)
+        ){
             window.navigator.vibrate(60);
         } 
         /*if (Math.abs(gradosAntes-grados)>20){
@@ -183,7 +187,7 @@ window.onload = function () {
                 //Poner el mapa en una ubicacion cercana a la actual
                 let lat = position.coords.latitude + Math.random() * variacionPermitida;
                 let lon = position.coords.longitude + Math.random() * variacionPermitida
-                map.setView([lat, lon], 23);
+                map.setView([lat, lon], 17);
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     maxZoom: 19,
                     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -193,7 +197,7 @@ window.onload = function () {
                     color: 'red',
                     fillColor: '#f03',
                     fillOpacity: 0.5,
-                    radius: 500
+                    radius: 100
                 }).addTo(map);
                 circle.bindPopup("Se encuentra en esta zona");
             });
@@ -340,8 +344,8 @@ window.onload = function () {
         const latitude = position.coords.latitude
         const longitude = position.coords.longitude
 
-        const latesperada = 39.394363;
-        const lonesperada = -3.2189677;
+        const latesperada = 38.9945928;
+        const lonesperada = -1.8537166;
 
         if ((latitude<latesperada+variacionPermitida && latitude>latesperada-variacionPermitida) 
                 && (longitude<lonesperada+10 && longitude>lonesperada-10)){
