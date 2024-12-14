@@ -344,8 +344,8 @@ window.onload = function () {
         const latitude = position.coords.latitude
         const longitude = position.coords.longitude
 
-        const latesperada = 39.394363;
-        const lonesperada = -3.2189677;
+        const latesperada = 38.9945928;
+        const lonesperada = -1.8537166;
 
         if ((latitude<latesperada+variacionPermitida && latitude>latesperada-variacionPermitida) 
                 && (longitude<lonesperada+10 && longitude>lonesperada-10)){
