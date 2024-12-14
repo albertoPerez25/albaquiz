@@ -48,7 +48,7 @@ window.onload = function () {
     let haUsadoAyuda = 0;
     let puntuacionCorrecta = 10;
     //Mapa
-    const variacionPermitida = 0.005
+    const variacionPermitida = 0.0009
     var map = L.map('map');
 
     //Variables con los colores de css para animar el dado
@@ -388,7 +388,7 @@ window.onload = function () {
         //if (respuesta.toLowerCase() === pregunta.respuesta.toLowerCase()) {
         if (grados<60 || grados>300){
             window.alert(turnoActual,puntajes[turnoActual]);
-            if(grados < 30 || grados > 330){
+            if(grados < 20 || grados > 340){
                 puntuacionCorrecta = 10;
             }
             else{
