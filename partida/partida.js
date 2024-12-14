@@ -48,7 +48,7 @@ window.onload = function () {
     let haUsadoAyuda = 0;
     let puntuacionCorrecta = 10;
     //Mapa
-    const variacionPermitida = 0.0001
+    const variacionPermitida = 0.0005
     var map = L.map('map');
 
     //Variables con los colores de css para animar el dado
