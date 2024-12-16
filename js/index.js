@@ -3,6 +3,8 @@ import {getCookie,changeCSS} from '../js/cookies.js';
 
 window.onload = function() {
         const botonesNav = document.getElementsByClassName('menuNotSelectedA');
+        const colorFondo = getComputedStyle(document.documentElement)
+        .getPropertyValue('--colorFondoPagina');
         //Si es alto contraste está activado usamos su css
         if (getCookie("alto-contraste")=="true"){
                 changeCSS("./estilo/alto-contraste/styles-ac.css", 1);
