@@ -34,9 +34,21 @@ window.onload = function() {
                                 break;
                         case "ajustes":
                                 botonesNav[2].click();
+                                document.querySelector('body').style.background = colorFondo;
+                                document.querySelector('#pantalla').style.opacity = 0;
+                                setTimeout(function() { 
+                                        window.navigator.vibrate(10);
+                                        window.location.href = botonesNav[2].getAttribute('enlace');
+                                }, 200)
                                 break;
                         case "estadisticas":
                                 botonesNav[1].click();
+                                document.querySelector('body').style.background = colorFondo;
+                                document.querySelector('#pantalla').style.opacity = 0;
+                                setTimeout(function() { 
+                                        window.navigator.vibrate(10);
+                                        window.location.href = botonesNav[1].getAttribute('enlace');
+                                }, 200)
                                 break;
                         default:
                                 break;
