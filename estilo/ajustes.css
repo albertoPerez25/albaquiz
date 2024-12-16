@@ -169,26 +169,17 @@ md-divider{
       flex-direction: row; /* Organiza los elementos de manera horizontal */
       justify-content: center; /* Centra el contenido principal */
       align-items: center; /* Centra el contenido verticalmente */
-      margin-left: 10vw;
+      margin-left: 12vw;
     }
     #titulo{
-        position: fixed;
-        top: 0;
-        transition: all 0.3s;
         font-size: 15px;
         padding: 0;
         margin: 2rem;
         margin-left: -2vw;
     }
     #titulo.fixed{
-        font-size: 20px;
-        font-weight:lighter;
         margin: 0rem;
         margin-left: 0vw;
-        z-index: 999;
-        background-color: var(--colorHeader);
-        width: 100%;
-        transition: all 0.3s;
     }
     /* Ajuste del menú en modo horizontal */
   .bottom-nav {
