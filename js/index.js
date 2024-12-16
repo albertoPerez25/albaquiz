@@ -33,7 +33,7 @@ window.onload = function() {
                                 btnJugar.click();
                                 break;
                         case "ajustes":
-                                botonesNav[2].click();
+                                //botonesNav[2].click();
                                 document.querySelector('body').style.background = colorFondo;
                                 document.querySelector('#pantalla').style.opacity = 0;
                                 setTimeout(function() { 
@@ -42,7 +42,7 @@ window.onload = function() {
                                 }, 200)
                                 break;
                         case "estadisticas":
-                                botonesNav[1].click();
+                                //botonesNav[1].click();
                                 document.querySelector('body').style.background = colorFondo;
                                 document.querySelector('#pantalla').style.opacity = 0;
                                 setTimeout(function() { 
