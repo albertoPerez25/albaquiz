@@ -162,3 +162,69 @@ md-divider{
     padding: 2vw;
   }
 
+/* If screen size orientation is in landscape mode */
+@media (orientation: landscape) AND (min-width: 600px) { 
+    /* Ajuste del cuerpo en modo horizontal */
+    body {
+      flex-direction: row; /* Organiza los elementos de manera horizontal */
+      justify-content: center; /* Centra el contenido principal */
+      align-items: center; /* Centra el contenido verticalmente */
+      margin-left: 10vw;
+    }
+    #titulo{
+        position: fixed;
+        top: 0;
+        transition: all 0.3s;
+        font-size: 15px;
+        padding: 0;
+        margin: 2rem;
+        margin-left: -2vw;
+    }
+    #titulo.fixed{
+        font-size: 20px;
+        font-weight:lighter;
+        margin: 0rem;
+        margin-left: 0vw;
+        z-index: 999;
+        background-color: var(--colorHeader);
+        width: 100%;
+        transition: all 0.3s;
+    }
+    /* Ajuste del menú en modo horizontal */
+  .bottom-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25vh; /* La altura original del menú ahora será su ancho */
+    height: 100%; /* El menú cubre toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+    justify-content: space-around; /* Espaciado uniforme entre los elementos */
+    align-items: center; /* Alinea los íconos y texto al centro horizontalmente */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: 0;
+    background-color: var(--colorFondo);
+    z-index: 1;
+  }
+
+  a {
+    width: 100%; /* Los enlaces ocupan todo el ancho del menú lateral */
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .menu,
+  .menuSelected {
+    width: 2.5rem; /* Ajuste del tamaño del ícono */
+    height: 2.5rem;
+    margin: 0; /* Elimina márgenes adicionales */
+  }
+
+  .menutext {
+    font-size: 0.8rem; /* Ajusta el tamaño del texto para el diseño vertical */
+    padding: 0; /* Elimina el espaciado superior */
+  }
+}
+
+
